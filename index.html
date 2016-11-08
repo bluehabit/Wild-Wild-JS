@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wild Wild.JS</title>
+	<link rel="stylesheet" href="styles/monokai-sublime.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+</head>
+<body>
+
+
+<h1>
+<img class='tumbleweed' src="images/tumbleweed.svg">
+Wild Wild.JS
+<img class='tumbleweed2' src="images/tumbleweed.svg">
+</h1>
+
+<div id='toc'>
+	<h2>Table of Contents</h2>
+	<hr>
+
+	<h3>Chapter 1</h3>
+	<ul>
+
+		<li>
+			<p class='subsection'>Primitives<span class='dot'>.</span><span class='dot'>.</span><span class='dot'>.</span><span class='dot'>.</span><span class='dot'>.</span></p>
+		</li>
+
+		<li>
+			<p>Strings<span class='dot'>.</span><span class='dot'>.</span><span class='dot'>.</span><span class='dot'>.</span><span class='dot'>.</span></p>
+		</li>
+
+	</ul>
+
+
+	<h3>Chapter 2</h3>
+	<ul>
+
+		<li>
+			<p>Functions<span class='dot'>.</span><span class='dot'>.</span><span class='dot'>.</span><span class='dot'>.</span><span class='dot'>.</span></p>
+		</li>
+
+		<li>
+			<p>Callbacks<span class='dot'>.</span><span class='dot'>.</span><span class='dot'>.</span><span class='dot'>.</span><span class='dot'>.</span></p>
+		</li>
+
+	</ul>
+</div>
+
+<div id='mainContainer'> <!--Begin Main Container -->
+
+<h2>Primitives</h2>
+	<section id='chapterPrimitives'>
+
+	<pre>
+		<code class='scode'>
+	//Numbers
+	4
+	9.3
+	-10	
+	+Infinity
+	-Infinity
+	NaN
+
+	//Strings
+	'hello world'
+	'43'
+
+	//booleans
+	true
+	false
+
+	//null and undefinied
+	null
+	undefined
+		</code>
+	</pre>
+
+	</section><!-- end chapter Primitives--> 
+
+<h2>JS Basics</h2>
+	<section id='aboutJS'>
+
+	<h3>Dynamic Typing</h3>
+	<pre>
+		<code class='scode'>
+	//Dynamic Typing
+	var num = 43;
+	num = 'now I am a string';
+		</code>
+	</pre>
+
+	<p><code class='highlight'>Dynamic typing</code> is something that JS has but not all other languages do, this allows you to change both the type and value of what is contained within the variable</p> 
+
+	<h3>Initializing Variables</h3>
+	<pre>
+		<code class='scode'>
+	var myDog; 
+	//undefined
+
+	var myDog = 'Spot';
+	//'Spot'
+		</code>
+	</pre>
+
+	<p><code class='highlight'>Undefined</code> indicates JS knows about the variable, but there is nothing within it. In other words the variable has not yet been <code class='highlight'>initialized</code></p> 
+
+	<h3>Appending Variables</h3>
+
+	<p> Can append variables with the <code class='highlight'>+=</code> operator.</p> 
+
+	<pre>
+		<code class='scode'>
+		var myPet = 'Luna';
+		myPet += 'is a green cheek conure';
+		//myPet 'Luna is a green cheek conure'
+		</code>
+	</pre>
+
+	<h3>Converting <i>Numbers</i> to <i>Strings</i></h3>
+
+	<pre>
+		<code class='scode'>
+		var num = 123;
+		num = num.toString();
+		//num -> '123'
+		//typeof num -> 'string'
+		</code>
+	</pre>
+
+	<h3>Converting <i>Strings</i> to <i>Numbers</i></h3>
+	<pre>
+		<code class='scode'>
+		var myStr = '123';
+		myStr = Number(myStr);
+		//convertStr = 123;
+		//typeof convertStr = 'number';
+		</code>
+	</pre>
+
+
+	</section><!-- end aboutJS--> 
+
+
+<h2>Strings</h2>
+
+<h3>Bracket Notation</h3>
+
+<p><code class='highlight'>Bracket notation</code> is a way to get a character at a specific <code class='highlight'>index</code> within a string.</p> 
+
+<pre>
+	<code class='scode'>
+		var myName = 'Chris';
+		myName[0] //-> 'C';
+		myName[myName.length - 1] //-> 's'
+		//getting the last character of a string
+
+		var lastChar = myName[myName.length - 1];
+		//can even save the last character to a variable if required
+	</code>
+</pre>
+
+
+<h3>Strings are Immutable</h3>
+
+<p>In Javascript, <code class='highlight'>String</code> values are <code class='highlight'>immutable</code>. This means they cannot be changed onced created.
+For example:
+</p>
+
+
+<pre>
+	<code class='scode'>
+		var myName = 'Bill';
+		myName[0] = 'J';
+		console.log(myName); //-> 'Bill'
+	</code>
+</pre>
+
+<p>
+Cannot change the value of myStr to 'Jill', because the contents of <code class='highlight'>myStr</code> cannot be altered.
+
+The only way to change <code class='highlight'>myStr</code> would be to assign it with a new string. 
+
+
+But you cannot change the individual characters of a <code class='highlight'>string literal</code>.
+</p>
+
+<pre>
+	<code class='scode'>
+		var myName = 'Chris';
+		//reassigning the string literal 'Chris' to myName
+	</code>
+</pre>
+
+The only <code class='highlight'>mutable</code> types in JS are <code class='highlight'>Objects</code> and <code class='highlight'>Arrays</code>. 
+
+<h3>Esacape Sequences</h3>
+	<section id='strings'>
+
+	<pre>
+		<table class="table table-striped"><thead><tr><th>Code</th><th>Output</th></tr></thead><tbody><tr><td><code>\'</code></td><td>single quote</td></tr><tr><td><code>\"</code></td><td>double quote</td></tr><tr><td><code>\\</code></td><td>backslash</td></tr><tr><td><code>\n</code></td><td>newline</td></tr><tr><td><code>\r</code></td><td>carriage return</td></tr><tr><td><code>\t</code></td><td>tab</td></tr><tr><td><code>\b</code></td><td>backspace</td></tr><tr><td><code>\f</code></td><td>form feed</td></tr></tbody></table>
+	</pre>
+
+	<p>You can <code class='highlight'>escape</code> a quote by placing a <code class='highlight'>\</code> in front of the quote.</p>
+
+	<pre><code class='scode'>
+   var myStr = "FirstLine\n\\SecondLine\\\nThirdLine";
+	</code></pre>
+
+	<h4>Console Output</h4>
+	<pre class='js-alert-box'>
+	<span>This Page Says:</span>
+
+	FirstLine
+	\SecondLine\
+	ThirdLine
+	</pre>
+
+
+	<h2>String Methods</h2>
+
+	<h3><span>String</span>.slice() and <span>array</span>.slice()</h3>
+
+	<pre>
+		<code class='scode'>
+			var myString = 'hello world banana';
+			myString.slice(0,4);
+			//hell
+
+			var myString = 'hello world banana';
+			myString.slice(6);
+			//world banana
+		</code>
+	</pre>
+
+	<p>
+	Can <b>also</b> be used on <b>arrays</b>
+	</p>
+
+	<pre>
+		<code class='scode'>
+			var myArr = ['Clint Eastwood', 'Revolver', 'Saloon', 'Spurs'];
+			myArr.slice(0,3)
+			console.log(myArr.slice(0,3)) 
+		</code>
+	</pre>
+
+	<code class='console-output'>["Clint Eastwood", "Revolver", "Saloon"]</code>
+
+	<h3><span class='pink'>Clone</span> Arrays with Splice</h3>
+
+	<p>
+	You can <b>clone</b> arrays with splice.
+	</p>
+
+	<pre>
+		<code class='scode'>
+			var myArr = ['Clint Eastwood', 'Revolver', 'Saloon', 'Spurs'];
+			var cloneArr = myArr.slice();
+		</code>
+	</pre>
+
+	<code class='console-output'>['Clint Eastwood', 'Revolver', 'Saloon', 'Spurs']</code>
+
+	<h3><span>String</span>.substring()</h3>
+	
+	<p>
+	The <code class='highlight'>substr(start,length)</code> function is similar to the <code class='highlight'>slice</code> function, only the 2nd parameter represents the length of the sub-string. If it is not provided then the rest of the string is returned. Although both methods do function <i>similarly</i>. 
+	</p>
+
+	<pre>
+		<code class='scode'>
+			var myString = 'hello world banana';
+			myString.substr(0,4);
+			//hell
+
+			var myString = 'hello world banana';
+			myString.substr(6);
+			//world banana
+		</code>
+	</pre>
+
+
+	<h3>replace(str1, str2)</h3>
+
+	<p>
+	The <code class='highlight'>replace</code> function replaces the first occurence of <code class='highlight'>str1</code> in a string with <code class='highlight'>str2</code>.
+
+	If you want to replace every occurence, it would be wise to use a <code class='highlight'>regular expression</code>. 
+	</p>
+
+	<p>For example, <code class='highlight'>/abc/g</code> replaces every occurrence of <code class='highlight'>abc</code> in the original string.</p>
+
+	<pre>
+		<code class='scode'>
+			var myString = 'a faintly glimmering candle dances in the window';
+			myString.replace('glimmering', 'flickering');
+			myString //-> "a faintly flickering candle dances in the window""
+		</code>
+	</pre>
+
+	<p><span class='pink'>Special Note</span> when you use <code class='highlight'>replace</code> it assigns a new <code class='highlight'>string literal</code> to the variable. </p> 
+
+
+	<h3>toUpperCase( ) &amp; toLowerCase( )</h3>
+
+	<pre>
+		<code class='scode'>
+			var yellMessage = 'i am yelling';
+			console.log(yellMessage.toUpperCase()); 
+			//'I AM YELLLING'
+		</code>
+	</pre>
+
+	<pre>
+		<code class='scode'>
+			var whisperMessage = 'I AM TALKING VERY QUIETLY';
+			console.log(whisperMessage.toUpperCase());
+			//'i am talking very quietly'
+		</code>
+	</pre>
+
+
+	<h3>charAt()</h3>
+
+	Finds a character at a given string index. 
+
+	<pre>
+		<code class='scode'>
+			var myString = 'Dance of Shadows';
+			myString.charAt(0)
+			//-> 'D';
+		</code>
+	</pre>
+
+	Similar to using bracket notation as you might recall from earlier. <code class='highlight'>myString[0] -> 'D'</code>.
+
+	<pre>
+		<code class='scode'>
+			var myString = 'Dance of Shadows';
+			myString[0] === 'D'; 
+			//true
+			myString.charAt(0) === 'D';
+			//true
+		</code>
+	</pre>
+
+
+	<h3>split(separator)</h3>
+
+	This method will splits a string based on the seperator provided. If no seperator is provided the full string is returned as an array with 1 item. 
+
+	<pre>
+		<code class='scode'>
+			var myVar = 'metal gear solid';
+			myVar = myVar.split(' '); 
+		</code>
+	</pre>	
+
+	<code class='console-output'>['metal', 'gear', 'solid']</code>
+
+	<pre>
+		<code class='scode'>
+			var myVar = 'cabbage, banana, orange';
+			myVar = myVar.split(', ');
+		</code>
+	</pre>	
+
+	<code class='console-output'>["cabbage", "banana", "orange"]</code>
+
+	</section><!-- end chapter strings--> 
+
+	<h2>Numbers</h2>
+
+	<h3>toPrecision() &amp; toFixed()</h3>
+	<pre>
+		<code class='scode'>
+			var num = 2.374;
+			console.log(num.toPrecision());//->"2.374"
+			console.log(num.toPrecision(1));//->"2"
+			console.log(num.toPrecision(2));//->"2.4"
+			console.log(num.toPrecision(5));//->"2.3740"
+ 
+			console.log(num.toFixed());//->"2"
+			console.log(num.toFixed(1));//->"2.4"
+			console.log(num.toFixed(4));//->"2.3740"
+
+		</code>
+	</pre>	
+
+	<h3>parseInt() &amp; parseFloat()</h3>
+
+	<pre>
+		<code class='scode'>
+			console.log(parseInt("123")); //-> 123
+			console.log(parseFloat("123.2")); //-> 123.2
+			console.log(+"123"); //-> 123
+		</code>
+	</pre>
+
+	<h3>Number.EPSILON</h3>
+
+	<p><span class='pink'>Special Note</span> Numbers that are not integers are often referred to as floating point numbers.
+
+	Operations on these numbers may not always result in the exact value because computers have difficulties representing them. For example, <code class='highlight'>0.6 + 0.3 </code>evaluates to <code class='highlight'> 0.8999999999999999</code> instead of <code class='highlight'>0.9</code>. 
+
+	One way to fix such logic is to calculate the difference between the actual result and the expected result and determine whether the difference is very small, i.e., close to zero. 
+
+	In JavaScript, <code class='highlight'>Number.EPSILON</code> represents a number that is very close to zero. We can check if the difference is smaller than  <code class='highlight'>Number.EPSILON</code> to verify that it is small enough.
+	</p>
+
+	<pre>
+		<code class='scode'>
+			var x = 0.6;
+			var y = 0.3;
+			var diff = (x + y) - 0.9; //the difference between (x+y) and 0.9
+			var absDiff = Math.abs(diff); // absolute difference
+			//the absolute difference is very small, meaning (x+y) and 0.9 are almost equal
+			
+			if (absDiff < Number.EPSILON){ 
+  				console.log("Inside if");
+			}
+		</code>
+	</pre>
+
+	<p>In this example, the variable diff holds the difference between <code class='highlight'>x + y </code> and <code class='highlight'>0.9</code>. Then we calculate the absolute difference using the <code class='highlight'>Math.abs(...)</code> function. If this absolute difference is smaller than <code class='highlight'>Number.EPSILON</code>, we can say that <code class='highlight'>x + y</code> and <code class='highlight'>0.9</code> are almost equal.</p>
+
+	<h3>Math.random</h3>
+
+	<b>Variant 1:</b>
+
+	<pre>
+		<code class='scode'>
+			var number = Math.floor(Math.random() * 6);
+			console.log(number)
+		</code>
+	</pre>
+
+	<p>Can produce <code class='highlight'>0</code> which would be ideal for something such as a RGB
+	guessing game where you want the number <code class='highlight'>0</code> to be a possibility</p>
+
+	<b>Variant 2:</b>
+
+	<pre>
+		<code class='scode'>
+			var number = Math.floor(Math.random() * 6) + 1;
+			console.log(number)
+		</code>
+	</pre>
+
+	<p>
+	Generates a random <code class='highlight'>#</code> between <code class='highlight'>1</code> and <code class='highlight'>6</code>. Unable to produce <code class='highlight'>0</code>. Ideal for something like a dice roll.
+	</p>
+
+
+
+	<h2>Operators</h2>
+
+	<img src="images/operators.png">
+
+
+	<p><span class='pink'>Special Note</span> Considered a best practice to use strict equality operators.</p>
+
+	<p>Note they are called equality operators becuase they compare things. You can turn any statement into an expression to check for equality. For example 
+	</p>
+
+	<pre>
+		<code class='scode'>
+			var myName = 'Chris';
+			myName[0] === 'C';
+			//true
+			myName[0] === 'K';
+			//false
+		</code>
+	</pre>
+
+	<h3>Not Equal to Operator</h3>
+
+	<b>Example 1:</b>
+	<pre>
+		<code class='scode'>
+			var dogName = 'rusty';
+			var catName = 'chad';
+
+			if(dogName !== cat){
+				console.log('These are different animals');
+			}
+		</code>
+	</pre>
+
+	<b>Example 2:</b>
+
+	<pre>
+		<code class='scode'>
+			var age = 23;
+
+			if(age % 2 !== 0){
+				console.log('Your age is odd');
+			}
+		</code>
+	</pre>
+
+	<b>Example 3:</b>
+	<pre>
+		<code class='scode'>
+			var turtle1 = 'sam';
+			var turtle2 = 'sam';
+
+			if(turtle1 !== turtle2){
+				console.log('these turtles are not the same');
+			} else {
+				console.log(these turtles are the same!);
+			}
+		</code>
+	</pre>
+
+
+</div>	<!--end main container -->
+
+
+<script src="highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
+
