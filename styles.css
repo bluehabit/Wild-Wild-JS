@@ -143,6 +143,10 @@ tr {
 .console-output {
 	text-align: left;
 	display: block;
-	margin-top: -41px;
+	margin-bottom: 15px;
 }
 
+img.center-image {
+    display: block;
+    margin: auto;
+}

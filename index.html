@@ -84,6 +84,29 @@ Wild Wild.JS
 <h2>JS Basics</h2>
 	<section id='aboutJS'>
 
+	<h3>String.length &amp; Array.length</h3>
+
+	<pre>
+		<code class='scode'>
+		var mySquid = 'squid';
+		//mySquid.length = 5;
+		//mySquid[5] = undefined
+		//mySquid[4] = 'd'
+		//mySquid[mySquid.length - 1] = 'd'
+		</code>
+	</pre>
+
+	<p>
+		<code class='highlight'>mySquid.length</code> is <code class='highlight'>5</code>. The <code class='highlight'>.length</code> property always gives you the total number of characters in the string or items in an array. 
+	</p>
+
+	<p> 
+		When we access a string index or array index with <code class='highlight'>bracket notation []</code> remember the count starts at <code class='highlight'>0</code>. So the last item in the string or array will always be <code class='highlight'>string.lengh - 1</code>. See the below example to help illustrate. 
+	</p>
+
+	<img class='center-image' src="images/sushi.png">
+
+
 	<h3>Dynamic Typing</h3>
 	<pre>
 		<code class='scode'>
@@ -138,6 +161,26 @@ Wild Wild.JS
 		myStr = Number(myStr);
 		//convertStr = 123;
 		//typeof convertStr = 'number';
+		</code>
+	</pre>
+
+	<h3>Chaining Together Methods and Properties</h3>
+	<pre>
+		<code class='scode'>
+			var wildWest = 'The, wild, wild, west';
+			wildWest.split(',').slice(2);
+		</code>
+	</pre>
+
+	<code class='console-output'>['wild', 'west']</code>
+
+	<h3>Invoking</h3>
+
+	Methods are invoked on their parent. For example:
+	<pre>
+		<code class='scode'>
+			var attr = parent.getAttribute('id');
+			//invoking the getAttribute method on the parent node
 		</code>
 	</pre>
 
@@ -220,7 +263,8 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	</pre>
 
 
-	<h2>String Methods</h2>
+	<h2>String Methods &amp; Properties</h2>
+
 
 	<h3><span>String</span>.slice() and <span>array</span>.slice()</h3>
 
@@ -244,7 +288,6 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 		<code class='scode'>
 			var myArr = ['Clint Eastwood', 'Revolver', 'Saloon', 'Spurs'];
 			myArr.slice(0,3)
-			console.log(myArr.slice(0,3)) 
 		</code>
 	</pre>
 
@@ -349,7 +392,7 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	</pre>
 
 
-	<h3>split(separator)</h3>
+	<h3>string.split(separator)</h3>
 
 	This method will splits a string based on the seperator provided. If no seperator is provided the full string is returned as an array with 1 item. 
 
@@ -372,6 +415,69 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<code class='console-output'>["cabbage", "banana", "orange"]</code>
 
 	</section><!-- end chapter strings--> 
+
+	<h2>Array Methods &amp; Properties</h2>
+
+	<h3>array.prototype.indexOf</h3>
+	<pre>
+		<code class='scode'>
+			var wildWestGuns = ['Peacemaker', 'Colt', 'Revolver']
+			//wildWestGuns.indexOf('Peacemaker') --> 0;
+			//wildWestGuns.indexOf('Colt') --> 1;
+
+			//wildWestGuns.indexOf('Peace') --> -1; 
+			//wildwestGuns.indexOf('Revolv') --> -1; 
+		</code>
+	</pre>	
+
+	<p><span class='pink'>Special Note</span> <code class='highlight'>array.indexOf</code> is different from <code class='highlight'>string.indexOf</code>.</p>
+
+	<p><code class='highlight'>string.indexOf</code> is a partial match. <code class='highlight'>array.indexOf</code> is exact match.</p>
+
+	<h3>array.slice</h3>
+	<pre>
+		<code class='scode'>
+		var fruits = ['banana', 'orange', 'lemon', 'apple', 'mango'];
+		var citrus = fruits.slice(0,3);
+		</code>
+	</pre>
+
+	<code class='console-output'>['banana', 'orange', 'lemon']</code>
+
+	<b>Can also use to Clone</b>
+
+	<pre>
+		<code class='scode'>
+		var myNumbers = [1,2,3,4,5,6];
+		var cloneArr = myNumbers.slice();
+		</code>
+	</pre>
+
+
+	<h3>array.join</h3>
+	<pre>
+		<code class='scode'>
+		var myArr = ['metal', 'gear', 'solid'];
+		myArr.join('--');
+		//"metal--gear--solid"
+		</code>
+	</pre>
+
+	<h3>Important Examples</h3>
+
+	<b>Removing Duplicate Values from Arrays</b>
+	<pre>
+		<code class='scode'>
+		var myArray = ['Sam', 'Mark', 'Tim', 'Sam'];
+
+		var result = myArray.filter(function(value, index, array){
+			return array.indexOf(value) === index;
+		});
+		//Sam, Mark, Tim
+		</code>
+	</pre>
+
+
 
 	<h2>Numbers</h2>
 
@@ -461,12 +567,12 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<img src="images/operators.png">
 
-
 	<p><span class='pink'>Special Note</span> Considered a best practice to use strict equality operators.</p>
 
 	<p>Note they are called equality operators becuase they compare things. You can turn any statement into an expression to check for equality. For example 
 	</p>
 
+	<b>Example 1</b>
 	<pre>
 		<code class='scode'>
 			var myName = 'Chris';
@@ -474,6 +580,18 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 			//true
 			myName[0] === 'K';
 			//false
+		</code>
+	</pre>
+
+	<b>Example 2</b>
+	<pre>
+		<code class='scode'>
+		var myArray = ['Sam', 'Mark', 'Tim', 'Sam'];
+
+		var result = myArray.filter(function(value, index, array){
+			return array.indexOf(value) === index;
+		});
+		//Sam, Mark, Tim
 		</code>
 	</pre>
 
@@ -517,12 +635,429 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 		</code>
 	</pre>
 
+	<h3>Ternary Operator</h3>
+
+
+	<p>Ternary operators give us an if / else scenario. The expression1 of the ternary operator is the condition.</p>
+
+	<code class='console-output'>expression1 ? expression2 : expression 3</code>
+
+
+	<b>Example 1:</b>
+	<pre>
+		<code class='scode'>
+			var name = 'chris';
+			var nameCheck = name === 'chris' ? 'yup its chris' : 'no its not chris';
+			console.log(nameCheck);
+		</code>
+	</pre>
+
+	<b>Example 2:</b>
+	<pre>
+		<code class='scode'>
+			var number = 6;
+			var oddEvenCheck = number % 2 === 0 ? 'even' : 'odd';
+			console.log(oddEvenCheck);
+		</code>
+	</pre>
+
+	<b>Example 3:</b>
+	<pre>
+		<code class='scode'>
+			var a = 2 === "2" ? "strictly equal" : "not strictly equal";
+			var b = 2 === 2 ? "strictly equal" : "not strictly equal";
+			console.log(a); //->"not strictly equal"
+			console.log(b); //->"strictly equal"
+			console.log(myArr); //-> ['red', 'blue']
+		</code>
+	</pre>
+
+	<b>Example 4:</b>
+	<pre>
+		<code class='scode'>
+			var bird = {
+				name: 'luna',
+				color: 'green',
+				sex: 'female',
+				age: 1
+			};
+
+			function checkProperty(property, object){
+				return (object.hasOwnProperty(property))? object[property] : false;
+			};
+
+			console.log(checkProperty('dog', bird));
+		</code>
+	</pre>
+
+	<b>Example 5:</b>
+	<pre>
+		<code class='scode'>
+			var a = 'dog';
+			var b = 'dog';
+			!(a === b)
+			//false
+		</code>
+	</pre>
+
+	<h3>Boolean Values</h3>
+
+	<h3>Truthy and Falsy Values</h3>
+	<pre>
+		<code class='scode'>
+			//Falsy values:
+			false
+			0
+			''
+			null
+			undefined
+			NaN
+		</code>
+	</pre>	
+
+	<b>Everything else is truthy</b>
+
+	<h2>Switch Statements</h2>
+
+	<b>Example 1:</b>
+
+	<pre>
+		<code class='scode'>
+function caseInSwitch(val){
+	var answer = '';
+		switch(val){
+			case 1:
+				answer = 'alpha';
+				break;
+			case 2:
+				answer = 'beta';
+				break;
+			case 3:
+				answer = 'gamma';
+				break;	
+			case 4:
+				answer = 'delta';
+				break;	
+			}
+			return answer;
+		}
+
+		caseInSwitch(1);
+		//alpha
+		</code>
+	</pre>
+
+	<p><span class='pink'>Special Note</span> It is best practice to only use <code class='highlight'>break</code> inside of switch statements. If you have many options, its best practice to use a switch statement. Using <code class='highlight'>break</code> outside of <code class='highlight'>switch statements</code> introduces unconditional jumps (also known as go to's) which leads to spaghetti code.</p> 
+
+	<b>Default Option</b>
+	<p>In a <code class='highlight'>switch</code> statement you may not be able to specify all possible values as <code class='highlight'>case</code> statements. Instead, you can add the <code class='highlight'>default</code> statement which will be executed if there is no matching <code class='highlight'>case</code> statement found.</p>
+
+	<b>Example 2:</b>
+	<pre>
+		<code class='scode'>
+function switchOfStuff(val){
+	var answer = '';
+		switch(val){
+			case 'a':
+				answer = 'apple';
+				break;
+			case 'b':
+				answer = 'bird';
+				break;
+			case 'c':
+				answer = 'cat';
+				break;	
+			default:
+				answer = 'stuff';
+			}
+			return answer;
+		}
+		</code>
+	</pre>
+
+	<h2>Conditionals</h2>
+
+	<h3>Nested if Statements</h3>
+
+	<pre>
+		<code class='scode'>
+	var p1Button = document.querySelector('#p1');
+	var p2Button = document.querySelector('#p2');
+
+	var p1Display = document.querySelector('#p1Display');
+	var p2Display = document.querySelector('#p2Display');
+
+	var p1Score = 0;
+	var p2Score = 0;
+
+	var gameOver = false;
+	var winningScore = 5;
+
+	p1Button.addEventListener('click', function(){
+		if(!gameOver){
+		//first if statement
+			p1Score++;
+			if(p1Score === winningScore){
+		//second if statement	
+				console.log('game over');
+			}
+			p1Display.textContent = p1Score;
+		}
+	})
+
+	p2Button.addEventListener('click', function(){
+		p2Score++;
+		p2Display.textContent = p2Score;
+	})
+		</code>
+	</pre>
+
+	<h3>Proper Usage</h3>
+
+	<b>Example 1</b>
+	<pre>
+		<code class='scode'>
+		if(firstChunk || lastChunk === ''){
+			stringCheck = false;
+		} else {
+			stringCheck = true;
+		}
+		</code>
+	</pre>	
+
+	<p>
+		Notice this line from the above example <code class='highlight'>if(firstChunk || lastChunk === '')</code> it is missing the equality operator comparing it to an empty string. In other words <code class='highlight'>if(firstChunk === '' || lastChunk === '')</code>
+	</p>	
+
+	<b>Example 2</b>
+	<pre>
+		<code class='scode'>
+		if(firstChunk === '' || lastChunk === ''){
+			stringCheck = false;
+		} else {
+			stringCheck = true;
+		}
+		</code>
+	</pre>
+
+	<p>The above is the correct way</p>
+
+	<h2>Loops</h2>
+
+	<h3>While Loops</h3>
+	<b>Example 1:</b>
+
+	<pre>
+		<code class='scode'>
+		var str = 'hello';
+		var count = 0;
+
+		while(count < str.length){
+			console.log(str[count]);
+			count++;
+		};
+		</code>
+	</pre>	
+
+	<b>Example 2:</b>
+
+	<pre>
+		<code class='scode'>
+			var num = 1;
+
+			while(num <= 20){
+				if(num % 4 === 0){
+					console.log(num);
+				}
+				num++;
+			}
+		</code>
+	</pre>
+
+	<h3>For Loops</h3>
+	<pre>
+		<code class='scode'>
+		var colors = ['red', 'orange', 'yellow', 'green'];
+
+		for(var i = 0; i < colors.length; i++){
+			console.log(colors[i]);
+		}
+		</code>
+	</pre>
+
+	<h3>For Each</h3>
+	<p>Javascript provides a built-in way of iterating over an array using forEach</p>
+
+	<pre>
+		<code class='scode'>
+			var colors = ['red', 'orange', 'yellow', 'green'];
+
+			colors.forEach(function(colorName){
+				console.log(colorName);
+			});
+		</code>
+	</pre>
+
+	<h2>Functions</h2>
+
+	<p>Functions let us wrap bits of code into <span class='pink'>REUSABLE</span> packages. They are on of the building blocks of JS.</p>
+
+	<pre>
+		<code class='scode'>
+		//declare a function first:
+		function sayHello(){
+			console.log('Hello World!');
+		}
+		</code>
+	</pre>
+
+	<p>Then call it</p>
+	<pre>
+		<code class='scode'>
+		sayHello();
+		sayHello();
+		sayHello();
+		sayHello();
+		</code>
+	</pre>
+
+	<p>Functions are designed to <span class='pink'>RETURN</span> something. The return keyword is a way to <span class='pink'>CAPTURE THE VALUE</span> coming out of the function so you can do something with it later. Think of each function as its own factory. Once the function is called and executed it returns a pacakge.</p>
+
+	<p><span class='pink'>Special Note</span>: Can only ever return one thing from a function; however, you can use conditional statements such as <code class='highlight'>if</code> to route what is returned.
+	</p>
+
+	<h3>Types of Functions</h3>
+	<pre>
+		<code class='scode'>
+		//function
+		function printMe(message){
+			console.log(message);
+		}
+
+		printMe('hello there!');
+
+		//function expression
+		var addArray = function(){
+			//
+		}
+
+		//Anonymous function
+		(function(){
+			console.log('Anonymous Function');
+		});
+
+		//Anonymous function 
+		var p = (function(){
+			console.log('Anonymous Function Saved to a Variable');
+		});
+
+		p();
+
+		//Anonymous Self Invoking function
+		(function(){
+			console.log('Anonymous Function');
+		})();
+
+		</code>
+	</pre>
+
+	<h3>No Formatting</h3>
+	<pre>
+		<code class='scode'>
+		//Normal function
+		function printMe(message){console.log(message);}
+
+		//Anonymous function
+		(function(){console.log('hello';)});
+
+		//Anonymous self invoking function
+		(function(){console.log('hello');})();
+		</code>
+	</pre>
+
+	<h3>Arguments</h3>
+	<p>Often we write functions to take inputs called <span class='pink'>Arguments</span>.</p>
+
+	<pre>
+		<code class='scode'>
+		function square(num){
+		console.log(num * num);
+		}
+		//num is a parameter
+		</code>
+	</pre>
+
+	<p>Now when we call square we need to pass in a value</p>
+	<pre>
+		<code class='scode'>
+		square(10); //prints 100
+		square(3); //prints 9
+		square(4); //prints 16
+		</code>
+	</pre>
+
+	<p>Can also store a function call and its parameter inside a variable</p>
+	<pre>
+		<code class='scode'>
+		function square(num) {
+			return num * num;
+		};
+
+		var storage = square(4);
+		//16
+		</code>
+	</pre>
+
+
+	<h3>Function Example</h3>
+	<p>Below is the same program, written several different ways refactoring it to be shorter and more effecient with each pass.</p>
+
+	<b>First Pass</b>
+	<pre>
+		<code class='scode'>
+		var myArray = [1,2,3,4,5,6,7,8,9,10];
+
+		function isEven(value, index, array){
+			if(value % 2 === 0){
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		var result = myArray.filter(isEven);
+		</code>
+	</pre>
+
+	<b>Second Pass</b>
+	<pre>
+		<code class='scode'>
+		var myArray = [1,2,3,4,5,6,7,8,9,10];
+
+		function isEven(value, index, array){
+			return value % 2 === 0;
+		}
+
+		var result = myArray.filter(isEven);
+		</code>
+	</pre>
+
+	<b>Third Pass</b>
+	<pre>
+		<code class='scode'>
+		var myArray = [1,2,3,4,5,6,7,8,9,10];
+
+		var result = myArray.filter(function(value, index, array){
+			return value % 2 === 0; 
+		});
+		</code>
+	</pre>
 
 </div>	<!--end main container -->
 
 <div id='new'></div>
 
-
+<script type="text/javascript" src='snakes.js'></script>
 <script src="highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
