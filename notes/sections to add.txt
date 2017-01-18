@@ -1,0 +1,37 @@
+<h2>'s
+- primitives
+- JS Basics
+- Strings
+- String Methods
+- Numbers
+- Operators
+- Switch Statements
+- loops
+- arrays
+
+
+*need to be added
+- node vs nodeList
+- custom map, filter, reduce functions from intro to JS chapter
+
+??JS basics section??
+-paragraph about the difference between properties and methods
+for example myStr.length vs console.log('hello');
+
+callback functions
+the first block is just iterating through the array
+if the condition is true then return it to the next
+function to do something to it
+
+if it is false then it is not returned to the next function
+and nothing is done to it in the callback function
+
+
+add good youtube videos
+websites etc such as codeschool treehouse
+
+finished projects:
+-win counter from colt
+-random color generator guessing game colt
+-checkout cart 
+-calculator

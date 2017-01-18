@@ -6,11 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-
 	<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
 </head>
 <body>
-
 
 <h1>
 <img class='tumbleweed' src="images/tumbleweed.svg">
@@ -52,6 +50,48 @@ Wild Wild.JS
 
 <div id='mainContainer'> <!--Begin Main Container -->
 
+<h2>Free Book, a Smarter Way to Learn JS</h2>
+<a href="http://www.asmarterwaytolearn.com/js/index-of-exercises.html
+">List of Exercises for Book</a>
+
+<a href="http://dit.dru.ac.th/home/004/classicweb/for_member/filekm/ASmarterWaytoLearnJavaScript.pdf
+">Download Book</a>
+
+<img src='images/hide radio button.png'>
+
+<img src="images/data html attributes.png">
+
+<img src='images/template strings.png'>
+
+<p><b>this</b> trick to figure out what its refering to, just console.log it. 'This' is always equal to whatever was called against it</p>
+
+<h2>Javascript This Tutorials</h2>
+https://www.sitepoint.com/inner-workings-javascripts-this-keyword/
+
+https://www.sitepoint.com/mastering-javascripts-this-keyword/
+
+http://jstherightway.org/
+
+<h2>Javascript Performance</h2>
+http://jsperf.com/
+
+<h3>Event Listener</h3>
+<p>Don't have to attach event listeners to the document object, can attach them to any HTML element objects such as the canvas variable, or element.querySelector.</p>
+	<pre>
+		<code class='scode'>
+canvas.addEventListener('click', onPuzzleClick);
+document.addEventListener('click', onPuzzleClick);
+		</code>
+	</pre>
+
+<h2>Callback example</h2>
+<p>Two types of callbacks, <b>synchronous</b> and <b>asynchronous</b></p>
+
+<img src="images/very important.png">
+
+<h2>Important</h2>
+<p>Check out MDN's <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">big guide</a> on JS here</p>
+
 <h2>Primitives</h2>
 	<section id='chapterPrimitives'>
 
@@ -81,8 +121,49 @@ Wild Wild.JS
 
 	</section><!-- end chapter Primitives--> 
 
+<h2>Project Sites</h2>
+<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://javascript30.com/" target="_blank">Javascript30</a>
+		</li>
+		<li>
+			<a href="http://thecodeplayer.com/" target="_blank">The Code Player</a>
+		</li>
+		<li>
+			<a href="http://www.w3schools.com/howto/" target="_blank">W3 How To</a>
+		</li>
+		<li>
+			<a href="http://materializecss.com/" target="_blank">Materialize Web Components</a>
+		</li>
+		<li>
+			<a href="https://code.tutsplus.com/categories/games" target="_blank">Games</a>
+		</li>
+		<li>
+			<a href="https://code.tutsplus.com/categories/javascript" target="_blank">Apps</a>
+		</li>
+	</ul>
+</div>	
+
 <h2>JS Basics</h2>
 	<section id='aboutJS'>
+
+	<h3>Object</h3>
+	<pre>
+		<code class='scode'>
+	var animal = 'dog'
+	var sounds = {
+		'pig': 'oink',
+		'cow': 'moo',
+		'dog': 'woof-woof',
+	}
+
+	var sound = sounds[animal]
+	//'woof-woof'
+		</code>
+	</pre>
+	<p>neat trick above, notice for this to work you have to use bracket notation. Dot notation will not work</p>
 
 	<h3>String.length &amp; Array.length</h3>
 
@@ -118,6 +199,14 @@ Wild Wild.JS
 
 	<p><code class='highlight'>Dynamic typing</code> is something that JS has but not all other languages do, this allows you to change both the type and value of what is contained within the variable</p> 
 
+	<h3>Console.log</h3>
+	<p>Can log multiple items to the console at the same time</p>
+	<pre>
+		<code class='scode'>
+	console.log(p1Score, p2Score);
+		</code>
+	</pre>
+
 	<h3>Initializing Variables</h3>
 	<pre>
 		<code class='scode'>
@@ -129,9 +218,37 @@ Wild Wild.JS
 		</code>
 	</pre>
 
+	<p>Failure to initialize variables can lead to problems such as the code below</p>
+
+	<b>Not Working</b>
+	<pre>
+		<code class='scode'>
+	var numberArr = [1, 2, 3, 4, 5]; //120
+
+	for(var i = 0; i < numberArr.length; i++){
+		var result *= numberArr[i]
+	}
+
+	//returns undefined, result has not been initialized
+		</code>
+	</pre>
+
+	<b>Working</b>
+	<pre>
+		<code class='scode'>
+	var numberArr = [1, 2, 3, 4, 5]; //120
+	var result  1; //initializing the variable
+
+	for(var i = 0; i < numberArr.length; i++){
+		var result *= numberArr[i]
+	}
+		</code>
+	</pre>
+
+ 
 	<p><code class='highlight'>Undefined</code> indicates JS knows about the variable, but there is nothing within it. In other words the variable has not yet been <code class='highlight'>initialized</code></p> 
 
-	<h3>Appending Variables</h3>
+	<h3>Appending Variables / Concating Strings</h3>
 
 	<p> Can append variables with the <code class='highlight'>+=</code> operator.</p> 
 
@@ -164,6 +281,35 @@ Wild Wild.JS
 		</code>
 	</pre>
 
+	<h3>Converting Number to Fixed Float</h3>
+	<pre>
+		<code class='scode'>
+		var myNum = 15.7893
+		var myNum = Number(myNum.toFixed(2));
+		//returns number 15.79
+		</code>
+	</pre>
+
+	<p>Why do this? Suppose you had the code below
+	</p>
+
+	<pre>
+		<code class='scode'>
+		var myNum = 5.99
+		myNum += 5.99;
+		//11.98
+		myNum += 5.99;
+		//17.97
+		myNum += 5.99;
+		//23.96
+		myNum += 5.99;
+		//29.950000000000003
+		//more decimal places here than we bargained for
+		</code>
+	</pre>
+
+	<p>Notice how eventually your 2 decimal number will eventually include many more decimals unless you cap it with <code class='highlight'>toFixed()</code> </p>
+
 	<h3>Chaining Together Methods and Properties</h3>
 	<pre>
 		<code class='scode'>
@@ -172,7 +318,33 @@ Wild Wild.JS
 		</code>
 	</pre>
 
+
+	<pre>
+		<code class='scode'>
+		document.querySelector("h2, h3").style.backgroundColor = "red";
+		</code>
+	</pre>
+
+	<pre>
+		<code class='scode'>
+			document.querySelector('h1').textContent = 'end of lesson';
+		</code>
+	</pre>
+
+	<pre>
+		<code class='scode'>
+			document.querySelector('ul').addEventListener('click', function(){
+
+			});
+		</code>
+	</pre>
+
 	<code class='console-output'>['wild', 'west']</code>
+
+	<p><span class='pink'>Special Note:</span> When researching on google pay close attention if the item listed is a <b>property</b> or <b>method</b>. In the example below we can see node.<b>parentNode</b> is a <b>property</b>. 
+	</p>
+
+	<img src="images/porm.png">
 
 	<h3>Invoking</h3>
 
@@ -184,11 +356,85 @@ Wild Wild.JS
 		</code>
 	</pre>
 
-
 	</section><!-- end aboutJS--> 
 
+	<div class='resource-list'>
+	<p class='heading-resource-list'>callback resources</p>
+	<ul>
+		<li>
+			<a href="https://blog.pivotal.io/labs/labs/javascript-constructors-prototypes-and-the-new-keyword" target="_blank">JS Constructors, Prototypes and the 'new' Keyword</a>
+		</li>
+	</ul>
+	</div>
+
+	<h3>By Value and By Reference</h3>
+	<pre>
+		<code class='scode'>
+			a  = 3;
+			b = 3;
+			//Every variable is a different location in the computer's memory.  
+
+			a === b // true
+			//above is comparing the CONTENTS of the memory locations, not the memory locations themselves. 
+
+			a = 5;
+			//overwriting the contents at that memory location
+
+		</code>
+	</pre>
+
+	<p>With Functions</p>
+	<pre>
+		<code class='scode'>
+		var c = 1;
+
+		function myFunc(x){
+		  x = 5;
+		  console.log(x); 
+		}
+		 
+		myFunc(c); //-> 5
+		console.log(c) //-> 1 
+
+		//in the above example we are just passing by value,
+		//that is passing the variable c that holds the value of 1
+		//through the function. Inside the function it is making a 
+		//COPY of that value to work with. Inside the function
+		//the value gets changed to 5. 
+
+		//outside the function the value of c still equals 1. They exist as different entities, in different worlds. 
+
+		</code>
+	</pre>
+
+	<p>With Objects</p>
+	<pre>
+		<code class='scode'>
+		var a = {
+			cost: 1
+		}
+
+		var b = {
+			cost: 1
+		}
+
+		var c = {
+			cost: 1
+		}
+
+
+		</code>
+	</pre>
+
+<h2>HTML Attributes</h2>
+<p>In HTML there are global and non global HTML attributes, for example the onload attribute shown below is available for all HTML elements, or global. While something like the form action attribute is exclusive to forms.</p>
+
+<img src="images/onload attribute.png">
 
 <h2>Strings</h2>
+
+<p><span class='pink'>Special Note:</span> Strings are <span class='pink'>IMMUTABLE</span>, data cannot be changed in place. Remember, every data type in JS is immutable <b>EXCEPT </b><span class='pink'>ARRAYS</span> and <span class='pink'>OBJECTS</span>. 
+	</p>
 
 <h3>Bracket Notation</h3>
 
@@ -207,13 +453,12 @@ Wild Wild.JS
 </pre>
 
 
-<h3>Strings are Immutable</h3>
+<h3>Immutability</h3>
 
 <p>In Javascript, <code class='highlight'>String</code> values are <code class='highlight'>immutable</code>. This means they cannot be changed onced created.
-For example:
 </p>
 
-
+<b>Example 1</b>
 <pre>
 	<code class='scode'>
 		var myName = 'Bill';
@@ -227,7 +472,6 @@ Cannot change the value of myStr to 'Jill', because the contents of <code class=
 
 The only way to change <code class='highlight'>myStr</code> would be to assign it with a new string. 
 
-
 But you cannot change the individual characters of a <code class='highlight'>string literal</code>.
 </p>
 
@@ -235,6 +479,53 @@ But you cannot change the individual characters of a <code class='highlight'>str
 	<code class='scode'>
 		var myName = 'Chris';
 		//reassigning the string literal 'Chris' to myName
+	</code>
+</pre>
+
+<h3>Can use replace() method</h3>
+
+<p><code class='highlight'>replace()</code> returns a <b>new string</b> with some or all matches of a pattern, the pattern can be string or RegEx. 
+</p>
+
+<pre>
+	<code class='scode'>
+	var myStr = 'jam';
+	myStr = myStr.replace(myStr[0], 'h');
+	/* "ham" */ 
+	</code>
+</pre>
+
+<h3>Immutability and Compound Assignment</h3>
+<p>Can also use <b>compound assignment</b> to change the value of a string. Remember the only way to change the value of a string in place once created is to reassign it. You can use compound assignments to modify a string. 
+</p>
+
+<b>Example</b>
+
+<pre>
+	<code class='scode'>
+		var myStr = 'dog';
+		myStr += 'cat';
+		/* 'dogcat' */
+	</code>
+</pre>
+
+<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.sitepoint.com/immutability-javascript/" target="_blank">Site Point Immutability Overview</a>
+		</li>
+	</ul>
+	</div>
+
+
+<h3>Can Also Use the Replace Method</h3>
+
+<pre>
+	<code class='scode'>
+		var myStr = 'dogcat';
+		myStr = myStr.replace(myStr[0], 'j');
+		/* "jogcat" */
 	</code>
 </pre>
 
@@ -260,6 +551,11 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	FirstLine
 	\SecondLine\
 	ThirdLine
+	</pre>
+
+	<h3>Compound Assignments</h3>
+		<pre>
+		<table class="table table-striped"><thead><tr><th>Operator</th><th>Symbol</th></tr></thead><tbody><tr><td><code>Addition</code></td><td>	+=</td></tr><tr><td><code>Division</code></td><td>	/=</td></tr><tr><td><code>Modulus</code></td><td>	%=</td></tr><tr><td><code>Multiplication</code></td><td>	*=</td></tr><tr><td><code>Subtraction</code></td><td>	-=</td></tr><tr><td></tbody></table>
 	</pre>
 
 
@@ -416,12 +712,109 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	</section><!-- end chapter strings--> 
 
-	<h2>Array Methods &amp; Properties</h2>
+	<h2>Arrays - Methods &amp; Properties</h2>
 
-	<h3>array.prototype.indexOf</h3>
+	<h3>Arrays</h3>
+	<p><span class='pink'>Special Note:</span> Arrays are <span class='pink'>MUTABLE</span>, data can be changed in place. Remember, every data type in JS is immutable <b>EXCEPT </b><span class='pink'>ARRAYS</span> and <span class='pink'>OBJECTS</span>. </p>
+
+	<b>Creating an array literal</b>
 	<pre>
 		<code class='scode'>
-			var wildWestGuns = ['Peacemaker', 'Colt', 'Revolver']
+			var myArr = [];
+		</code>
+	</pre>	
+
+	<p>Can also use the <code class='highlight'>new</code> keyword, although not recommended</p>
+
+	<pre>
+		<code class='scode'>
+			var myArr = new Array('red', 'blue', 'green');
+		</code>
+	</pre>
+
+	<b>Example Array</b>
+	<pre>
+		<code class='scode'>
+			var myColleagues = ['Sam', 'Chris', 'Lisa'];
+		</code>
+	</pre>	
+
+	<h3>Arrays are MUTABLE</h3>
+	<b>allows us to change data in place</b>
+	<pre>
+		<code class='scode'>
+			var myColleagues = ['Sam', 'Chris', 'Lisa'];
+
+			myColleagues[0] = 'Jon';
+			myColleagues[2] = 'Stephanie';
+
+			console.log(myColleagues);
+			//Jon, Chris, Stephanie
+		</code>
+	</pre>	
+
+	<h3>MultiDimensional / Nested Arrays</h3>
+	<pre>
+		<code class='scode'>
+			var friendsGroup = [
+				['Harry', 'Ron', 'Hermione'],
+				['Malfoy', 'Crabbe', 'Goyle'],
+				['Mooney', 'Wormtail', 'Prongs']
+			];
+
+			friendsGroup[2][0]
+			//'Mooney'
+		</code>
+	</pre>	
+
+	<pre>
+		<code class='scode'>
+			var ourArray = ['Stimpson', 'j', 'cat'];
+			ourArray.push(['happy', 'joy']);
+			/* "['Stimpson', 'j', 'cat', ['happy', joy]"" */
+		</code>
+	</pre>	
+
+	<pre>
+		<code class='scode'> 
+			var myArray = [
+				['John', 23],
+				['Cat', 3]
+			];
+
+			myArray.push(['dog', 5]);
+		</code>
+	</pre>	
+
+
+	<h3>Built in Methods</h3>
+	<p>Arrays are a type of object in javascript, as such arrays come with some built in methods such as <code class='highlight'>filter, map, reduce</code>. For example:</p>
+
+	<b>Array.prototype.filter()</b>
+	<b>Parameters:</b>
+	<b>index</b>
+	<p>The index of the current element being processed in the array</p>
+
+	<pre>
+		<code class='scode'>
+		var result = myArray.filter(function(value, index, array){
+			return array.indexOf(value) === index;
+			//value, index, array are built in here
+		});
+		</code>
+	</pre>	
+
+	<b>array</b>
+	<p>The array filter was called upon</p>
+
+
+	<h3>indexOf</h3>
+
+	<p>Returns the FIRST index match for a given item inside an array</p>
+
+	<pre>
+		<code class='scode'>
+			var wildWestGuns = ['Peacemaker', 'Colt', 'Revolver', 'Colt']
 			//wildWestGuns.indexOf('Peacemaker') --> 0;
 			//wildWestGuns.indexOf('Colt') --> 1;
 
@@ -429,6 +822,11 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 			//wildwestGuns.indexOf('Revolv') --> -1; 
 		</code>
 	</pre>	
+
+	<p>Notice how <code class='highlight'>wildWestGuns.indexOf('Colt')</code> returns <code class='highlight'>1</code> even though it is found within the array twice. Again it only returns the FIRST index that is found for that item.
+	</p>
+
+	<br>
 
 	<p><span class='pink'>Special Note</span> <code class='highlight'>array.indexOf</code> is different from <code class='highlight'>string.indexOf</code>.</p>
 
@@ -453,6 +851,13 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 		</code>
 	</pre>
 
+	<pre>
+		<code class='scode'>
+		var array = [1, 2, 3, 'a', 'b', 445, 45];
+		var letters = array.slice(3,5);
+		/* ['a', 'b'] */
+		</code>
+	</pre>
 
 	<h3>array.join</h3>
 	<pre>
@@ -460,6 +865,58 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 		var myArr = ['metal', 'gear', 'solid'];
 		myArr.join('--');
 		//"metal--gear--solid"
+		</code>
+	</pre>
+
+	<pre>
+		<code class='scode'>
+		var elements = ['wind', 'water', 'earth', 'heart'];
+		elements.join(', ');
+		/* "wind, water, earth, heart" */
+		</code>
+	</pre>
+
+	<h3>array.splice</h3>
+	<p>Use splice to add and remove items from an array. Items removed in this manner do not leave any holes in the array like the <code class='highlight'>delete</code> keyword will</p>
+
+	<p>In <code class='highlight'>array.splice(0,0)</code> The first parameter indicates at what position the new items will be injected. In this case, at index 0. The second parameter indicates how many items will be removed from the array to make room for the new items, in this case 0 items will be deleted. 
+	</p>
+
+	<b>Adding Items</b>
+	<pre>
+		<code class='scode'>
+		var myArr = [
+			'Witch',
+			'Moon',
+			'Monster'
+		];
+
+		myArr.splice(0, 0, 'Bat', 'Ghosts', 'Goblins');
+		/* "['Bat', 'Ghosts', 'Goblins', 'Witch', 'Moon', 'Monster']" */
+		</code>
+	</pre>
+
+	<b>Removing Items</b>
+	<pre>
+		<code class='scode'>
+		var myArr = [
+			'Witch',
+			'Moon',
+			'Monster'
+		];
+
+		myArr.splice(0, 2);
+		/* '[Monster]' */
+		</code>
+	</pre>
+	
+
+	<b>Notice how delete leaves holes</b>
+	<pre>
+		<code class='scode'>
+		var myArr = [1,2,3]
+		delete myArr[0];
+		/* [undefined × 1, 2, 3] */ 
 		</code>
 	</pre>
 
@@ -477,9 +934,803 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 		</code>
 	</pre>
 
+	<h3>Shift and Unshift</h3>
+	<p>Use unshift to add to the FRONT of an array</p>
+	<pre>
+		<code class='scode'>
+		var colors = ['red', 'orange', 'yellow'];
+		colors.unshift('blue');
+		</code>
+	</pre>
+
+	<p>Use shift to remove the FIRST item of an array</p>
+	<pre>
+		<code class='scode'>
+		var colors = ['red', 'orange', 'yellow'];
+		var firstItem = colors.shift();
+		</code>
+	</pre>
+
+	<h3>Push and Pop</h3>
+	<p>Use push to add to the END of an array</p>
+
+	<pre>
+		<code class='scode'>
+		var colors = ['red', 'orange', 'yellow'];
+		colors.push('violet');
+		</code>
+	</pre>
+
+	<p>Use pop to remove the last item in an array</p>
+	<pre>
+		<code class='scode'>
+		var colors = ['red', 'orange', 'yellow'];
+		var lastItem = colors.pop();
+		//yellow
+		</code>
+	</pre>
+
+	<h3>Array.concat</h3>
+	<p>Used to combine multiple arrays</p>
+
+	<pre>
+		<code class='scode'>
+		var arr1 = ['snow', 'ice'];
+		var arr2 = ['green', 'verdant'];
+		var arr3 = arr1.concat(arr2);
+		console.log(arr3);
+		/* ["snow", "ice", "green", "verdant"] */
+		</code>
+	</pre>	
+
+	<h2>array.includes</h2>
+
+	<a href="http://www.2ality.com/2016/02/array-prototype-includes.html?m=1">read about it here</a>
+
+	<h2>array.indexOf, array.find, array.findIndex</h2>
+
+	<h3>indexOf</h3>
+	<p>Finds the index of the FIRST item in the array that matches the criteria</p>
+
+	<pre>
+		<code class='scode'>
+		var myArr = ['Ghastly', 'Gengar', 'Haunter'];
+
+		//examples
+		// myArr.indexOf('Ghastly');
+		// //0
+		// myArr.indexOf('Haunter');
+		// //2
+		// myArr.indexOf('Pikachu');
+		// //-1
+		</code>
+	</pre>	
+
+	<h3>array.find()</h3>
+	<p>returns the <b>VALUE</b> of the first element in the array that satisfies the provided test function. Notice how 18 is returned in this example but 28 is not - it only returns the first element that matches the criteria</p>
+
+	<pre>
+		<code class='scode'>
+		var ages = [3, 10, 8, 18, 28];
+
+		function isAdult(element) {
+		  return element >= 18;
+		}
+
+		ages.find(isAdult);
+		//18 
+		</code>
+	</pre>	
+
+	<h3>array.findIndex</h3>
+	<p>Returns the <b>INDEX</b> of the first element in an array that satisfies the provided testing function. Returns 3 for the array item 18 in this case. Note how its again returning the array index of 3 not the value</p>
+
+	<p>Example 1</p>
+	<pre>
+		<code class='scode'>
+		var ages = [3, 10, 8, 18, 28];
+
+		function isAdult(element) {
+		  return element >= 18;
+		}
+
+		ages.findIndex(isAdult);
+		//3
+		</code>
+	</pre>	
+
+	<p>Example 2</p>
+	<pre>
+		<code class='scode'>
+		var shoppingCart = {
+		items: [
+		{
+			name: 'sushi',
+			color: 'red'
+		},
+		{
+			name: 'turtle',
+			color: 'green'
+		},
+		{
+			name: 'water',
+			color: 'blue'
+		},
+		{
+			name: 'flowers',
+			color: 'purple'
+		}
+		],
+		total_price: 0
+	}
+
+	var cartIndex = shoppingCart.items.findIndex( function(x){
+		return x.name === 'water';
+	});
+
+	//cartIndex -> 2
+		</code>
+	</pre>
+
+	<p>Example 2</p>
+	<pre>
+		<code class='scode'>
+		var ages = [3, 10, 8, 18, 28];
+
+		function isAdult(element) {
+		  return element >= 18;
+		}
+
+		ages.findIndex(isAdult);
+		//3
+		</code>
+	</pre>
+
+	<h2>Objects</h2>
+
+	<p><span class='pink'>Special Note:</span> Objects are <span class='pink'>MUTABLE</span>, data CAN be changed in place. Remember, every data type in JS is immutable <b>EXCEPT </b><span class='pink'>ARRAYS</span> and <span class='pink'>OBJECTS</span>. 
+	</p>
+
+	<h3>Updating Data in Place</h3>
+	<p>Again we can do this because objects are mutable</p>
+	<pre>
+		<code class='scode'>
+		var person = {
+			name: 'Chris',
+			age: 29,
+			city: 'Dallas'
+		};
+
+		//update age
+		person.age = 21;
+		person.city = 'Arlington'
+		</code>
+	</pre
+
+
+	<p>Everything inside an object is a <b>key: value pair</b>. Unlike Arrays, inside objects data has no order. Key is synonymous with the term property</p>
+
+	<h3>Creating Objects</h3>
+
+	<p>There are two ways to create an object, but the recommend way is the object literal</p>
+
+	<b>Object Literal</b>
+	<pre>
+		<code class='scode'>
+		var bird = {}
+		bird.name = 'Luna',
+		bird.age = 1,
+		bird.color = 'emerald'
+		</code>
+	</pre>
+
+	<b>Object Constructor</b>
+	<pre>
+		<code class='scode'>
+		var bird = {
+			name: 'Luna',
+			age: 1,
+			color: 'emerald'
+		}
+		</code>
+	</pre>
+
+	<b>Object Constructor Function</b>
+	<pre>
+		<code class='scode'>
+			function Car(make, model, year){
+				this.make = make;
+				this.model = model;
+				this.year = year;
+			}
+
+			var newCar = new Car('DeLorean', 'DMC-12', '1981')
+			//new keyword very important, as it creates a new instance 
+			//of the object
+		</code>
+	</pre>
+
+	<p>Read more about object creation methods on the MDN <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects">Working with Objects Guide</a></p>
+
+
+
+
+
+	<p>The other method is to use the <code class='highlight'>new</code> keyword</p>
+	
+	<pre>
+		<code class='scode'>
+		var bird = new Object();
+		</code>
+	</pre>
+
+	<h3>Arrays can hold all sorts of Data</h3>
+	<p>Notice how the object below holds an array and another object inside of it</p>
+	<pre>
+		<code class='scode'>
+		var junkObject = {
+			age: 57,
+			color: 'purple',
+			isHungry: true
+			friends: ['Sam', 'Chris'],
+			pet: {
+				name: 'Rusty',
+				species: 'Dog',
+				age: 2
+			}
+		}; 
+
+		//above has typo somewhere throws error
+		</code>
+	</pre>
+
+	<h3>Object Constructor</h3>
+	<pre>
+		<code class='scode'>
+		function person(firstName, lastName, age){
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.age = age;
+			this.fullName = function(){
+				return this.firstName + ' ' + this.lastName;
+			};
+		}
+
+		var chris = new person('Chris', 'Michaels', 29);
+		</code>
+	</pre>
+
+
+	<h3>Accessing Information in Objects</h3>
+	<p> <span class='pink'>DOT NOTATION</span> is the preferred way of accessing object properties because it is easy to read and faster to write. However, <span class='pink'>BRACKET NOTATION</span> is used when the property name is a variable or the property name contains special characters such as a <code class='highlight'>-</code> or <code class='highlight'>.</code>
+	</p>
+
+	<p><span class='pink'>OBJECTS</span></p> 
+	<b>Accessing Information</b>
+	<pre>
+		<code class='scode'>
+		var bird = {
+			name: 'luna',
+			color: 'green',
+			age: 1
+		}
+
+		//dot notation
+		bird.name
+		bird.age
+		bird.color
+
+		//bracket notation
+		bird['name'] //'Luna'
+		bird['age'] //1
+		bird['color'] //'green'
+		</code>
+	</pre>
+
+	<p><span class='pink'>ARRAY OF OBJECTS</span></p> 
+	<b>Accessing Information</b>
+
+	<p>Example</p>
+	<pre>
+		<code class='scode'>
+  var campgrounds = [
+    {name: 'Salmon Creek', image:''},
+    {name: 'Granite Hill', image:''},
+    {name: 'Mountain Goats Rest', image:''}
+]
+
+
+  campgrounds[1]
+  //object {name: 'Granite Hill', image: ''}
+
+
+  campgrounds[2].name 
+  //'Mountain Goats Rest'
+		</code>
+	</pre>
+
+	<b>Example 1</b>
+	<pre>
+		<code class='scode'>
+	var pokemonMoves = [
+		{
+			attack: 'water gun',
+			defense: 'growl'
+		},
+		{
+			attack: 'ember',
+			defense: 'leer'
+		},
+		{
+			attack: 'burrow',
+			defense: 'acid armor'
+		}
+	];
+
+	pokemonMoves[0].attack //water gun
+	pokemonMoves[0].defense //growl
+	pokemonMoves[1].defense //leer
+		</code>
+	</pre>
+
+	<b>Example 2</b>
+	<pre>
+		<code class='scode'>
+		var post = [
+			{
+				title: 'cats are mediocre',
+				author: 'colt',
+				comments: ['Awesome Post', 'Terrible Post']
+			},
+			{
+				title: 'cats are actually awesome',
+				author: 'cat luvr',
+				comments: ['<3', 'Go to hell I hate you']
+			}
+
+
+		];
+
+		post[1].comments[0] //'<3'
+		post[0].comments[1] //'terrible post'
+		post[0].comments // gives you the whole array
+		</code>
+	</pre>
+
+	<b>Example 3</b>
+	<pre>
+		<code class='scode'>
+			var movies = [
+			{
+				name: 'Alien',
+				hasWatched: true,
+				rating: 5
+			},
+			{
+				name: 'Iron Giant',
+				hasWatched: true,
+				rating: 5
+			},
+			{
+				name: 'Zootopia 2',
+				hasWatched: false,
+				rating: 5
+			}
+		];
+		</code>
+	</pre>
+
+	<b>Example 4: Checkout Cart</b>
+	<p>Another example of an <b>array of objects</b> below, taken from a real shopping cart project example</p>
+
+	<pre>
+		<code class='scode'>
+
+		var checkoutCart = {
+		//array of objects
+		items: [
+			{
+				id: 'item1',
+				name: 'California Roll',
+				price: 8.99,
+				quantity: 1,
+				notYetAdded: true
+			},
+			{
+				id: 'item2',
+				name: 'Sushi Roll',
+				price: 5.99,
+				quantity: 1,
+				notYetAdded: true
+			}
+		],
+		total_price: 0
+		}
+
+		//first accessing the checkoutCart object
+		//then opening the items property which contains an array value
+		//inside the array we have items again so we access with dot notation
+
+		//checkoutCart.items.length 2
+		//checkoutCart.items[1].name Sushi Roll
+		//checkoutCart.items[0].name California Roll
+		//checkoutCart.items[1].price 5.99
+		</code>
+	</pre>
+
+	<h3>Pushing new item to array of objects</h3>
+	<p><span class='pink'>Very Important: </span> Pushing a new item to an array of objects is a very important concept, so take the time to look at this example.
+	</p>
+
+	<pre>
+		<code class='scode'>
+	var shoppingCart = {
+ 		items: [
+ 		{
+ 			name: 'Sushi',
+ 			price: 5.99
+ 		},
+ 		{
+ 			name: 'Rice',
+ 			price: 8.99
+ 		}
+ 	],
+ 	total_price: 0
+ }
+
+shoppingCart.items.push({name:'Octopus', price: 12.99});
+		</code>
+	</pre>	
+
+	<h3>Adding Methods to Objects</h3>
+	<p>We can add our own methods to objects. Adding these functions as properties to objects are just called methods()</p>
+
+	<pre>
+		<code class='scode'>
+		var bird = {
+			name: 'Chuck',
+			age: 2,
+			friends: ['Sammy', 'Luna'],
+			song: function(){
+				console.log('tweet tweet tweet');
+			}
+		}
+
+		bird.song()
+		//tweet tweet tweet
+		</code>
+	</pre>	
+
+	<h3>Name Space Collision</h3>
+	<p>Can have methods with the same name, but exist in different object spaces.What's happening here is a <b>name space collision</b> - just a fancy way of saying we have two things with the same name. We can put them in separate name spaces which is very simple to do </p>
+
+	<pre>
+		<code class='scode'>
+	var dogSpace = {
+
+	};
+
+	dogSpace.speak = function(){
+		return 'Woof';
+	}
+
+	var catSpace = {
+
+	};
+
+	catSpace.speak = function(){
+		return 'Meow';
+	}
+		</code>
+	</pre>
+
+	<p>
+	This is very common on the web for things like <b>comments, posts and tags</b>. You might have a method have <b>posts.delete, tags.delete, or comments.delete</b>
+	</p>
+
+	<p>oc</p> 
+	<b>Accessing Information</b>
+	<pre>
+		<code class='scode'>
+		var people = {
+			george: {
+				firstName: 'George',
+				age: 28
+			},
+			bob: {
+				firstName: 'Bob',
+				age:32
+			},
+			stan: {
+				firstName: 'Stan',
+				age: 55
+			}
+		};
+
+		//dot notation
+		people.george //shows george object
+		people.bob.age //32
+
+		//bracket notation
+		people['george']['firstName'] //'George'
+		people['bob']['age'] //32
+
+		//mixed notation
+		people.george['firstName'] //'George'
+		people.bob['age'] //32
+		</code>
+	</pre>
+	
+	<h3>Object.prototype.hasOwnProperty()</h3>
+	<p>Under Construction</p>
+
+
+	<h3>For in Loop</h3>
+	<pre>
+		<code class='scode'>
+		var bird = {
+			name: 'luna',
+			age: 1,
+			color: 'emerald'
+		};
+
+		for(var p in bird){
+			console.log(p + '-' + bird[p]);
+		}
+
+		//p is the property name
+		//bird[p] is the property value
+
+
+		//can also write it as
+		for(var p in bird){
+			console.log(p + '-' + bird.p);
+		}
+		</code>
+	</pre>
+
+	<h3>For in Loop with Arrays of Objects</h3>
+
+	<b>Example 1</b>
+	<pre>
+		<code class='scode'>
+		var storeCart = {
+		//array of objects
+		items: [
+			{
+				id: "item2",
+				name: "Chicken Fried Rice",
+				price: 8.99,
+				quantity: 1,
+				totalPrice: 8.99,
+				type: "rice"
+			},
+			{
+				id: "item3",
+				name: "Shrimp Roll",
+				price: 5.99,
+				quantity: 1,
+				totalPrice: 5.99,
+				type: "sushi"
+			},
+			{
+				id: "item4",
+				name: "Spicy Tuna Roll",
+				price: 7.50,
+				quantity: 1,
+				totalPrice: 7.50,
+				type: "sushi"
+			}
+		],
+		total_price: 0,
+	};
+
+	for(var p in storeCart.items){
+		console.log(storeCart.items[p].name)
+	}
+
+	//Chicken Fried Rice
+	//Shrimp Roll
+	//Spicy Tuna Roll
+		</code>
+	</pre>
+
+	<b>Example 2</b>
+	<pre>
+		<code class='scode'>
+		var storeCart = {
+		items: [
+			{
+				id: "item2",
+				name: "Chicken Fried Rice",
+				price: 8.99,
+				quantity: 1,
+				totalPrice: 8.99,
+				type: "rice"
+			},
+			{
+				id: "item3",
+				name: "Shrimp Roll",
+				price: 5.99,
+				quantity: 1,
+				totalPrice: 5.99,
+				type: "sushi"
+			},
+			{
+				id: "item4",
+				name: "Spicy Tuna Roll",
+				price: 7.50,
+				quantity: 1,
+				totalPrice: 7.50,
+				type: "sushi"
+			}
+		],
+		total_price: 0,
+	};
+
+	for(var p in storeCart.items){
+		if(storeCart.items[p].type === 'sushi'){
+		console.log('found a sushi');
+		}
+	}
+
+	//found a sushi
+	//found a sushi
+		</code>
+	</pre>
+
+	<b>Example 3</b>
+	<pre>
+		<code class='scode'>
+		var storeCart = {
+	items: [
+		{
+			id: "item2",
+			name: "Chicken Fried Rice",
+			price: 8.99,
+			quantity: 1,
+			totalPrice: 8.99,
+			type: "rice"
+		},
+		{
+			id: "item3",
+			name: "Shrimp Roll",
+			price: 5.99,
+			quantity: 1,
+			totalPrice: 5.99,
+			type: "sushi"
+		},
+		{
+			id: "item4",
+			name: "Spicy Tuna Roll",
+			price: 7.50,
+			quantity: 1,
+			totalPrice: 7.50,
+			type: "sushi"
+		}
+	],
+	total_price: 0,
+	};
+
+	for(var p in storeCart.items){
+		if(storeCart.items[p].type === 'sushi'){
+			console.log(checkoutCart.items[p].name);
+		}
+	}
+
+	//Shrimp Roll
+	//Spicy Tuna Roll
+
+
+	for(var p in storeCart.items){
+		console.log(storeCart.items[p].price);
+	}
+
+	//8.99
+	//5.99
+	//7.5
+
+		</code>
+	</pre>
+	
+
+	<h3>Removing key:value pairs from an object</h3>
+	<pre>
+		<code class='scode'>
+		var bird = {
+			name: 'luna',
+			age: 1,
+			color: 'emerald'
+		};
+
+		delete bird.color;
+		</code>
+	</pre>
+
+	<h2>Date Object</h2>
+
+	<h3>Months are Zero Based</h3>
+	<pre>
+		<code class='scode'>
+		January - 0
+		February - 1
+		March - 2
+		April - 3
+		May - 4
+		June - 5
+		July - 6
+		Aug - 7 
+		Sep - 8 
+		Oct - 9
+		Nov - 10
+		Dec - 11
+		</code>
+	</pre>
+
+	<h3>Days of the Week are Zero Based</h3>
+	<pre>
+		<code class='scode'>
+	Sunday - 0
+	Monday - 1
+	Tuesday - 2
+	Wednesday - 3
+	Thursday - 4
+	Friday - 5
+	Saturday - 6
+	Sunday - 7
+		</code>
+	</pre>
+
+	<h3>Creating a Date</h3>
+	<pre>
+		<code class='scode'>
+	//method 1
+	var date1 = new Date('October 15, 1986 11:23:07');
+	var date2 = new Date('January 15, 1922 03:55:10');
+	var date3 = new Date('March 15, 1986 13:43:05')
+
+	//method 2
+	var date4 = new Date(2016, 08, 05, 0);
+	//Year, Month, Day, Time format
+
+	//Creating Date at End of Month
+	var date5 = new Date(2016, 09, 0);
+	//Fri Sep 30 2016 00:00:00 GMT-0500 (Central Daylight Time)
+
+	//Creating Date at Beginning of Month
+	var date6 = new Date(2016, 09);
+	//Sat Oct 01 2016 00:00:00 GMT-0500 (Central Daylight Time)
+		</code>
+	</pre>
+
+	<h3>.toLocalTimeString();</h3>
+
+	<p>
+	Returns a string with <b>language sensitive</b> representation of the time. 
+	</p>
+
+	<pre>
+		<code class='scode'>
+		var date1 = new Date();
+		date1.toLocaleTimeString();
+		//"2:29:38 PM"
+		</code>
+	</pre>
+
+	<h3>toDateString();</h3>
+	<pre>
+		<code class='scode'>
+		var date1 = new Date();
+		date1.toDateString();
+		//"Tue Nov 22 2016"
+		</code>
+	</pre>
+
 
 
 	<h2>Numbers</h2>
+
+	<p>Numbers are <b>immutable</b>, remember only arrays and objects are mutable</p>
 
 	<h3>toPrecision() &amp; toFixed()</h3>
 	<pre>
@@ -533,6 +1784,19 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	</pre>
 
 	<p>In this example, the variable diff holds the difference between <code class='highlight'>x + y </code> and <code class='highlight'>0.9</code>. Then we calculate the absolute difference using the <code class='highlight'>Math.abs(...)</code> function. If this absolute difference is smaller than <code class='highlight'>Number.EPSILON</code>, we can say that <code class='highlight'>x + y</code> and <code class='highlight'>0.9</code> are almost equal.</p>
+
+	<h3>Math.floor</h3>
+	<p>If you know the numbers you are going to be working with need to be whole numbers, good idea to math.floor the result</p>
+
+	<pre>
+		<code class='scode'>
+	function pieceDimensions(){
+		puzzle.pieceWidth = Math.floor(puzzle.width / puzzle.difficulty);
+		puzzle.pieceHeight = Math.floor(puzzle.height / puzzle.difficulty);
+	}
+		</code>
+	</pre>
+
 
 	<h3>Math.random</h3>
 
@@ -715,7 +1979,25 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 		</code>
 	</pre>	
 
-	<b>Everything else is truthy</b>
+	<p>Everything else is truthy. Because of this we can use falsey values as a catch all</p>
+
+	<p>Because of this we can use falsey values as a catch all. Instead of writing like the code below:</p>
+	<pre>
+		<code class='scode'>
+		if(puzzlePiece === null){
+		//code
+		}
+		</code>
+	</pre>	
+
+	<p>Instead this is a best practice</p>
+	<pre>
+		<code class='scode'>
+		if(!puzzlePiece){
+		/*code*/
+		}
+		</code>
+	</pre>	
 
 	<h2>Switch Statements</h2>
 
@@ -775,7 +2057,7 @@ function switchOfStuff(val){
 		</code>
 	</pre>
 
-	<h2>Conditionals</h2>
+	<h2>Conditionals &amp; Logical Operators</h2>
 
 	<h3>Nested if Statements</h3>
 
@@ -842,6 +2124,20 @@ function switchOfStuff(val){
 
 	<p>The above is the correct way</p>
 
+	<h3>Can route two return vales without using else</h3>
+	<pre>
+		<code class='scode'>
+	function testLogical(val){
+		if(val > 20 || val < 10){
+		  return 'outside';
+		}
+		  return 'inside'
+	}
+
+	testLogical(15);
+		</code>
+	</pre>
+
 	<h2>Loops</h2>
 
 	<h3>While Loops</h3>
@@ -875,6 +2171,22 @@ function switchOfStuff(val){
 	</pre>
 
 	<h3>For Loops</h3>
+
+	<p>Example using for loops to get the array index number</p>
+	<pre>
+		<code class='scode'>
+		var myArr = ['Sam', 'Jessie', 'Jill'];
+
+		for(var i = 0; i < myArr.length; i++){
+			console.log(myArr[i] + ' is at index ' + i);
+		}
+
+		//Sam is at index 0
+		//Jessie is at index 1
+		//Jill is at index 2
+		</code>
+	</pre>
+
 	<pre>
 		<code class='scode'>
 		var colors = ['red', 'orange', 'yellow', 'green'];
@@ -884,6 +2196,22 @@ function switchOfStuff(val){
 		}
 		</code>
 	</pre>
+
+	<p>
+		<span class='pink'>Very important</span>, when nesting <code class='highlight'>if</code> blocks instead of a <code class='highlight'>for</code> loop, do not use the <code class='highlight'>else</code> clause. Because if the <code class='highlight'>if</code> statement is not correct, it will go to the <code class='highlight'>else</code> statement and do that through every iteration in the array
+	</p>
+
+	<p>See the example below</p>
+
+	<img src="images/check.png">
+
+	<p>
+		<span class='pink'>Also remember</span>, the <code class='highlight'>return</code> keyword will exit both <i>loops</i> and <i>functions</i>
+	</p>
+
+	<h3>Nested For Loops</h3>
+	<b>under construction</b>
+
 
 	<h3>For Each</h3>
 	<p>Javascript provides a built-in way of iterating over an array using forEach</p>
@@ -895,6 +2223,60 @@ function switchOfStuff(val){
 			colors.forEach(function(colorName){
 				console.log(colorName);
 			});
+		</code>
+	</pre>
+
+	<p><b>forEach iterating over HTML Collections / Node Lists</b> in the DOM does not work by default, must use it in the following way.</p>
+
+	<p>HTML</p>
+	<pre>
+	<xmp class="html-markup scode">
+	<ul id='myDiv'>
+	    <li>Ghastly</li>
+	    <li>Haunter</li>
+	    <li>Gengar</li>
+	</ul>
+	</xmp>
+	</pre>
+
+	<p>JS - this <b>doesn't work</b></p>
+	<pre>
+		<code class='scode'>
+		//this doesn't work
+		var listItems = document.getElementById('myDiv').children;
+
+		listItems.forEach(function (item) {
+		    console.log(item); 
+		});
+		</code>
+	</pre>
+
+	<p>JS - <b>Fix</b></p>
+	<p>Remember, .children is a HTMLCollection which is array like, but not quite an array. Here is the fix:</p>
+
+	<pre>
+		<code class='scode'>
+		var listItems = document.getElementById('myDiv').children;
+
+		Array.prototype.forEach.call(listItems, function(item) { 
+		    console.log(item.innerText);
+		});
+
+		//Ghastly, Haunter, Gengar
+		</code>
+	</pre>
+
+	<p>Alternative Solution</p>
+
+	<pre>
+		<code class='scode'>
+	var listItems = document.getElementById('myDiv').children;
+
+	listItems = Array.prototype.slice.call(listItems);
+
+	listItems.forEach(function (item) {
+	        console.log(item); // 
+    });	
 		</code>
 	</pre>
 
@@ -921,10 +2303,35 @@ function switchOfStuff(val){
 		</code>
 	</pre>
 
+	<h3>Return Keyword</h3>
+
 	<p>Functions are designed to <span class='pink'>RETURN</span> something. The return keyword is a way to <span class='pink'>CAPTURE THE VALUE</span> coming out of the function so you can do something with it later. Think of each function as its own factory. Once the function is called and executed it returns a pacakge.</p>
+
+	<p><span class='pink'>RETURN will not only exit the function, it will also break out of loops such as FOR or WHILE</span></p>
 
 	<p><span class='pink'>Special Note</span>: Can only ever return one thing from a function; however, you can use conditional statements such as <code class='highlight'>if</code> to route what is returned.
 	</p>
+
+	<h3>On Document Load Immediately Executed Function</h3>
+	
+	<p>Example1:</p>
+	<pre>
+		<code class='scode'>
+	(function (window){
+	//code to run 
+	})(window);
+		</code>
+	</pre>
+
+	<p>Example2:</p>
+	<pre>
+		<code class='scode'>
+	window.onload = function(){
+	//code to run
+	}
+		</code>
+	</pre>
+
 
 	<h3>Types of Functions</h3>
 	<pre>
@@ -975,8 +2382,29 @@ function switchOfStuff(val){
 		</code>
 	</pre>
 
-	<h3>Arguments</h3>
+	<h3>Function Declaration vs Function Expression</h3>
+
+	<p>Function declaration is the same as defining a function</p>
+	<p>Functions have <b>two forms</b> function declarations and function expressions</p> 
+
+	<pre>
+		<code class='scode'>
+		//function declaration / defining a function
+		function capitalize(str) {
+			return str.charAt(0).toUpperCase() + str.slice(1);
+		}
+
+		//function expression
+		var capitalize = function(str){
+			return str.charAt(0).toUpperCase() + str.slice(1);
+		}
+		</code>
+	</pre>
+
+	<h3>Arguments / Parameters</h3>
 	<p>Often we write functions to take inputs called <span class='pink'>Arguments</span>.</p>
+
+	<p>In JavaScript, you'll find that both the terms are often used interchangeably, so it's really just preference. However, some may distinguish a parameter as something that is given to a function declaration, definition, or prototype, and an argument is something that is passed when calling the function.</p>
 
 	<pre>
 		<code class='scode'>
@@ -1008,8 +2436,834 @@ function switchOfStuff(val){
 		</code>
 	</pre>
 
+	<p>Argument names are <span class='pink'>arbitrary</span> for example using the argument name <code class='highlight'>pinkDinosaur</code> below
+	</p>
 
-	<h3>Function Example</h3>
+	<pre>
+		<code class='scode'>
+		var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+			var isEvenNumbers = numbers.filter(function(pinkDinosaur){
+			if(pinkDinosaur % 2 === 0){
+				return pinkDinosaur;
+			}
+		});
+
+		console.log(isEvenNumbers);
+		</code>
+	</pre>
+
+	<h2>Callback Functions AKA Higher Order Functions</h2>
+
+	<p>
+	Callbacks are very important because it allows us to use <b>closures</b> to access variables that would have normally been destroyed. It is very important to understand in javascript functions are just values you can pass around. 
+	</p>
+
+	<p>Remember local variables inside of a function, only exist within that functions scope. They are <b>created and destroyed</b> when that function executes. Callbacks let us preserve these variables to be later used inside other functions!</p>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			Study: <code class='highlight'>arr.filter(callback[, thisArg])</code> on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank">MDN Array.prototype.filter()</a>
+		</li>
+		<li>
+			 <a href="https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks"  target="_blank">MDN Declaring and Using Callbacks</a>
+		</li>
+	</ul>
+	</div>
+
+
+
+	<h3>Passing Functions to Other Functions</h3>
+
+	<p><b>A callback is a function inside of another functions parameter</b>. Callback functions are also known as higher order functions. Callbacks allow us to pass functions to other functions through parameters</p>
+
+	<b>Example 1: Named Callback Function</b>
+
+	<pre>
+		<code class='scode'>
+		function sing(){
+			console.log('twinkle twinkle...');
+			console.log('little star');
+		}
+
+		setInterval(sing, 1000);
+		</code>
+	</pre>
+
+	<b>Example 2: Anonymous Callback Function</b>
+	<pre>
+		<code class='scode'>
+		setInterval(function(){
+		console.log('twinkle twinkle...');
+		console.log('little star');
+		}, 1000);
+		</code>
+	</pre>
+
+	<b>Example 3</b>
+	<pre>
+		<code class='scode'>
+		//define function
+		function myFunc(printCallback){
+			printCallback();
+		}
+
+		//call higher order function
+		myFunc(function(){
+			console.log('Yo...');
+		});
+		</code>
+	</pre>
+
+	<img src="images/callback00.png">
+
+	<p><b>Even More Callback examples</b></p>
+	<p>Callback closures give you access to both <b>variables</b> and <b>parameters</b>, but you must specify what you need from the closure inside the callback. For example see the line <code class='highlight'>callback(lastName, city)</code>below that gets back both the lastName parameter and the city variable. </p>
+
+	<pre>
+		<code class='scode'>
+	function getFullName(firstName, lastName, callback){
+		var city = 'Arlington';
+		console.log('Hello there ' + firstName + ' ' + lastName);
+		callback(lastName, city);
+	}
+		
+	getFullName('Chris', 'Feltus', function(ln, city){
+		console.log('Mr. ' + ln + ' you live in the city of ' + city);
+	});
+
+	//callback(lastName, city) a closure, gets back the lastName parameter and city variable from its parent function
+		</code>
+	</pre>
+
+	<p><b> You can use any paramter name in the higher order function
+	</p></b>
+
+	<p>Using <b>ITEM</b> for parameter name</p>
+	<pre>
+		<code class='scode'>
+	//define function
+	function fullName(firstName, lastName, callback){
+		console.log('Hello ' + firstName + ' ' + lastName);
+		callback(lastName);
+	}
+
+	//call higher order function
+	fullName('Chris', 'Feltus', function(item){
+		console.log('Mr.' + item + ' how are you today?');
+	});
+		</code>
+	</pre>
+
+	<p>Using <b>pinkDinosaur</b> for parameter name, again arbitrary</p>
+	<pre>
+		<code class='scode'>
+	//define function
+	function fullName(firstName, lastName, callback){
+		console.log('Hello ' + firstName + ' ' + lastName);
+		callback(lastName);
+	}
+
+	//call higher order function
+	fullName('Chris', 'Feltus', function(pinkDinosaur){
+		console.log('Mr.' + pinkDinosaur + ' how are you today?');
+	});
+		</code>
+	</pre>
+
+	<img src="images/callback-origin.png" class='center-image'>
+	
+	<pre>
+		<code class='scode'>
+	/////////////////
+	//////  Call Backs
+	/////////////////  
+	//It’s named “callback” because at some point in time 
+	//it is “called back” by the higher-order function.
+
+	function mySandwich(param1, param2, callback) {
+	   	alert('Started eating my sandwich. It has: ' + param1 + ', ' + param2);
+	    if (callback) {
+	        callback();
+	    }
+	}
+
+mySandwich('ham', 'cheese');
+
+	//Example 1: Vanilla Callback
+	function toeJam(callback){
+		callback();
+	}
+
+	toeJam(function(){
+		console.log('Yo!')
+	});
+
+	//Example 1.5: Vanilla Callback
+	//define function
+	function toeJam(callback){
+		callback();
+	}
+
+	var message = function(){
+		console.log('funky...');
+	}
+
+	toeJam(message);
+
+	//Example 1.7
+	//define function
+	function toeJam(callback){
+		callback();
+	}
+
+	//named callback
+	function yo(msg){
+		console.log('yo!');
+	}
+
+	toeJam(yo);
+
+
+	//Example 2: Callback Closure 
+	function setLocation(city, callback){
+		var country = 'France';
+		callback(country);
+		console.log('You are in the city of ' + city);
+	}
+
+	var greeting = function(country){
+		console.log('You are in the country of ' + country);
+	};
+
+	setLocation('paris', greeting);
+
+
+
+	//Example 3: Callback - with existing function 
+	//define our function
+	function fullName(firstName, lastName, callback){
+		console.log('My name is ' + firstName + ' ' + lastName);
+		callback(lastName);
+	}
+
+	//passing through greeting variable thats a function
+	var greeting = function(ln){
+		console.log('Welcome Mr. ' + ln);
+	};
+
+
+	fullName('Jackie', 'Chan', greeting);
+
+
+	//Example 3.5: Callback - with existing function
+	//define our function
+	function fullName(firstName, lastName, callback){
+		console.log('My name is ' + firstName + ' ' + lastName);
+		callback(firstName, lastName);
+	}
+
+	//passing through greeting variable thats a function
+	var greeting = function(fn, ln){
+		console.log('Welcome Mr. ' + ln + ' your first name is ' + fn);
+	};
+
+
+	fullName('Jackie', 'Chan', greeting);
+
+	//Example 3.7 Don't have to use a function saved to a variable either
+	//see greet function
+
+	function fullName(firstName, lastName, callback){
+		console.log('My full name is ' + firstName + ' ' + lastName);
+		callback(firstName);
+	}
+
+	function greet(fn){
+		console.log('Hey ' + fn + ' how are you today'); 
+	}
+
+	fullName('Chris',  'Feltus', greet);
+
+	//Example 4: Callback - with anonymous function
+	function fullName(firstName, lastName, callback){
+	  console.log("My name is " + firstName + " " + lastName);
+	  callback(lastName);
+	}
+
+	fullName("Jackie", "Chan", function(ln){
+		console.log('Welcome Mr. ' + ln);
+	});
+
+
+	//Example 5: Function Closures 
+	function setLocation(city, callback){
+		var country = 'France';
+		callback(country);
+		console.log('You are in the city of ' + city);
+	}
+
+	var greeting = function(country){
+		console.log('You are in the country of ' + country);
+	};
+
+	setLocation('paris', greeting);
+
+
+	//Example 6: Compartmentalizing code with multiple callbacks
+
+	//define function
+	function publish(item, author, callback){
+		console.log(item);
+		var date = new Date();
+
+		callback(author, date);
+	}
+
+	//callbacks
+	function textingFormat(author, time){
+		var sendTime = time.toLocaleTimeString();
+		//takes date = new Date() 
+		//and converts it to the format "2:29:38 PM"
+		console.log('Sent from ' + author + ' at ' + sendTime);
+	}
+
+	function articleFormat(author, date){
+		var pubDate = date.toDateString();
+		//takes date = new Date() 
+		//and converts it to this format "Tue Nov 22 2016"
+		console.log('Written by ' + author);
+		console.log('Published on ' + pubDate);
+	}
+
+	publish("10 Tips for JavaScript Developers", "Jane Doe", articleFormat);
+	publish("How are you Jane?", " From Monique", textingFormat); 
+
+
+	/////////////////
+	//////  Closures
+	/////////////////  
+	//Part 1: You can refer to variables defined outside 
+	//of the current function.
+
+	function setLocation(city) {
+	  var country = "France"; 
+
+	  function printLocation() {       
+	    console.log("You are in " + city + ", " + country);  
+	  }
+
+	  printLocation();
+	}
+
+	setLocation ("Paris");  // output: You are in Paris, France
+
+
+	//Part2: Inner functions can refer to variables defined in
+	// outer functions even after the latter have returned.
+
+	function setLocation(city) {
+	  var country = "France"; 
+
+	  function printLocation() {       
+	    console.log("You are in " + city + ", " + country);  
+	  }
+
+	  return printLocation;
+	}
+
+	var currentLocation = setLocation ("Paris");   
+
+	currentLocation();   // output: You are in Paris, France
+
+
+	//Part3:  Inner functions store their 
+	// outer function’s variables by reference, not by value.
+
+	function cityLocation() {
+	  var city = "Paris";
+
+	  return {
+	    get: function() { console.log(city); },  
+	    set: function(newCity) { city = newCity; }
+	  };
+	}
+
+	var myLocation = cityLocation();
+
+	myLocation.get();           // output: Paris
+	myLocation.set('Sydney');
+	myLocation.get();           // output: Sydney
+
+
+	//////
+
+	function getFullName(firstName, lastName, callback){
+		var city = 'Seattle';
+		console.log('Hello there ' + firstName + ' ' + lastName);
+		callback(lastName, city);
+	}
+
+	getFullName('Chris', 'Feltus', function(ln, city){
+		console.log('Mr.' + ln + ' you live in the city of ' + city);
+	});
+
+	////
+
+	var friends = ['Mike', 'Stacey', 'Andy', 'Rick'];
+
+	friends.forEach(function(eachName, index){
+	console.log(index + 1 + '. ' + eachName);
+	});
+
+	//1. Mike
+	//2. Stacey
+	//3. Andy
+	//4. Rick
+
+	////
+
+	function makeAdjectifier(adjective){
+		return function(string){
+			return adjective + '' + string;
+		};
+	}
+
+	var coolifier = makeAdjectifier('cool');
+	coolifier('dog');
+	//cool dog
+
+	////
+
+	var ages = [3, 10, 8, 18, 28];
+
+	//define function
+	function isAdult(element) {
+	  return element >= 18;
+	}
+
+	//call function
+	ages.findIndex(isAdult);
+	//3 
+	//read more on this example here: https://www.reddit.com/r/learnjavascript/comments/5g4151/question_regarding_callback_function_example/
+
+	///callback example from the DOM w/ NAMED function
+	var listChildren = document.getElementById('myDiv').children
+
+	var callback = function(){
+		var buttonContainer = this.parentNode;
+		console.log(buttonContainer);
+	}
+
+	for(var i = 0; i < listChildren.length; i++){
+		listChildren[i].addEventListener('click', callback);
+	}
+	
+	///callback example from the DOM w/ Anonymous function
+
+	var listChildren = document.getElementById('myDiv').children
+
+	for(var i = 0; i < listChildren.length; i++){
+		listChildren[i].addEventListener('click', function(){
+			var buttonContainer = this.parentNode;
+			console.log(buttonContainer);
+		})
+	}
+
+	////
+
+	
+	function cycleArray(arr, callback){
+		for(var i = 0; i < arr.length; i++){
+			callback(arr[i])
+		}
+	}
+
+	function print(message){
+		console.log(message);
+	}
+
+	var spookyArr = ['ghost', 'vampire', 'dracula']
+
+	cycleArray(spookyArr, print);
+	//ghost
+	//vampire
+	//dracula
+
+	
+	</code>
+	</pre>
+
+	<b>Callback example using button wave animation</b>
+
+	<img src="images/wave callback.png">
+
+	<p><b>Code Pen Example</b> of the Callbacks in the DOM</p>
+
+	<p><b>DOM Anonymous Callbacks</b></p>
+	<p data-height="226" data-theme-id="0" data-slug-hash="ENQKgE" data-default-tab="js,result" data-user="bluehabit" data-embed-version="2" data-pen-title="ENQKgE" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/ENQKgE/">ENQKgE</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	<p><b>DOM Named Callbacks</b></p>
+	<p data-height="243" data-theme-id="0" data-slug-hash="zoRqNW" data-default-tab="js,result" data-user="bluehabit" data-embed-version="2" data-pen-title="zoRqNW" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/zoRqNW/">zoRqNW</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+	
+	<p><span class='pink'>Special Note:</span> Remember callback closures have access to both <b>variables</b> and <b>parameters</b> created in the parents function scope</code>
+
+	<p>See example below:</p>
+
+	<pre>
+		<code class='scode'>
+		//define function
+		function definePig(pig, callback){
+			console.log(pig + ' is a piglet');
+			callback(pig); //using callback on the pig PARAMETER
+		}
+
+		//callback
+		function pigSounds(pigName){
+			console.log(pigName + ' says: ' + 'oink oink oink');
+		}
+
+		//call function
+		definePig('Abby', pigSounds);
+		
+		//Abby is a piglet
+		//Abby says: oink oink oink
+		</code>
+	</pre>
+
+	<p>See another example, using <b>variables</b> and <b>parameters</b></p>
+
+	<pre>
+		<code class='scode'>
+	//define function
+	function definePig(pig, callback){
+		var adjective = 'small'
+		console.log(pig + ' is a piglet');
+		callback(pig, adjective); 
+	}
+
+	//callback
+	function pigDiscription(pigName, pigType){
+		console.log(pigName + ' is a ' + pigType + ' pig');
+	}
+
+	//call function
+	definePig('Abby', pigDiscription);
+
+	//Abby is a piglet
+	//Abby is a small pig
+		</code>
+	</pre>
+
+	<p>Another <b>callback</b> Example</p>
+	<pre>
+		<code class='scode'>
+	//global variable
+	var allUserData = [];
+
+	//define function
+	function getInput(options, callback){
+		allUserData.push(options); //push items to array
+		callback(options);
+	}
+
+	//callback function
+	function logStuff(userData){
+		if(typeof userData === 'string'){
+			console.log(userData);
+		} else if(typeof userData === 'object') {
+			for(var item in userData){
+				console.log(item + ': ' + userData[item]);
+			}
+		}
+	}
+
+	// //calling function
+	getInput({name:'Rich', speciality:'JavaScript'}, logStuff);
+
+	//name: Rich
+	//speciality: JavaScript
+
+		</code>
+	</pre>
+
+	<h3>Creating Custom Filter, Map Functions from Scratch</h3>
+
+	<p><code class='highlight'>Filter, map and reduce</code> are built in methods for the array object in javascript. For practice, lets practice creating our own from scratch using functions and callbacks. 
+	</p>
+
+	<pre>
+		<code class='scode'>
+	function filter(arr, callback){
+		var result = [];
+
+		//for each item in the array apply the callback
+		for(var i = 0; i < arr.length; i++){
+		//if callback returns true then add to the result
+		  if(callback(arr[i])){
+			result.push(arr[i]);
+		  }
+		}
+		return result;
+	}
+
+	var numbers = [3, 45, 2, 34, 7, 8, 4];
+	var oddNumbers = filter(numbers, function(item){
+		return item % 2 !== 0;
+	});
+
+	console.log(oddNumbers);
+	//3, 45, 7
+		</code>
+	</pre>
+
+	<h3>Callbacks with Anonymous vs Named Functions</h3>
+
+	<p>There's a difference between <i>values</i> and <i>variables</i>. <i>Values</i> don't have scope, <i>variables</i> do. Getting a value outside of a function isn't anything special. But accessing a variable after the point where it normally would have been destroyed is a trick made possible by closures and callback functions. See image below to illustrate. 
+	</p>
+
+	<p>
+	<span class='pink'>Special Note:</span>Remember a local variable can only be accessed inside of the function where it is declared. It is <span class='pink'>created and destroyed</span> every time the function is executed
+	</p>
+
+	<p>Variables in javascript can only be local or global in nature. They are global variables if created outside of a function. They are local variables IF they are created with the <b>var</b> keyword inside of a function. If you reuse a variable name both in the global, and local scope of a function. The program will use the GLOBAL variable inside the function unless you use the var keyword.</p>
+
+	<p>For Example</p>
+	<b>under construction add example</b>
+
+	<br>
+	<img src="images/closure.png" alt='closure example' class='center-image'>
+	<br>
+
+	<b>Callback with Anonymous Function</b>
+	<pre>
+		<code class='scode'>
+	function fullName(firstName, lastName, callback){
+		console.log('My name is ' + firstName + ' ' + lastName);
+		callback(lastName);
+	}
+
+	fullName('Jackie', 'Chan', function(ln){
+		console.log('Welcome Mr. ' + ln);
+	})
+	</code>
+	</pre>
+
+	<b>Callback with Named Function</b>
+	<pre>
+		<code class='scode'>
+	function fullName(firstName, lastName, callback){
+		console.log('My name is ' + firstName + ' ' + lastName);
+		callback(lastName);
+	}
+
+	var greeting = function(ln){
+		console.log('Welcome Mr. ' + ln);
+	};
+
+	fullName('Jackie', 'Chan', greeting);
+	</code>
+	</pre>
+
+	<h3>Callback function example</h3>
+	<pre>
+		<code class='scode'>
+	var arraySearch = function(arr, callback){
+		for(var i = 0; i < arr.length; i++){
+			callback(arr[i]);
+		}
+	}
+
+	arraySearch([1,2,'fruit',4,5,'cat'], function(item){
+		console.log(item)
+	});
+
+	//1 2 fruit 4 5 cat
+		</code>
+	</pre>
+
+	<b>another example: named function call back</b>
+	<pre>
+		<code class='scode'>
+	function showMessage(){
+		alert('clicked!')
+	}
+
+	var button = document.getElementById('btn');
+	button.addEventListener('click', showMessage);
+		</code>
+	</pre>
+
+	<b>can also have anonymous function callback</b>
+	<pre>
+		<code class='scode'>
+	var button = document.getElementById('btn');
+	button.addEventListener('click', function(){
+		alert('clicked!');
+	});
+		</code>
+	</pre>
+
+	<img src="images/callback-function.png" class='center-image'>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>callback resources</p>
+	<ul>
+		<li>
+			<a href="https://www.impressivewebs.com/callback-functions-javascript/" target="_blank">Impressive Webs JS Callback Functions</a>
+		</li>
+		<li>
+			<a href="https://www.sitepoint.com/demystifying-javascript-closures-callbacks-iifes/">Demystifying JS Callbacks and Closures</a>
+		</li>
+		<li>
+			<a href="http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/">JSisSexy Understanding CallBack Functions</a>
+		</li>
+		<li>
+			<a href="http://callbackhell.com/">Callback Hell</a>
+		</li>
+		<li>
+			<a href="https://medium.freecodecamp.com/javascript-callbacks-explained-using-minions-da272f4d9bcd#.9or43x4xd">Callbacks Explained Using Minions</a>
+		</li>
+			<li>
+			<a href="http://eslint.org/docs/rules/callback-return">ESLint Callbacks</a>
+		</li>
+
+		
+	</ul>
+	</div>	
+
+	<h2>Closures</h2>
+<p>Using variables defined in outer functions</p>
+<p>Summary:</p>
+<img src="images/closures6.png">
+
+<img src="images/closures1.png">	
+<img src="images/closures2.png">
+<img src="images/closures3.png">
+
+<p>Examples of what is and isn't a closure</p>
+<img src="images/closures4.png">
+
+<img src="images/closures5.png">
+
+<h2>Prototypes</h2>
+<h3>Call, apply, bind - changing value of 'this'</h3>
+<p>
+	<b>Call</b>
+	<p>This will call the function right away</p>
+</p>
+
+<img src="images/callexample2.png">
+
+<p>
+	<b>Call in the wild</b>
+</p>
+
+<img src='images/callexamplewild.png'>
+
+<p>
+	<b>Apply Example</b>
+	<p>Will call function right away</p>
+	Notice with call arguments are passed using comma seperated values, while apply arguments are passed using an array
+</p>
+
+<img src="images/applyexample.png">
+
+<p>
+	<b>Bind</b>
+	Works just like call, but instead of calling the function right away it returns a function definition set to the value of the this arg. Bind uses <b>partial application</b>, thats what neat about bind we do not need to know all the parameters to the function when we bind it. 
+</p>
+
+<p>Does NOT call the function immediatley, you call it at a later time. So again bind is helpful when we either a) dont know all the argumetns we will pass through a function or b) working with asynchronous code</p>
+
+<img src="images/bindexample.png">
+
+<p>Another common application for using bind is to set the context of the keyword this to a function that will be called at a later time. This is very commonly used technique done with <b>asynchronus code</b></p>
+
+<img src="images/bindwild.png">
+
+<p>
+<b>New Keyword</b>
+Creating Constructor Functions
+</p>
+
+<img src="images/newkw.png">
+<br>
+<img src="images/newkwrules.png">
+
+<p>Another example</p>
+<p>When you use the 'new' keyword for object construction, 'this' refers to newly created <b>empty object</b></p>
+<img src="images/thenewkw.png">
+
+<p>
+<img src="images/newkw2.png">
+</p>
+
+<p><b>Multiple Constructors</b></p>
+
+<img src="images/multipleconstructors.png">
+
+<h3>Normal Constructor Function vs Using Prototype Chain</h3>
+<img src="images/prototypes1.png">
+
+
+<a href="https://github.com/bluehabit/Wild-Wild-JS/blob/master/Resources/prototype%20examples.js">Prototype Example Resources</a>
+
+<h2>Prototypes</h2>
+
+<h3>Prototype Chain</h3>
+<p>Using regular constructor function</p>
+<img src="images/prototypechain1.png">
+
+<p>Making use of the <b>Prototype Chain</b></p> 
+<img src="images/prototypechain2.png">
+
+<p>Now watch what happens when we dir() the object</p>
+
+<img src="images/prototype chain.gif">
+
+<p>Each object also in addition has its own properties in the dunder proto as you can see below such as 'hasOwnProperty'</p>
+
+<img src="images/dunderproto.png">
+
+<p>more examples</p>
+
+<h3>Prototype Chain to Build a Car</h3>
+<img src="images/prototypes2.png">
+
+<p>Always strive to share preoperties and methods for obects created by a constructor function in the __Prototype__ since its more effecient. Otherwise, if you had to create lets say 100 car objects. If each car object has the same methods and properties they have to be continously recreated each time. If you stick it in the __Prototype__ they have access to these by default, much more effecient</p>
+
+	<h2>Function Examples</h2>
+	<pre>
+		<code class='scode'>
+		function pick(object, props){
+
+			var result = {};
+			for(var p in object){
+				if(props.indexOf(p) >= 0){
+					result[p] = object[p]
+				}
+			}
+			return result; 
+		}
+
+		var turtles = {
+			name: 'leonardo',
+			color: 'blue',
+			weapon: 'sword'
+		}
+
+		console.log(pick(turtles, ['name', 'weapon']));
+		</code>
+	</pre>
+
+	<h3>Pick Properties in Object</h3>
+
+	<h3>Refactoring Example</h3>
 	<p>Below is the same program, written several different ways refactoring it to be shorter and more effecient with each pass.</p>
 
 	<b>First Pass</b>
@@ -1053,9 +3307,2592 @@ function switchOfStuff(val){
 		</code>
 	</pre>
 
-</div>	<!--end main container -->
+	<h3>Function Scaffolding</h3>
+	<b>Under construction</b>
 
-<div id='new'></div>
+	<h3>Programs</h3>
+
+	<b>Factorial</b>
+	<pre>
+		<code class='scode'>
+		function factorial(num){
+			var result = 1;
+
+			for(var i = 2; i<= num; i++){
+				result = result * i;
+				//can also use result *= i
+			}
+			return result; 
+		}
+		//factorial(4) 4*3*2*1
+		</code>
+	</pre>
+	
+	<h3>isUniform</h3>
+	<pre>
+		<code class='scode'>
+		var numbers = [1, 1, 1, 1];
+
+		var isUniform = function(array){
+			var first = array[0];
+
+			for(var i = 0; i < array.length; i++){
+				if(array[i] !== first){
+					return false;
+				}
+			}
+			return true
+		}
+
+		isUniform(numbers);
+		</code>
+	</pre>
+
+	<h3>sumArray</h3>
+	<pre>
+		<code class='scode'>
+		var numbers = [10, 20, 30, 55];
+
+		var sumArray = function(array){
+			var sum = 0;
+
+			for(var i = 0; i < array.length; i++){
+				sum += array[i];
+			}
+			return sum;
+		}
+
+		sumArray(numbers);
+		</code>
+	</pre>
+
+	<h3>find max</h3>
+	<pre>
+		<code class='scode'>
+
+		var myArr = [10, 50, 999, 7];
+
+		var max = function(array){
+			var max = array[0];
+
+			for(var i = 0; i < array.length; i++){
+				if(array[i] > max){
+					max = array[i];
+				}
+			}
+			return max;
+		};
+
+		max(myArr);
+		//999
+		</code>
+	</pre>
+
+	<h3>find min</h3>
+	<pre>
+		<code class='scode'>
+		var numbers = [1, 5, 15, 500, -1];
+
+		var min = function(numbers){
+			var min = numbers[0];
+
+			for(var i = 1; i < numbers.length; i++){
+				if(numbers[i] < min){
+					min = numbers[i];
+				}
+			}
+			return min
+		}
+
+		min(numbers);
+		//-1
+		</code>
+	</pre>
+
+	<h2>Filter, Map &amp; Reduce</h2>
+
+	<h3>Map</h3>
+
+	<p>Think of <code class='highlight'>.map</code> as a for each loop that is specifically trasnforming values within the array. Each value in the array corresponds to one transformed output value. 
+	</p>
+
+	<p>The return value from filter should be a boolean, indicating whether to inclue the original value in the result <code class='highlight'>(true)</code> or whether to leave it out <code class='highlight'>false</code>. You should not return the value itself, just a boolean. The <code class='highlight'>filter()</code> method creates a new array with all elements that pass the test implemented by the provided function. Function to test each element of the array. Return true to keep the element. Filtered values are in an array.</p>
+
+	<pre>
+		<code class='scode'>
+		var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+		var isEvenNumbers = numbers.filter(function(value){
+			if(value % 2 === 0){
+				return value;
+			}
+		});
+
+		console.log(isEvenNumbers);
+		</code>
+	</pre>
+
+	<p><span class='pink'>Special Note:</span> <code class='highlight'>Array.map</code>
+	can easily be chained. <b>For Example</b>: 
+	</p>
+
+	<pre>
+		<code class='scode'>
+		var numbers = [1, 2, 3, 4];
+
+		var newNumbers = numbers.map(function(number){
+			return number * 2;
+		}).map(function(number){
+			return number + 1;
+		});
+
+		console.log(newNumbers)
+		//3, 5, 7, 9
+		</code>
+	</pre>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://cryto.net/~joepie91/blog/2015/05/04/functional-programming-in-javascript-map-filter-reduce/" target="_blank">Cryto.net filter, reduce, map guide</a>
+		</li>
+
+	</ul>
+	</div>
+
+	<h2>Document Object Model</h2>
+	<p>The DOM is the interface between JS and HTML/CSS. It's a bunch of special JS objects and functions we can use to interact with our HTML or CSS and can modify, animate things etc.</p>
+
+	<h3>Nodes and Node Lists</h3>
+	<p>Every tag you see on a page is a node, there are also different types of nodes: <b>Element Nodes, Text Nodes, and Attribute Nodes</b></p>
+
+	<img src="images/typesofnodes.png" alt='types of nodes'>
+	<p>The <b>document</b> is a node itself <i>(document node)</i>. Any HTML tag is a node. Also the white space between tags is also counted as a node.</p>
+
+	<p>Node lists works like an array. Technically what is being returned here is not an array but a <b>node list</b> its an 'array like'. It has some of the basic things that JS arrays have,  but its missing some of the features of an actual array. For example we can do <code class='highlight'>element.length</code> but if we try to do <code class='highlight'>element.forEach() </code> it doesn't work.</p>
+
+	<p><b>HTMLCollection === nodeList</b></p>
+
+	<p><span class='pink'>HTML Collections are Not Arrays</span> if you want to use <b>forEach</b> on HTML collections read more information here on <a href="http://clubmate.fi/the-intuitive-and-powerful-foreach-loop-in-javascript/" target='_blank'>clufmate.fi</a></p>
+
+	<img src="images/foreach htmlcollection.png" alt='for each html collection' class='center-image'>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection " target="_blank">MDN HTML Collection</a>
+		</li>
+		<li>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList"  target="_blank">MDN Node List</a>
+		</li>
+		<li>
+			<a href="http://stackoverflow.com/questions/15763358/difference-between-htmlcollection-nodelists-and-arrays-of-objects"  target="_blank">Stackoverflow Nodelists vs HTML Collections</a>
+		</li>
+		<li>
+			<a href="http://clubmate.fi/the-intuitive-and-powerful-foreach-loop-in-javascript/"  target="_blank">clubmate.fi HTML Collections and forEach Loops</a>
+		</li>
+	</ul>
+	</div>
+
+	<pre>
+		<code class='scode'>
+	document.getElementsByTagName() // returns node list
+	document.images //returns node list
+		</code>
+	</pre>
+
+	<h3>White Space #text Nodes</h3>
+
+	<p>When you use the <code class='highlight'>.childNodes</code> property it has the potential to generate empty text nodes depending on how the HTML is formatted, namely the presence or lack of white space.</p>
+
+	<p>Notice in the example below you have to format your HTML in a specific way, with no blank spaces indents or returns, so that it does not generate text nodes.</p>
+
+	<p><b>HTML - formatting removed, no empty text nodes</b></p>
+	<pre>
+	<xmp class="html-markup scode">
+	<ul id='ulParent'><li>Ghastly</li><li>Haunter</li><li>Gengar</li></ul>
+	</xmp>
+	</pre>
+
+	<p>When we format the HTML nicely to include tabs, returns etc. it will generate blank text nodes</p>
+
+	<p><b>HTML - formatting added, generates empty text nodes</b></p>
+	<pre>
+	<xmp class="html-markup scode">
+	<ul id='ulParent'>
+		<li>Ghastly</li>
+		<li>Haunter</li>
+		<li>Gengar</li>
+	</ul>
+	</xmp>
+	</pre>
+
+	<p>JS</p>
+	<pre>
+		<code class='scode'>
+		var listChildren = document.getElementById('ulParent').childNodes;
+		</code>
+	</pre>
+
+	<p><span class='pink'>Special Note</span> To avoid this it is recommend you instead use <code class='highlight'>.children</code> instead of <code class='highlight'>.childNodes</code>. <code class='highlight'>.children</code> <b>will not generate empty text nodes</b>, however <code class='highlight'>.childNodes</code> will. 
+	</p>
+
+	<pre>
+		<code class='scode'>
+		var listChildren = document.getElementById('ulParent').children;
+		//prefered method with no empty text nodes
+		</code>
+	</pre>
+
+	<h3>Level 0 DOM</h3>
+	<pre>
+		<code class='scode'>
+	document.images; /* displays all nodes of type img in the document */
+	document.images.length; /* displays total # of images in document */
+
+	document.forms; // node list
+	document.forms['loginForm'] // getting a form by a specific name
+
+	document.anchors; //node list
+
+		</code>
+	</pre>
+
+	<h3>Appending</h3>
+	<pre>
+		<code class='scode'>
+	//Method #1 createElement, createTextNode
+	var liNode = document.createElement('li');
+	var txtNode = document.createTextNode('spooky');
+	var parent = document.getElementById('domList1')
+
+	liNode.appendChild(txtNode);
+	parent.appendChild(liNode);
+
+	//Method #2 .innerTEXT
+	var liNode = document.getElementById('beaker');
+	liNode.innerText = 'new text';
+
+	//Method #3 .innerHTML
+	var liNode = document.getElementById('beaker');
+	liNode.innerHTML = 'guppy'
+
+	//Another Variation
+	var parent = document.getElementById('domList1');
+	parent.childNodes[1].innerHTML = 'ghost';
+		</code>
+	</pre>
+
+	<h2>Removing Items from DOM</h2>
+	<p>Several main ways to remove items from the DOM: <code class='highlight'>element.ClassList.toggle('hide')</code>, <code class='highlight'>element.remove()</code>, <code class='highlight'>delete element</code>, <code class='highlight'>element.innerHTML = ''</code>.</p> 
+
+	<code class='highlight'>element.ClassList.toggle('hide')</code>
+
+	<h3>element.classList.toggle('hide')</h3>
+	<p><code class='highlight'>element.ClassList.toggle('hide')</code> uses a CSS class to toggle hiding an element</p>
+	
+	<pre>
+		<code class='scode'>
+	.hide{
+		display: none;
+	}
+		</code>
+	</pre>
+	
+	<h3>element.innerHTML = ''</h3>
+	<p><code class='highlight'>.innerHTML</code> is destructive. It will overwrite whatever HTML code is currently there. As a result can set the <code class='highlight'>.innerHTML</code> to an empty string <code class='highlight'>''</code> to remove an item from the DOM. 
+	</p>
+
+
+
+	<h3>console.dir()</h3>
+	<p>Everything lives inside of one object called the document. It's the root node everything lives inside of.</p>
+
+	<p>To get the actual object representation of something you must use <code class='highlight'>console.dir(object)</code>. For example <code class='highlight'>console.dir(document)</code></p>
+
+	<p>It looks like an element is returning the HTML back to us - but its actually returning the <b>object representation</b> of the tag. You can check what it is returning by using the <b>console.dir</b> method.</p>
+
+	<p>This is useful for finding a list for <code class='highlight'>.style</code> properties for DOM elements</p>
+
+	<p>For example:</p>
+
+	<pre>
+		<code class='scode'>
+		var submitButton = document.getElementById('submitButton');
+		console.dir(submitButton)
+		/*generates object properties and values*/
+		/*can then expand style and look at properties inside*/
+		</code>
+	</pre>
+
+	<img src="images/style properties.png">
+
+
+	<h3>Select and Manipulate Work Flow</h3>
+	<p>When working with the DOM you will continously selecting elements and then manipulating them</p>
+
+	<b>example</b>
+	<pre>
+		<code class='scode'>
+	var h1 = document.querySelector('h1');
+	h1.style.color = 'pink';
+		</code>
+	</pre>
+
+	<h3>Selecting Element Methods</h3>
+
+	<pre>
+		<code class='scode'>
+	document.getElementById();
+	document.getElementsByClassName();
+	document.getElementsByTagName();
+	document.querySelector();
+	document.querySelectorAll();
+		</code>
+	</pre>
+
+	<h3>getElementsByClassName</h3>
+
+	<p>JS</p>
+	<pre>
+		<code class='scode'>
+	var tags = document.getElementsByClassName('bolded');
+	//returns a nodeList with listItem2 and listItem3
+		</code>
+	</pre>
+
+
+	<p>HTML</p>
+	<pre>
+	<xmp class="html-markup scode">
+		<body>
+			<h1>Hello</h1>
+			<ul>
+				<li id='highlight'>List Item 1</li>
+				<li class='bolded'>List Item 2</li>
+				<li class='bolded'>List Item 3</li>
+			</ul>
+		</body>
+	</xmp>
+	</pre>
+
+	<h3>getElementsByTagName</h3>
+
+	<p>JS</p>
+	<pre>
+		<code class='scode'>
+	var tags = document.getElementsByTagName('li');
+	//returns a nodeList with List Item 1, List Item 2 and List Item 3
+		</code>
+	</pre>
+
+	<p>HTML</p>
+	<pre>
+	<xmp class="html-markup scode">
+		<body>
+			<h1>Hello</h1>
+			<ul>
+				<li id='highlight'>List Item 1</li>
+				<li class='bolded'>List Item 2</li>
+				<li class='bolded'>List Item 3</li>
+			</ul>
+		</body>
+	</xmp>
+	</pre>
+
+	<h3>querySelector</h3>
+
+	<p><span class='pink'>Special Note</span> <code class='highlight'>querySelector</code>always returns one element. If you need more than one element use <code class='highlight'>querySelectorAll</code>. When we do this we are using the <b>css-style selectors</b>.
+	</p>
+
+	<b>Examples</b>
+
+	<pre>
+	<xmp class="html-markup scode">
+		<h3 class='item-name'>California Roll</h3>
+		<!-- read as h3.item-name -->
+
+		<p class='description'>Crab meat, avocado and cucumber</p>
+		<!-- read as p.description -->
+
+		<p class='item-number'>Quantity: 6</p>
+		<!-- read as p.item-number -->
+
+		<p class='cost'>$5.50</p>
+		<!-- read as p.cost -->
+
+		<div class='pink-bar group'>
+		<!-- read as div.pink-bar -->
+	</xmp>
+	</pre>
+
+	<h3>parent.querySelector</h3>
+
+	<p><span class='pink'>Very Important: </span> can use query selector within the constraints of a parent element container. In the example GIF below each shopping cart item is its own container. By using <code class='highlight'>this</code> and then finding the top most parent for the container using <code class='highlight'>var parent = targetElement.parentNode;</code> you can then <b>query within the constraints of that container</b> by using <code class='highlight'>parent.querySelector</code>. </p>
+
+	<b>Example</b>
+	<p data-height="265" data-theme-id="0" data-slug-hash="pNdEqw" data-default-tab="html,result" data-user="bluehabit" data-embed-version="2" data-pen-title="pNdEqw" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/pNdEqw/">pNdEqw</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+	
+	<b>Using this in context of a parent container</b>
+	<img class='center-image' src="images/query selector within a parent.gif">
+
+	<pre>
+		<code class='scode'>
+		//!important! notice how these are all using the parent element in other words parent.querySelector NOT document.querySelector
+
+		var query = parent.querySelector('p.item-number').innerText;
+
+		var pink = parent.querySelector('div.pink-bar');
+
+		var anchor = parent.querySelector('a[target]');
+		//notice how [] is used to target an html attribute with
+		//css
+
+		var sonic = parent.querySelector('img[alt~="sonic"');
+		//notice to target a value ~ is used before the = sign 
+		//with css
+
+		var tag = document.querySelector('#highlight');
+		</code>
+	</pre>
+
+	<p>Some more examples</p>
+	<p>HTML</p>
+	<pre>
+	<xmp class="html-markup scode">
+		<p id='ptext' data-key='highlight'>P text</p>
+	</xmp>
+	</pre>
+
+	<p>JS</p>
+	<pre>
+		<code class='scode'>
+		var p = document.querySelector("#ptext[data-key='highlight']")
+		</code>
+	</pre>
+
+	<b>Chaining Together Selectors</b>
+	<pre>
+		<code class='scode'>
+	var li = document.querySelector('li a.special');
+		</code>
+	</pre>
+
+	<h3>querySelectorAll</h3>
+	<p>Returns a list of ALL elements that match a given CSS-style selector</p>
+
+	<p>JS</p>
+	<pre>
+		<code class='scode'>
+	var li = document.querySelectorAll('h1');
+	// returns Hello and Goodbye
+		</code>
+	</pre>
+
+	<pre>
+		<code class='scode'>
+	var li = document.querySelectorAll('h1')[1];
+	/*returns second h1 in HTML collection array like, which is 'Goodbye'*/
+		</code>
+	</pre>
+
+	<p>HTML</p>
+	<pre>
+	<xmp class="html-markup scode">
+		<body>
+			<h1>Hello</h1>
+			<h1>Goodbye</h1>
+			<ul>
+				<li id='highlight'>List Item 1</li>
+				<li class='bolded'>List Item 2</li>
+				<li class='bolded'>List Item 3</li>
+			</ul>
+		</body>
+	</xmp>
+	</pre>
+
+	<h2>HTML Element Objects</h2>
+	<p>HTML attributes you see for example an images width or height attribute are parts of the HTML element object that can be accessed, see below for more information</p>
+
+	<img src="images/HTML element object properties.png">
+
+	<h2>HTML Element Object Constructors</h2>
+	<p>Creating HTML Element Objects</p>
+
+	<p>
+	<b>Constructor vs document.createElement</b>
+	<p>
+
+	<p>
+	<b>Accessing or Setting Properties, Dot Notation vs set/get Attribute</b>
+	</p>
+
+	<p>Some elements have the <code class='highlight'>new</code> keyword allowing yout to build a new object that way (comes in handy particularly for games with <code class='highlight'>new Image</code> and <code class='highlight'>new Audio</code>. Also note not very many HTML element objects can be created via constructor</p>
+
+	<p>But for creating most new elements <code class='highlight'>document.createElement('')</code> should be used. 
+	</p>
+
+	<pre>
+		<code class='scode'>
+	//Object Constructor
+	var dog = new Object();
+	dog.name = 'Samuel';
+	dog.age = 5;
+	dog.sound = function(){
+		console.log('Woof Woof')
+	}
+
+	//Image HTML DOM Image Object Constructor Method
+	var fruitBat = new Image();
+	fruitBat.src = 'fruitbat.jpg';
+	fruitBat.alt = 'a silly fruit bat being brushed'
+	fruitBat.style.height = '110px';
+	fruitBat.style.width = '110px';
+
+	//document.createElement Method
+	var fruitBat = document.createElement('img');
+	fruitBat.src = 'fruitBat.jpg';
+	fruitBat.alt = 'a silly fruit bat being brushed';
+
+	//Can also use .setAttribute or .getAttribute
+	var img = document.createElement('img');
+	img.alt = 'cute cat';
+	img.setAttribute('alt', 'a large cat with a hat')
+	
+	//notice we are using dot notation for the properties 
+	//we can either get or set the property for example
+	//console.log(fruitBat.src) property will give us 'fruitBat.jpg'
+
+		</code>
+	</pre>	
+
+	<img src="images/fruitbat.png">
+
+	<h2>DOM Manipulation</h2>
+
+	<h3>Move element on mousemove</h3>
+	<a href="http://codepen.io/bluehabit/pen/ggwVMO">Codepen</a>
+
+	<p>This code doesn't work for somereason on codepen, put it in a browser to see it in action</p>
+
+	<h3>Mousehold code</h3>
+	<p data-height="265" data-theme-id="0" data-slug-hash="VPKoLg" data-default-tab="js,result" data-user="bluehabit" data-embed-version="2" data-pen-title="VPKoLg" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/VPKoLg/">VPKoLg</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	<h3>Capturing Event Object on Mouse Click</h3>
+	<p data-height="265" data-theme-id="0" data-slug-hash="vgXoNw" data-default-tab="js,result" data-user="bluehabit" data-embed-version="2" data-pen-title="vgXoNw" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/vgXoNw/">vgXoNw</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	<h3>Protip</h3>
+	<img src="images/protip.png">
+
+	<h2>Capturing Mouse Events</h2>
+	<p>insert code pen example here</p>
+
+	<h2>HTML Element Objects</h2>
+	<p>insert code pen example here</p>
+
+	<div class='content-group'>
+	<h3>Mouse Events</h3>
+	<b>Logging the event</b>
+	<p>HTML</p>
+	<pre>
+	<xmp class="html-markup scode">
+		var button = document.getElementById('submitButton');
+	</xmp>
+	</pre>
+
+	<p>JS</p>
+	<pre>
+		<code class='scode'>
+	button.addEventListener('click', function(event){
+		console.log(event);
+	})
+		</code>
+	</pre>
+
+	<p>Here is what the output looks like when you log the mouse click event. <code class='highlight'>.screenX</code> or <code class='highlight'>.screenY</code> will provide you with the <b>global</b> screen coordinates. While <code class='highlight'>.clientX</code> or <code class='highlight'>clientY</code> will be local, for example what coordinates of a button element was pressed</p>
+
+	<img src="images/mouse event.png" alt='mouse event'>
+
+	<h3>MouseEvent clientX and clientY</h3>
+	<p>HTML</p>
+	<pre>
+	<xmp class="html-markup scode">
+		var button = document.getElementById('submitButton');
+	</xmp>
+	</pre>
+
+	<pre>
+		<code class='scode'>
+	button.addEventListener('click', function(event){
+		console.log(event);
+		console.log(event.clientX)
+		//log event object property clientX
+		console.log(event.clientY)
+		//log event object property clientY
+	})
+
+	<p>Notice how the above code logs the exact local coordinates where the button was clicked</p>
+		</code>
+	</pre>
+
+	<img src="images/client event.png">
+
+	</div>
+
+	<h3>Mouse Move</h3>
+
+	<p>Capturing the mouse move event, notice how it continously updates</p>
+
+	<img src="images/mouse-move.gif">
+
+	<h3>Event Capturing and Bubbling</h3>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.youtube.com/watch?v=0sfPDJiMTXk
+			" target="_blank">Kirupa Event Capturing and Bubbling</a>
+		</li>
+	</ul>
+	</div>
+
+	<h3 id='goat'>Style Property</h3>
+
+	<p>When the DOM is constructed every individual node has a <code class='highlight'>.style</code> property, which is a huge object with every single possible CSS property within it. Can do <code class='highlight'>elementname.style </code> to get a full list of the style properties
+	</p>
+
+	<pre>
+		<code class='scode'>
+	//Select Element
+	var tag = document.getElementById('highlight');
+
+	//Manipulate
+	tag.style.color = 'blue';
+	tag.style.border = '10px solid red';
+	tag.style.fontSize = '70px';
+	tag.style.background = 'yellow';
+	tag.style.marginTop = '200px';
+		</code>
+	</pre>
+
+	<p><span class='pink'>Special Note</span> However, it should be clearly noted that it is considered a best practice to instead define an elements style within a class and toggle it with <code class='highlight'>element.classList.toggle</code>
+	</p>
+
+	<h3>The Alternative</h3>
+	<p>Rather than directly manipulating style with JS, we can define a CSS class and then toggle it on or off with JS
+	</p>
+
+	<p>CSS</p>
+	<pre>
+		<code class='scode'>
+	.some-class {
+		color: blue;
+		border: 10px solid red;	
+	}
+		</code>
+	</pre>
+
+	<p>JS</p>
+	<pre>
+		<code class='scode'>
+	var tag = document.getElementById('highlight');
+	tag.classList.add('some-class');
+		</code>
+	</pre>
+
+	<h3>classList</h3>
+	<p>A read-only list that contains the classes for a given element. It is <b>not an array</b>.</p>
+
+	<p>CSS</p>
+	<pre>
+		<code class='scode'>
+	.another-class {
+		color: purple;
+		fontSize: 1.5em
+	}
+		</code>
+	</pre>
+
+	<p>JS</p>
+	<pre>
+		<code class='scode'>
+	var tag = document.querySelector('h1');
+	var p = document.querySelectorAll('p')[0];
+
+	//add a class to the selected element
+	tag.classList.add('another-class');
+	p.classList.add('fun');
+
+	//remove a class
+	tag.classList.remove('another-class');
+
+	//toggle a class
+	tag.classList.toggle('another-class');
+		</code>
+	</pre>
+
+	<h3>toggle()</h3>
+	<p><b>Toggle</b> is a method on element.classList</p>
+	
+	<p data-height="365" data-theme-id="0" data-slug-hash="aBpqXK" data-default-tab="js,result" data-user="bluehabit" data-embed-version="2" data-pen-title="aBpqXK" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/aBpqXK/">aBpqXK</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	<h3>element.id</h3>
+
+	<p><b>Gets</b> or <b>Sets</b> id of an element</p>
+
+	<pre>
+	<xmp class="html-markup scode">
+		<a href='www.google.com'>I am a link</a>
+		<img id='logo' src='logo.png'>
+	</xmp>
+	</pre>
+
+	<pre>
+		<code class='scode'>
+	var logoImage = document.getElementById('logo');
+	logoImage.id;
+	/*'logo'*/
+
+	logoImage.id = 'newLogo';
+	logoImage.id;
+	/*'newLogo'*/
+
+		</code>
+	</pre>
+
+	<p>HTML</p>
+	<pre>
+	<xmp class="html-markup scode">
+		<a href='www.google.com'>I am a link</a>
+		<img src='logo.png'>
+	</xmp>
+	</pre>
+
+	<p>JS</p>
+	<pre>
+		<code class='scode'>
+	var listChildren = document.getElementById('ulParent').children;
+
+	for(var i = 0; i < listChildren.length; i++){
+			listChildren[i].addEventListener('click', function(){
+			this.classList.toggle('pink');
+		});
+	}
+		</code>
+	</pre>
+
+	<h3>textContent</h3>
+
+	<p>
+	<span class='pink'>Special Note</span> textContent is <b>destructive</b>, it will overwrite, not preserve, the content. <b>Will not render tags</b>, it treats whatever you pass to it purely as a string - even if it has tags. 
+	</p>
+
+	<pre>
+		<code class='scode'>
+	var p = document.querySelectorAll('p')[0];
+
+	p.textContent = "hello world";
+		</code>
+	</pre>
+
+	<h3>innerHTML</h3>
+	<p>
+	<span class='pink'>Special Note</span> innerHTML will <b>preserve</b> inner text properties. It will also <b>render any tags you pass through it</b>
+	</p>
+
+	<pre>
+		<code class='scode'>
+	var p = document.querySelectorAll('p')[0];
+
+	p.innerHTML = "hello'<'strong'>'world'<'/'strong'>'";
+	/* manipulating text inside element, remove ' from above */
+		</code>
+	</pre>
+
+	<h3>Attributes</h3>
+	<p>Use <code class='highlight'>getAttribute()</code> and <code class='highlight'>setAttribute()</code> to read and write HTML attributes such as <code class='highlight'>src</code> or <code class='highlight'>href</code>
+	</p>
+
+	<h3>Binding Example</h3>
+	<p>See code pen and illustration below</p>
+
+	<img src="images/clickthese.png">
+
+	
+	<p>HTML</p>
+	
+	<pre>
+	<xmp class="html-markup scode">
+		<a href='www.google.com'>I am a link</a>
+		<img src='logo.png'>
+	</xmp>
+	</pre>
+
+	<p>JS</p>
+
+	<pre>
+		<code class='scode'>
+		var link = document.querySelector('a');
+		link.setAttribute('href', 'www.dogs.com');
+		//Change HREF attribute
+
+		var img = document.querySelector('img');
+		img.setAttribute('src', 'corgi.png');
+		//Change SRC attribute
+		</code>
+	</pre>
+
+	<h2>DOM Events</h2>
+	<b>Making webpages interactive</b>
+	<p>Events include things such as:</p>
+	<ul>
+		<li>Clicking on a button</li>
+		<li>Hovering over a link</li>
+		<li>Dragging and Dropping</li>
+		<li>Pressing the Enter Key</li>
+	</ul>
+
+	<h3>The Process</h3>
+	<p>We first <b>Select</b> and element and then add an <b>event listener</b></p>
+
+	<p><i>Listen for a click on this button</i></p>
+	<p><i>Listen for a hover event on the h1</i></p>
+	<p><i>Listen for a keypress on text input</i></p>
+
+	<p>We are attaching these event listeners to specific elements. First we select a given element such as a submit button, then we attach a listener to that element. The event listener will then listen for a specific event such as on click. And when that even occurs it will run a block of code.
+	</p>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="	https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+			" target="_blank">Common Types of Events</a>
+		</li>
+	</ul>
+	</div>	
+
+	<h3>addEventListener</h3>
+	<p>To add a listener, we us e a method called <b>addEventListener</b>
+	</p>
+
+	<pre>
+		<code class='scode'>
+	element.addEventListener(type, functionToCall);
+	/*Syntax*/
+		</code>
+	</pre>
+
+	<p>The callback function only runs when the event fires</p>
+
+	<pre>
+		<code class='scode'>
+	var button = document.querySelector('button');
+	button.addEventListener('click', function(){
+		console.log('button clicked');
+	});
+		</code>
+	</pre>
+
+	<p><span class='pink'>Special Note</span> You can have more than one event listener attached to an element
+	</p>
+
+	<h3>IE8 addEventListener compatibility Issues</h3>
+	<p>IE8 does not support addEventListener, as a work around can use the following method</p>
+
+	<pre>
+		<code class='scode'>
+	var button = document.getElementsByTagName('button')[0];
+	
+	button.onclick = addTask;
+
+	var addTask = function(){
+		console.log('Add task...');
+	};
+		</code>
+	</pre>
+
+	<p>To read more about compatability issues visit the link below</p>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Compatibility
+			" target="_blank">IE8 Compatibility addEventListener</a>
+		</li>
+	</ul>
+	</div>
+
+	<h3>addEventListener with Anonymous Function</h3>
+	<p>addEventListener with anonymous function is my prefered method, the only time I wouldn't use it is if I needed to use that function again as a named function somewhere else outside of that event listener</p> 
+	<p>HTML</p>
+	<xmp class="html-markup scode">
+		<button>Click Me</button>
+		<p>No one has Clicked me Yet</p>
+	</xmp>
+	</pre>
+
+	<p>JS</p>
+	<pre>
+		<code class='scode'>
+	var button = document.querySelector('button');
+	var paragraph = document.querySelector('p');
+
+	//setup event listener
+	button.addEventListener('click', function(){
+		paragraph.textContent = 'Someone clicked the button';
+	});
+		</code>
+	</pre>
+
+	<h3>addEventListener with Named Function</h3>
+	<p>HTML</p>
+	<xmp class="html-markup scode">
+		<button>Click Me</button>
+		<p>No one has Clicked me Yet</p>
+	</xmp>
+	</pre>
+
+	<p>JS</p>
+	<pre>
+		<code class='scode'>
+	button.addEventListener('click', changeText);
+
+	function changeText(){
+		paragraph.textContent = 'Someone clicked the button';
+	}
+		</code>
+	</pre>
+
+	<h2>DOM Examples</h2>
+
+	<h3>Shopping Cart Check - Very Important</h3>
+
+	<p>Part of my shopping cart project, we need to make a function to see if an item already exists in our cart. If no, then push it, if yes then return -1. Lets break this down.
+	</p>
+
+	<b>Array of Objects Important Note</b>
+	<p>When you have an array of objects, like the example below, its important to see it as just an array. You access it just like a regular array, there are still indices to access the information etc.</p>
+
+	<p>Example</p>
+	<img src="images/puzzle array.png">
+
+
+	<p>For Example:</p>
+	<pre>
+		<code class='scode'>
+	//example 1: regular array
+	var myArray = ['ghost', 'goblin', 'haunted'];
+	//myArray[0] -> ghost
+	//myArray[2] -> haunted
+		</code>
+	</pre>
+
+	<pre>
+		<code class='scode'>
+	//example 2: array of objects
+	var shoppingCart = {
+		items: [
+			{
+				name: 'sushi',
+				color: 'red'
+			},
+			{
+				name: 'turtle',
+				color: 'green'
+			},
+			{
+				name: 'water',
+				color: 'blue'
+			},
+			{
+				name: 'george',
+				color: 'purple'
+			}
+
+			],
+			total_price: 0
+	}
+	//shoppingCart.items represents the whole array
+	//shoppingCart.items[0].name -> sushi
+	//shoppingCart.items[2].color -> blue
+		</code>
+	</pre>
+
+	<p>The important thing is to just look at <span class='highlight'>objectName.arrayOfObjects</span> as just a regular array, you access the information the same, for example <span class='highlight'>objectName.arrayOfObjects[1]</span>. Just like you would access <span class='highlight'>myArray[0]</span>, <span class='highlight'>myArray[i] etc.</span></p>
+
+
+	<b>Step 1</b>
+	<p>Here using some logic where we <span class='highlight'>i</span> represents the index of the array</p>
+
+	<pre>
+		<code class='scode'>
+	var myArr = ['ghost', 'vampire', 'wolf'];
+
+	for(var i = 0; i < myArr.length; i++){
+		console.log(myArr[i] + ' has the index of ' + i);
+	}
+
+	//ghost has the index of 0
+	//vampire has the index of 1
+	//wolf has the index of 2
+		</code>
+	</pre>
+
+	<b>Step 1.5</b>
+	<p>JS arrays have a built in method called<span class='highlight'>findIndex</span> that allows us to find the index an array item is at. Just be aware for all of these functions, including the custom ones, the array index for the matched item will always be the first instance of it. For example if you have <span class='highlight'>var elementals = ['fire', 'water', 'fire', 'earth', 'wind']</span> the index found for fire will always be the first instance of that item, in this case <span class='highlight'>0</span>.</p>
+
+	<pre>
+		<code class='scode'>
+		var shoppingCart = {
+		items: [
+		{
+			name: 'sushi',
+			color: 'red'
+		},
+		{
+			name: 'turtle',
+			color: 'green'
+		},
+		{
+			name: 'water',
+			color: 'blue'
+		},
+		{
+			name: 'flowers',
+			color: 'purple'
+		}
+		],
+		total_price: 0
+	}
+
+	var cartIndex = shoppingCart.items.findIndex( function(x){
+		return x.name === 'water';
+	});
+
+	//cartIndex -> 2
+		</code>
+	</pre>
+
+	<p>Another important note if we save <span class='highlight'>cartIndex</span> as a variable we can use it while accessing an aray. For Example: </p>
+
+	<pre>
+		<code class='scode'>
+	//setting cartIndex
+	var cartIndex = 2;
+	//
+
+	var shoppingCart = {
+		items: [
+			{
+				name: 'sushi',
+				color: 'red'
+			},
+			{
+				name: 'turtle',
+				color: 'green'
+			},
+			{
+				name: 'water',
+				color: 'blue'
+			},
+			{
+				name: 'george',
+				color: 'purple'
+			}
+
+			],
+			total_price: 0
+	}
+
+	//shoppingCart.items[cartIndex].name -> 'water';
+	//shoppingCart.items[cartIndex].color -> 'blue'
+
+		</code>
+	</pre>
+
+	<p><span class='pink'>Very Important:</span> study the code snippets below carefully</p>
+	<pre>
+		<code class='scode'>
+	//shoppingCart.items[cartIndex].name; -> 'water'
+	//shoppingCart.items[cartIndex].color; -> 'blue'
+		</code>
+	</pre>
+
+	<b>Step 2</b>
+	<p>Now lets continue on that logic knowing that we can use <span class='highlight'>i</span> to find the index number of an array</p>
+
+	 <pre>
+		<code class='scode'>
+		var shoppingCart = {
+	items: [
+		{
+			name: 'sushi',
+			color: 'red'
+		},
+		{
+			name: 'turtle',
+			color: 'green'
+		},
+		{
+			name: 'water',
+			color: 'blue'
+		},
+		{
+			name: 'george',
+			color: 'purple'
+		}
+
+		],
+		total_price: 0
+	}
+
+	function findItem(list, name) {
+	    for (i = 0 ; i < list.length; i++) {
+	        if (list[i].name === name) {
+	            return i;
+	        }
+	    }
+
+    return -1; 
+	}
+
+	//findItem(shoppingCart.items, 'water'); --> 2
+	//findItem(shoppingCart.items, 'george'); --> 3
+	//findItem(shoppingCart.items, 'sushi'); --> 4
+		</code>
+	</pre>
+
+	<b>Step 3</b>
+	<p>Now lets introduce the DOM twith some preliminary logic, if the item is found in the <span class='highlight'>shoppingCart.items</span> array then return <span class='highlight'>-1</span> else push it to the array</p>
+
+	 <pre>
+		<code class='scode'>
+	var slab = document.getElementById('slab');
+	var addToCart = document.getElementById('addToCart')
+
+
+	addToCart.addEventListener('click', function(){
+		var parent = this.parentNode; 
+		console.log(parent);
+
+		var itemName = parent.querySelector('.item-name').innerText;
+		var itemPrice = Number(parent.querySelector('.item-price').innerText);
+		var itemQuantity = 1;
+
+		var cartIndex = findItem(shoppingCart.items, itemName);
+		console.log(cartIndex);
+
+		if(cartIndex === -1){
+			console.log('push to cart');
+		} else {
+			console.log('item already exists');
+		}
+	});
+
+
+	var shoppingCart = {
+		items: [
+			{
+			name:'sushi',
+			color: 'red'
+			}
+		],
+		total_price: 0
+	}
+
+	function findItem(list, name){
+		var found = false;
+		var i = 0;
+
+		for(i; i < list.length; i++){
+			if(list[i].name === name){
+				found = true;
+				break; //to stop i from increasing
+				//otherwise it will always go to its max
+				//list.length in this case, 2
+			}
+		}
+
+		if(found){
+			return i;
+		} else {
+			return - 1;
+		}
+	}
+
+	//logs 'item already exists' for cartIndex local variable
+		</code>
+	</pre>
+
+	<b>Step 4</b>
+	<p>Now lets finalize the logic</p>
+	<pre>
+		<code class='scode'>
+	var slab = document.getElementById('slab');
+	var addToCart = document.getElementById('addToCart')
+
+
+	addToCart.addEventListener('click', function(){
+		var parent = this.parentNode; 
+		console.log(parent);
+
+		var itemName = parent.querySelector('.item-name').innerText;
+		var itemPrice = Number(parent.querySelector('.item-price').innerText);
+		var itemQuantity = 1;
+
+		var cartIndex = findItem(shoppingCart.items, itemName);
+
+		if(cartIndex === -1){
+			shoppingCart.items.push({
+				name: itemName,
+				itemPrice: itemPrice,
+				totalPrice: itemPrice,
+				itemQuantity: itemQuantity
+			})
+			console.log('pushed ' + itemName + ' to cart');
+		} else {
+			shoppingCart.items[cartIndex].itemQuantity ++;
+			shoppingCart.items[cartIndex].totalPrice += itemPrice;
+			console.log(shoppingCart.items[cartIndex])
+		}
+	});
+
+
+	var shoppingCart = {
+		items: [],
+		total_price: 0
+	}
+
+	function findItem(list, name){
+		var found = false;
+		var i = 0;
+
+		for(i; i < list.length; i++){
+			if(list[i].name === name){
+				found = true;
+				break; //to stop i from increasing
+				//otherwise it will always go to its max
+				//list.length in this case, 2
+			}
+		}
+
+		if(found){
+			return i;
+		} else {
+			return - 1;
+		}
+	}
+		</code>
+	</pre>
+
+	<p>Or check out the final code on <a href="http://codepen.io/bluehabit/pen/xRWaKb" target='_blank'>codepen</a></p>
+
+	<p data-height="222" data-theme-id="0" data-slug-hash="xRWaKb" data-default-tab="js,result" data-user="bluehabit" data-embed-version="2" data-pen-title="xRWaKb" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/xRWaKb/">xRWaKb</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h3>classList to change list item color</h3>
+<p data-height="365" data-theme-id="0" data-slug-hash="aBpqXK" data-default-tab="js,result" data-user="bluehabit" data-embed-version="2" data-pen-title="aBpqXK" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/aBpqXK/">aBpqXK</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	<p>HTML</p>
+	<xmp class="html-markup scode">
+		<ul id='ulParent'>
+			<li>Orchids</li>
+			<li>Succulents</li>
+			<li>Tulips</li>
+		</ul>
+	</xmp>
+	</pre>
+
+	<p>JS</p>
+	<pre>
+		<code class='scode'>
+	var ulParent = document.getElementById('ulParent');
+	var lis = ulParent.children;
+
+	for(var i = 0; i < lis.length; i++){
+		lis[i].addEventListener('click', function(){
+			this.style.color = 'pink';
+		});
+	}
+		</code>
+	</pre>
+
+	<h3>using 'This' to bind to + and - Buttons</h3>
+<p data-height="247" data-theme-id="0" data-slug-hash="RojWaL" data-default-tab="html,result" data-user="bluehabit" data-embed-version="2" data-pen-title="RojWaL" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/RojWaL/">RojWaL</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	<h2>CSS</h2>
+
+	<h3>Covering page with image</h3>
+	<img src="images/browser cover.png">
+
+	<p>Removing blue outline from iput fields, buttons etc.</p>
+	<img src="images/blue-outline.png">
+	<pre>
+		<code class='scode'>
+		input:focus {
+			outline:none
+		}
+		</code>
+	</pre>	
+
+	<img src="images/ghost.png" class='center-image'>
+
+	<h3>Selectors</h3>
+	<p>can select <b>both</b> an ID and a Class</p>
+	<pre>
+		<code class='scode'>
+	#my-cart.animateMenu {
+		opacity: 1;
+		transition: .45s all ease;
+		transform: translate(-50%, -50%) scale(1.5);
+		z-index: 1
+	}
+		</code>
+	</pre>
+
+	<b>Relationship Selectors</b>
+	<pre>
+		<code class='scode'>
+	document.querySelector('div > p');
+		</code>
+	</pre>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://youmightnotneedjs.com/" target='_blank'>you might not need js.com</a>
+		</li>
+		<li>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors#Information_Selectors_based_on_relationships" target="_blank">Relationship Selectors MDN</a>
+		</li>
+		<li>
+			<a href="https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048" target="_blank">30 CSS Selectors to Know - tutsPlus</a>
+		</li>
+		<li>
+			<a href="http://cssreference.io/" target='_blank'>cssreference.io</a>
+		</li>
+	</ul>
+	</div>	
+
+	<b>Attribute Selectors</b>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://www.w3schools.com/css/css_attribute_selectors.asp" target="_blank">CSS Attribute Selectors</a>
+		</li>
+	</ul>
+	</div>	
+
+	<h3>Display: None</h3>
+	<p>trick using Display: none to hide elements from the page, not only that but hidden elements do not occupy space</p>
+
+	<img src="images/displaynone.png">
+
+	<h3>Transform</h3>
+
+	<p><b>Translate X</b></p>
+	<img src="images/translate-x.gif" alt='translate x'>
+
+	<p><b>Translate y</b></p>
+	<img src="images/translate-y.gif" alt='translate y'>
+
+	<h3>Cursor Style</h3>
+	<pre>
+		<code class='scode'>
+	.close-button {
+		fill: #94d341b;
+		cursor: pointer
+	}
+		</code>
+	</pre>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor" target="_blank">MDN CSS Cursor Styles</a>
+		</li>
+	</ul>
+	</div>	
+
+	<h3>Center an Image</h3>
+	<pre>
+		<code class='scode'>
+		img {
+			display: block;
+			margin: auto;
+			width: 40%
+		}
+		</code>
+	</pre>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://www.w3schools.com/css/css_align.asp" target="_blank">W3 Centering</a>
+		</li>
+		<li>
+			<a href="http://codepen.io/efuller/pen/4c414d0054352006a74158fef993308f" target="_blank">Wave Button Animations</a>
+		</li>
+	</ul>
+	</div>	
+
+	<h2>CSS Only Animations</h2>
+	<p>Multiple transform properties done correctly</p>
+	<pre>
+		<code class='scode'>
+		button {
+			transform: translateX(300px) scale(0.5) rotate(90deg);
+		}
+		</code>
+	</pre>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://stanhub.com/create-responsive-tabs-using-css-only-no-jquery/" target="_blank">Tabs</a>
+		</li>
+		<li>
+			<a href="http://codepen.io/hherbst86/pen/OboJJr" target="_blank">Tabs</a>
+		</li>
+		<li>
+			<a href="http://codepen.io/kubbafox/pen/MbBLXg" target="_blank">Animated Tabs by Kubbafox</a>
+		</li>
+		<li>
+			<a href="http://www.hongkiat.com/blog/css3-checkbox-radio/" target="_blank">Radio Buttons</a>
+		</li>
+		<li>
+			<a href="https://codepen.io/AngelaVelasquez/pen/Eypnq" target="_blank">Animated Radio Buttons</a>
+		</li>
+		<li>
+			<a href="https://stanhub.com/tutorials/responsive-horizontal-css-only-tabs/" target="_blank">More Tabs</a>
+		</li>
+		<li>
+			<a href="https://www.sitepoint.com/you-dont-need-javascript-for-that/" target="_blank">More Examples</a>
+		</li>
+	</ul>
+	</div>	
+
+	<h2>CSS Advanced Selectors and Combinators</h2>
+
+	<p>Combinator Examples</p>
+	<pre>
+		<code class='scode'>
+	.tabs + input {
+		display: none;
+		width: 100%;
+	}
+
+	.tabs + input + div {
+		visibility: none;
+		width: 100%;
+	}
+
+	.tabs + input:checked + div {
+		visibility: visible;
+	}
+
+		</code>
+	</pre>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://www.w3schools.com/cssref/css_selectors.asp" target="_blank">W3 Schools CSS Selectors</a>
+		</li>
+		<li>
+			<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">MDN Selectors</a>
+		</li>
+
+		
+	</ul>
+	</div>	
+
+	<h2>Real World CSS</h2>
+
+	<h3>CSS Centering Floats</h3>
+	<img src="images/css centering floats.png" alt='css centering floats'>
+
+	<h3>Shopping Cart Modal Not Displaying</h3>
+	<p>Issue below with getting a shopping cart modal to display when the checkout button is clicked</p>
+
+	<b>Problem</b>
+	<p data-height="234" data-theme-id="0" data-slug-hash="JbPRoR" data-default-tab="css,result" data-user="bluehabit" data-embed-version="2" data-pen-title="JbPRoR" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/JbPRoR/">JbPRoR</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	<b>Fix</b>
+	<p data-height="265" data-theme-id="0" data-slug-hash="JbEVqN" data-default-tab="css,result" data-user="bluehabit" data-embed-version="2" data-pen-title="JbEVqN" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/JbEVqN/">JbEVqN</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+	<p>Issues fixed:</p>
+	<ul>
+		<li>#1 css specificity of trying to overwrite ID CSS with a class.</li>
+		<li>#2 z-index</li>
+	</ul>
+
+	<b>before</b>
+	<pre>
+		<code class='scode'>
+	.animateMenu {
+		opacity: 1;
+		transition: .45s all ease;
+		transform: scale(1.5);
+	}	
+		</code>
+	</pre>
+
+	<p>can verify if it was added correctly by checking the DIV's class list</p>
+
+	<img src="images/verify1.png">
+
+	<b>after</b>
+	<pre>
+		<code class='scode'>
+	#my-cart.animateMenu {
+		opacity: 1;
+		transition: .45s all ease;
+		transform: scale(1.5);
+		z-index: 1;
+		position: relative;
+	}	
+		</code>
+	</pre>
+
+	<p>verifying it worked correctly</p>
+	<img src="images/verify2.png">
+
+
+	<b>Fix with Absolute Positioning On Menu</b>
+	<p data-height="265" data-theme-id="0" data-slug-hash="PbWgry" data-default-tab="css,result" data-user="bluehabit" data-embed-version="2" data-pen-title="PbWgry" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/PbWgry/">PbWgry</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	<p>The last fix here is I noticed, as I added more *list items to the unordered list, it would actually push the menu down further and further down the screen even when it was hidden, so here is the fix for that</p>
+
+	<pre>
+		<code class='scode'>
+	#my-cart {
+		width: 45%;
+		transform: scale(.1);
+		transition: .45s all ease;
+		position: absolute;
+		top: 50%; left: 50%;
+		transform: translate(-50%, -50%) scale(.1);
+		opacity: 0;
+	}
+
+	#my-cart.animateMenu {
+		opacity: 1;
+		transition: .45s all ease;
+		transform: translate(-50%, -50%) scale(1.5);
+		z-index: 1;
+	}
+		</code>
+	</pre>
+
+	<pre>
+		<code class='scode'>
+	#my-cart.animateMenu {
+		opacity: 1;
+		transition: .45s all ease;
+		transform: scale(1.5);
+		z-index: 1;
+		position: relative;
+	}	
+		</code>
+	</pre>
+
+	<h3>Modal Animations</h3>
+	<p data-height="265" data-theme-id="0" data-slug-hash="ENWxPp" data-default-tab="html,result" data-user="bluehabit" data-embed-version="2" data-pen-title="ENWxPp" class="codepen">See the Pen <a href="http://codepen.io/bluehabit/pen/ENWxPp/">ENWxPp</a> by Chris (<a href="http://codepen.io/bluehabit">@bluehabit</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+	<h2>Chrome Dev Tools &amp; Debugging</h2>
+	<h3>Classes</h3>
+	<p>In the unordered list below, when a list item is clicked, it toggles the class pink on the list item. Notice how the class is added and removed in real time in dev tools</p>
+
+	<img class='image-border' src="images/classListToggle.gif" alt='classListToggle'>
+
+	<h3>Classes show up on Hover</h3>
+	<img src="images/showclass.png" alt='show class on hover chrome dev tools'>
+
+	<h3>Shows Margin and Padding on Hover</h3>
+	<p>Can hover over an element to get a visual box model representation of its padding and margin</p>
+
+	<img src="images/causingmargins.png" class='center-image'>
+
+	<h3>Breakpoints</h3>
+
+	<p>Use breakpoints to pause your JavaScript code and investigate the values of variables and the call stack at that particular moment in time.</p>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.youtube.com/watch?v=-q1z8BPFItw&feature=youtu.be" target="_blank">Awesome Overview of Dev Tools</a>
+		</li>
+		<li>
+			<a href="https://developers.google.com/web/tools/chrome-devtools/javascript/add-breakpoints" target="_blank">developers.google breakpoints</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=-q1z8BPFItw" target="_blank">Debugging JS with breakpoints</a>
+		</li>
+		<li>
+			<a href="https://developers.google.com/web/tools/chrome-devtools/javascript/step-code" target="_blank">developers.google stepping through your code</a>
+		</li>
+		<li>
+			<a href="https://developers.google.com/web/tools/chrome-devtools/" target="_blank">Chrome Dev Tools</a>
+		</li>
+	</ul>
+	</div>	
+
+	<h2>Sublime</h2>
+	<h3>Unindent Code Shift + Tab</h3>
+	<p>Unindent code using Shift + Tab</p>
+
+	<img class='image-border' src="images/unindent-code.gif" alt='unindent code sublime'>
+
+
+	<h3>Autocomplete</h3>
+	<p>Begin by typing some of the tags below then hitting tab and it will autocomplete some of the markup for you</p>
+
+	<p><b>Example: using HTML tag</b></p>
+	<img class='image-border' src="images/html-complete.gif" alt='html-autocomplete'>
+
+	<p><b>Example: Using IMG tag</b></p>
+	<img class='image-border' src="images/imgtag.gif" alt='img tag autocomplete'>
+
+	<p><b>Example: using Script tag</b></p>
+	<img class='image-border' src="images/scripttag.gif" alt='script tag autocomplete'>
+
+	<h2>HTML</h2>
+	<h3>URI Fragment Identifiers</h3>
+	<p>URI fragment Identifiers allow the page to move to a specific section when clicked</p>
+
+	<pre>
+	<xmp class="html-markup scode">
+	<ul>
+	  <a href="#section1">Section1</a>
+	  <a href='#section2'>Section2</a>
+	  <a href='#section3'>Section3</a>
+	</ul>
+
+	<div class='section' id='section1'>
+	<h1>Section 1</h1>
+	<p>Paragraph 1</p>
+
+	<div class='section' id='section2'>
+	<h1>Section 2</h1>
+	<p>Paragraph 2</p>
+
+	<div class='section' id='section3'>
+	<h1>Section 3</h1>
+	<p>Paragraph 3</p>
+
+	</xmp>
+	</pre>
+
+	<h2>ES6</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://github.com/DrkSephy/es6-cheatsheet
+			" target="_blank">ES6 Cheat Sheet</a>
+		</li>
+		<li>
+			<a href="https://github.com/lukehoban/es6features#template-strings" target="_blank">ES6 Features Luke Hoban Github</a>
+		</li>
+	</ul>
+	</div>	
+
+	<h2>JS 'This'</h2>
+
+	<p>The value of this depends on how the function was called. The value dependso n the caller. The vale of this is redetermined every time the program enters into a new context (i.e. function) during execution. Lets take a look at some example code:</p>
+
+	<p>This is always used in reference to an <b>object</b> that invokes it</p>
+
+	<pre>
+		<code class='scode'>
+	var name = "tt"; /* global variable (window.name) */
+
+	var person = {
+
+	  name: "tingting",
+
+	  outerFunc: function () {
+
+	    console.log(this); // person (this === person) but this happens because of the caller (person.outerFunc()).
+
+	    console.log(this.name); // person.name (which is "tingting"), the "name" property.
+
+	    function getFullName () {
+	      console.log(this); // (this === window)
+	      console.log(this.name); // window.name, which is "tt"
+	    }
+
+	    getFullName(); // This is a global function call (notice there is nothing on the left side). The expected value of "this" inside that function is "window". Because "window" is the global object.
+
+	  }
+
+	};
+
+	person.outerFunc(); // Please note that "person" is the caller. Inside the context of "outerFunc", "this" will be "person".
+
+		</code>
+	</pre>
+
+	<p>To find out the value of "this" I recommend you to ask yourself "How is this function called?". Let me give you another example:</p>
+
+	<pre>
+		<code class='scode'>
+	 var name = "Tingting";
+    var age = 20;
+    
+    function info() {
+      console.log(this.name);
+      console.log(this.age);
+    }
+    
+    var person = {
+      name: "Anthony",
+      age: 40,
+      printInfo: info
+    };
+    
+    var dog = {
+      name: "Bobby",
+      age: 7,
+      printInfo: info
+    };
+    
+    /* Please notice we are using the same function "info" in 3  different scenarios:*/
+    info();
+    person.printInfo();
+    dog.printInfo();
+    /* Please note that the we are having 3 different values of this in the same function,
+    for every different execution. (first one is window, second one is person, third one is dog).*/
+
+
+		</code>
+	</pre>
+
+	<h2>Canvas Tutorials</h2>
+
+	<img src="images/canvas attributes.png">
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://www.html5canvastutorials.com/tutorials/html5-canvas-element/
+			" target="_blank">html5canvastutorials.com</a>
+		</li>
+		<li>
+			<a href="http://www.html5canvastutorials.com/tutorials/
+			" target="_blank">html5canvastutorials.com tutorial list</a>
+		</li>
+		<li>
+			<a href="https://www.kirupa.com/canvas/
+			" target="_blank">Kirupa.com Canvas</a>
+		</li>
+	</ul>
+	</div>	
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://jakewiesler.com/javascript-keywords-whats-up-with-this/
+			" target="_blank">Whats up with 'this'?</a>
+		</li>
+		<li>
+			<a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/
+			" target="_blank">JSisSexy Understanding 'this'</a>
+		</li>
+	</ul>
+	</div>	
+
+	<h2>Flexbox</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://flexboxfroggy.com/
+			" target="_blank">Flexbox Froggy</a>
+		</li>
+		<li>
+			<a href="http://www.flexboxdefense.com/
+			" target="_blank">Flexbox Defense Game</a>
+		</li>
+		<li>
+			<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+			" target="_blank">CSS Tricks a complete guide to Flexbox</a>
+		</li>
+		<li>
+			<a href="https://flexbox.webflow.com/
+			" target="_blank">Webflow: flexbox layout builder</a>
+		</li>
+	</ul>
+	</div>	
+
+	<h2>Coding Games</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.codewars.com/
+			" target="_blank">Code Wars</a>
+		</li>
+		<li>
+			<a href="https://www.codingame.com/start
+			" target="_blank">Codingame</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Regex Tutorials</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://regexone.com/
+			" target="_blank">regexone, good intro to regex</a>
+		</li>
+		<li>
+			<a href="http://www.rexegg.com/
+			" target="_blank">rexegg</a>
+		</li>
+		<li>
+			<a href="http://www.regexr.com/
+			" target="_blank">regexr</a>
+		</li>
+		<li>
+			<a href="https://regex101.com/
+			" target="_blank">regex101</a>
+		</li>
+		<li>
+			<a href="http://tryregex.com/
+			" target="_blank">tryregex</a>
+		</li>
+		<li>
+			<a href="http://www.regexpal.com/
+			" target="_blank">regexpal</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Working Remotely</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://medium.freecodecamp.com/the-economics-of-working-remotely-28d4173e16e2#.21vkhum9d
+			" target="_blank">Quincy Larson analysis on working remotely</a>
+		</li>
+		<li>
+			<a href="https://www.amazon.com/gp/product/B00FPT6EBK/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00FPT6EBK&linkCode=as2&tag=out0b4b-20&linkId=c94e93556817e59b97fdf6fdf146f3d7
+			" target="_blank">The Year Without Pants</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>JS Books</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja" target="_blank">JS: Novice to Ninja</a>
+		</li>
+		<li>
+			<a href="eloquentjavascript.net/" target="_blank">Eloquent JS</a>
+		</li>
+		<li>
+			<a href="https://github.com/getify/You-Dont-Know-JS" target="_blank">You Dont Know JS</a>
+		</li>
+		<li>
+			<a href="http://jsforcats.com/" target="_blank">js for cats</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Youtube Channels</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA
+			" target="_blank">Computerphile</a>
+		</li>
+		<li>
+			<a href="https://www.khanacademy.org/computing/computer-programming
+			" target="_blank">Khan Acacdemy Javascript</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/user/TheHappieCat/videos
+			" target="_blank">The Happie Cat</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/channel/UCKTehwyGCKF-b2wo0RKwrcg
+			" target="_blank">Bisqwit</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/channel/UCyIe-61Y8C4_o-zZCtO4ETQ
+			" target="_blank">DevTips</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=q_MXH_Ponpg
+			" target="_blank">kudvenkat JS series</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg
+			" target="_blank">The Net Ninja</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/user/learncodeacademy
+			" target="_blank">learn code academy</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/user/derekbanas/playlists
+			" target="_blank">Derek Banas</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/user/thenewboston/playlists
+			" target="_blank">thenewboston</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/user/shiffman
+			" target="_blank">Coding Rainbow</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/channel/UCRQhZGXC0WK85YRXl7nGX0w
+			" target="_blank">All things JS LLC</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q
+			" target="_blank">Fun Fun Function</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Courses</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://beta.hacksaw.academy" target="_blank">Hacksaw Academy</a>
+		</li>
+		<li>
+			<a href="https://www.freecodecamp.com/" target="_blank">Free Code Camp</a>
+		</li>
+		<li>
+			<a href="https://teamtreehouse.com/" target="_blank">Team Tree House</a>
+		</li>
+		<li>
+			<a href="https://www.kirupa.com" target="_blank">kirupa.com</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/user/techSithTube/videos" target="_blank">techsith</a>
+		</li>
+		<li>
+			<a href="https://www.udacity.com/" target="_blank">Udacity</a>
+		</li>
+		<li>
+			<a href="https://survivejs.com/" target="_blank">Survive.js | Webpack &amp; React </a>
+		</li>
+		<li>
+			<a href="https://ilovecoding.org/" target="_blank">iLoveCoding.org</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/user/LevelUpTuts" target="_blank">Level Up Tuts</a>
+		</li>
+		<li>
+			<a href="https://frontendmasters.com/" target="_blank">Front End Masters</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Great Resources</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://plainjs.com/javascript/" target="_blank">plain.js | Using Vanilla JS to solve problems</a>
+		</li>
+		<li>
+			<a href="https://cloudacademy.com/" target="_blank">cloud academy</a>
+		</li>
+		<li>
+			<a href="http://www.w3schools.com/js/js_best_practices.asp" target="_blank">JS Best Practices</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=e-5obm1G_FY" target="_blank">Functional Programming</a>
+		</li>
+		<li>
+			<a href="https://www.reddit.com/r/learnjavascript/comments/55o3g8/understanding_variable_assignment_with_js_gotchas/" target="_blank">By Reference vs By Value</a>
+		</li>
+		<li>
+			<a href="http://hangar.runway7.net/javascript/difference-call-apply" target="_blank">Difference Between Call and Apply</a>
+		</li>
+
+	</ul>
+	</div>
+
+	<h2>Javascript KeyCodes</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://keycode.info/
+			" target="_blank">keycode.info</a>
+		</li>
+	</ul>
+	</div>
+
+
+	<h2>Linux Resources</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://linuxacademy.com/
+			" target="_blank">Linux Academy</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Javascript Core</h2>
+
+	<h3>Bind</h3>
+	<pre>
+		<code class='scode'>
+	var dog = {
+		sound: 'woof',
+		talk: function(){
+			console.log(this.sound);
+		}
+	}
+
+	dog.talk() //woof
+		</code>
+	</pre>
+
+	<p>Here we have the dog object that has a method called talk. We have some functionality, like talk, that is <b>bundled</b> with an object
+	</p>
+
+	<p>But what happens here?</p>
+
+	<pre>
+		<code class='scode'>
+	var dog = {
+		sound: 'woof',
+		talk: function(){
+			console.log(this.sound);
+		}
+	}
+
+	dog.talk() //woof
+
+	var talkFunction = dog.talk
+	talkFunction() // undefined 
+		</code>
+	</pre>
+
+	<p>Whaaaatt? Why is this returning undefined? Because when you assign a method to a variable, in this case <span class='highlight'>dog.talk</span>, it is no longe a method that belongs to an object. Now it is just a regular function.</p>
+
+	<p>It is no longer a method connected to an object - its just a free floating function. It has lost its connection. You could fix this by doing <span class='highlight'>dog.sound</span> instead of <span class='highlight'>this.sound</span> in the original object. But thats not very useful lets use <b>bind</b> instead</p>
+
+	<p>To put it another way, lets rewrite the function to look like this</p>
+
+
+	<pre>
+		<code class='scode'>
+		var talkFunction = function(){
+			console.log(this.sound) 
+			/* there is no this in this context. There is no object invoking the function, that is what this refers to it refers to the context that it is being called */
+		}
+
+		talkFunction(); //undefined
+
+		</code>
+	</pre>
+
+	<p>This always is in reference to the object that invokes it. So the value of this depends on the context where the function is being CALLED. However we can <b>BIND</b> it to that context by using the function bind as shown below. When we use bind we make a <b>copy</b> of the function, and bind it to the proper context. Where the function was CALLED gives us its CONTEXT</p>
+
+	<pre>
+		<code class='scode'>
+		var dog = {
+		sound: 'woof',
+		talk: function(){
+			console.log(this.sound);
+			}
+		}
+
+		dog.talk() //woof
+
+		var talkFunction = dog.talk;
+		var boundFunction = talkFunction.bind(dog);
+		//so bind forces 'this' keyword to be dog in this case
+		boundFunction(); //woof
+		</code>
+	</pre>
+
+	
+	<p>Think about how we use the word <b>this</b> in the english language. The word this by itself doesn't mean anything without <b>context</b></p>
+
+	<p>Imagine you turn to your friend and say <i>I don't like this</i>, they won't know what your talking about, there is no context. Bind is a way we can be very specficic in what we mean by 'this'</p>
+
+	<p>Here is another example:</p>
+
+	<pre>
+		<code class='scode'>
+
+		//we are using bind to make a COPY of the function
+		//where THIS is BOUND to the right OBJECT
+		//we will also call the copy that is binded correctly
+
+		function talk(){
+			console.log(this.sound)
+		}
+
+		var boromir = {
+			sound: 'One does not simply walk into mordor'
+		}
+
+		var talkBoundToBoromir = talk.bind(boromir);
+		talkBoundToBoromir();
+		</code>
+	</pre>
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.youtube.com/watch?v=GhbhD1HR5vk
+			" target="_blank">Object Creation Part 1</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=PIkA60I0dKU
+			" target="_blank">Object Creation Part 2</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=YkoelSTUy7A
+			" target="_blank">Object Creation Part 3</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/watch?v=Y3zzCY62NYc
+			" target="_blank">Object Creation Part 4</a>
+		</li>
+	</ul>
+	</div>
+
+	<h3>call() and apply()</h3>
+	<p>Cakk attaches / connects a seperate function to an object temporarily as if it was the objects own method. Both call and apply work pretty similarly check the examples below:</p>
+	<pre>
+		<code class='scode'>
+		//call() example 1
+		var obj =  {
+			num: 2
+		}
+
+		var addToThis = function(a){
+			return this.num + a; 
+		};
+
+		addToThis.call(obj, 3);
+		//5 
+		</code>
+	</pre>
+
+	<img src="images/call example.png" alt='call example'>
+
+	<pre>
+		<code class='scode'>
+		//call() example 2
+		var obj =  {
+			num: 2
+		}
+
+		var addToThis = function(a, b, c){
+			return this.num + a + b + c; 
+		};
+
+		addToThis.call(obj, 3, 2, 1);
+		//8
+		</code>
+	</pre>
+
+	<pre>
+		<code class='scode'>
+		//apply() example
+		var obj =  {
+			num: 2
+		}
+
+		var addToThis = function(a, b, c){
+			return this.num + a + b + c; 
+		};
+
+		var arr = [1,2,3];
+		addToThis.apply(obj, arr);
+		//8 
+		</code>
+	</pre>
+
+
+	<h3>Object Prototypes</h3>
+
+
+
+	<h3>Variable Hoisting</h3>
+	<pre>
+		<code class='scode'>
+	var myVar = 'my Value';
+
+	(function(){
+		alert(myVar);
+		//undefined
+
+		var myVar = 'local value';
+		//this is a local variable
+
+		alert(myVar)
+		//'local value'
+	})();
+		</code>
+	</pre>
+
+	<p>Why is the output different for myVar in the above example? Its because variables get hoisted to the top of their scope. Don't let the word <i>hoist</i> confuse you. All it means is behind the scenes if you have a variable declared in a function scope its going to be brought to the very top, <strong>BUT</strong> just the <b>declaration</b> not the <b>initialization</b>. 
+	</p>
+
+	<p><b>Here is whats happening at the top</b></p>
+	<pre>
+		<code class='scode'>
+		var myVar = 'my Value';
+
+		(function(){
+			var myVar; //behind the scenes declaration
+			alert(myVar);
+			//undefined
+
+			var myVar = 'local value'; //it would initialize here
+			//this is a local variable
+
+			alert(myVar)
+			//'local value'
+		})();
+		</code>
+	</pre>
+
+	<p>This is why if you read a book like JS the Good parts it always recommends you declare your variables at the top of a function, this is why. 
+	</p>
+
+	<p>So to reiterate if you have variable declarations scattered throughout your function, get rid of those, and at least declare them at the top of your function</p>
+
+	<b>Functions are also hoisted to the top</b>
+	<pre>
+		<code class='scode'>
+		var myVar = 'my Value';
+
+		(function(){
+			newFunction(); //calling newFunction here before its 
+			//defined
+
+			function newFunction(){
+				alert('hello world');
+			}
+			//function declaration
+		})();
+		</code>
+	</pre>
+
+	<p>Whats happening here is the function is hoisted to the top as well. 
+	</p>
+
+	<h3>Function Scope</h3>
+	<pre>
+		<code class='scode'>
+	function scopeExample(){
+	var name = 'Chris';
+	}
+
+	scopeExample(); //name is destroyed after this line, it only exists
+	//inside the local function
+
+	console.log(name) // undefined, this variable only exists in the functions
+	//local scope. It is CREATED and DESTROYEd everytime the function is executed
+
+		</code>
+	</pre>
+
+
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://code.tutsplus.com/tutorials/javascript-hoisting-explained--net-15092
+			" target="_blank">JS Hoisting</a>
+		</li>
+		<li>
+			<a href="https://qa.moderndeveloper.com/t/how-function-with-closures-allocated-in-memory/1563/4
+			" target="_blank">JS Scopes and Closures</a>
+		</li>
+		<li>
+			<a href="https://www.sitepoint.com/javascript-closures-demystified/
+			" target="_blank">JS Closures Demystified</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Filter, Map, Reduce</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.sitepoint.com/map-reduce-functional-javascript/
+			" target="_blank">Filter, Map, Reduce</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Git Steps</h2>
+	<pre>
+		<code class='scode'>
+			//1. git init (if creating manually)
+			//2. git clone if not
+			//3. add remote 'git remote add origin https://github.com/bluehabit/testrepo'
+			//can verify remote added successfully by using
+			//'git remote -v'
+			//4. check 'git status'
+			//5. 'git add -A' to add all files
+			//6. 'git commit -m' commit the files to be pushed
+			//7. push git push -u origin masster
+		</code>
+	</pre>
+
+	<h2>Recurssive</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.youtube.com/watch?v=Mv9NEXX1VHc
+			" target="_blank">Computerphile: What on earth is recursion?</a>
+		</li>
+	</ul>
+	</div>
+	
+
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.atlassian.com/git/tutorials/making-a-pull-request/how-it-works" target="_blank">Git Tutorial</a>
+		</li>
+		<li>
+			<a href="http://rypress.com/tutorials/git/index" target="_blank">Rypress git Tutorial</a>
+		</li>
+	</ul>
+	</div>	
+
+	<h2>React</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://gumroad.com/l/learn-pure-react
+			" target="_blank">Learn React</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Functional Programming</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://medium.com/@cscalfani/so-you-want-to-be-a-functional-programmer-part-1-1f15e387e536#.rpf2b6xtf
+			" target="_blank">So you Want to be a Functional Programmer Part 1</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Web Design Resources</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://dribbble.com/" target="_blank">dribble.com</a>
+		</li>
+		<li>
+			<a href="http://www.awwwards.com/" target="_blank">awwwards.com</a>
+		</li>
+		<li>
+			<a href="https://www.siteinspire.com/" target="_blank">siteinspire.com</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Finding a Programming Job</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://thefastestwaytolandatechjob.teachable.com/p/thefastestwaytolandatechjob" target="_blank">Josh Kemp Finding a Programming Job Course</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Programming Headhunters</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.toptal.com/
+			" target="_blank">toptal.com | freelance</a>
+		</li>
+		<li>
+			<a href="https://hired.com/
+			" target="_blank">hired.com</a>
+		</li>
+		<li>
+			<a href="https://business.stackoverflow.com/talent#
+			" target="_blank">stackoverflow careers</a>
+		</li>
+		<li>
+			<a href="http://www.indeed.com/prime
+			" target="_blank">indeed prime</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Data Scientist</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://www.k2datascience.com/#!/" target="_blank">K2 Data Science</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>AI</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.youtube.com/channel/UCWN3xxRkmTPmbKwht9FuE5A" target="_blank">Siraj Raval - Machine Learning</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Maker Movement</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.youtube.com/channel/UCtZkss5RBrUWLfrrieOJheg" target="_blank">That Maker Show</a>
+		</li>
+		<li>
+			<a href="https://www.adafruit.com/" target="_blank">Ada Fruit</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Unicode Symbols</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://unicode-table.com/en/sets/hearts-symbols/" target="_blank">Unicode-table.com</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Project Ideas</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://code.tutsplus.com/tutorials/create-an-html5-canvas-tile-swapping-puzzle--active-10747" target="_blank">Image Puzzle</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>You might not need... (series)</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://youmightnotneedjs.com/" target="_blank">You might not need JS</a>
+		</li>
+		<li>
+			<a href="http://youmightnotneedjquery.com/" target="_blank">You might not need jquery</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Interview Prep</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="https://www.interviewcake.com/" target="_blank">Interview Cake</a>
+		</li>
+		<li>
+			<a href="https://outco.io" target="_blank">outco.io</a>
+		</li>
+		<li>
+			<a href="https://tylermcginnis.com/react-interview-questions/" target="_blank">React Interview Questions</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Vanilla JS</h2>
+	<li>
+		<a href="https://plainjs.com/javascript/" target="_blank">plainjs.com</a>
+	</li>
+
+	<h2>Canvass</h2>
+	<div class='resource-list'>
+	<p class='heading-resource-list'>resources</p>
+	<ul>
+		<li>
+			<a href="http://www.w3schools.com/tags/canvas_drawimage.asp" target="_blank">Canvas</a>
+		</li>
+	</ul>
+	</div>
+
+	<h2>Misc</h2>
+	<h3>Blocks</h3>
+	<img class='center-image' src="images/blocks.png" alt='blocks'>
+	
+	<img class='center-image' src="images/blocks1.png" alt='blocks'>
+
+	<img class='center-image' src="images/blocks2.png" alt='blocks'>
+
+	<b>Why doesn't the following code work</b>
+
+	<img class='center-image' src="images/blocks3.png" alt='blocks'>
+
+	<img class='center-image' src="images/blocks4.png" alt='blocks'>
+
+
+
+</div>	<!--end main container -->
 
 <script type="text/javascript" src='snakes.js'></script>
 <script src="highlight.pack.js"></script>

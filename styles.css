@@ -149,4 +149,46 @@ tr {
 img.center-image {
     display: block;
     margin: auto;
+    border: 3px solid #9a9a9a;
+}
+
+img {
+	max-width: 100%;
+/*	display: block;*/
+}
+
+.resource-list {
+	background-color: #91d4ed;
+	padding: 15px;
+	border: 3px dashed white;
+}
+
+.heading-resource-list {
+	font-size: 1.5em;
+	text-transform: uppercase;
+	color: white;
+	opacity: .75;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/*HTML syntax highlighting*/
+
+.html-markup{
+	font-size: 1.25em;
+	color: white;
+	background-color: #272822;
+	padding: 10px;
+}
+
+.image-border {
+	border: 3px solid #272822;
+}
+
+.content-group {
+	border: 2px solid #4d738b;
+	padding: 2px;
 }
