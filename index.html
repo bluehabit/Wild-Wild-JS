@@ -84,10 +84,31 @@ document.addEventListener('click', onPuzzleClick);
 		</code>
 	</pre>
 
-<h2>Callback example</h2>
-<p>Two types of callbacks, <b>synchronous</b> and <b>asynchronous</b></p>
+<h2>Console.dir</h2>
 
-<img src="images/very important.png">
+<p>Lets you see what a type of variable is, and if it is an object will display its properties and methods</p>
+
+<pre>
+	<code class='scode'>
+//console.dir()
+//aka dir()
+
+var dogs = []
+//dir(dogs) -> Array[0]
+
+var luna = {}
+//dir(luna) -> Objects
+
+function printMe(){
+	console.log('hi')
+}
+//dir(printMe) ->function
+
+var meme = true;
+// dir(meme) -> true
+	</code>
+</pre>
+
 
 <h2>Important</h2>
 <p>Check out MDN's <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">big guide</a> on JS here</p>
@@ -152,15 +173,15 @@ document.addEventListener('click', onPuzzleClick);
 	<h3>Object</h3>
 	<pre>
 		<code class='scode'>
-	var animal = 'dog'
-	var sounds = {
-		'pig': 'oink',
-		'cow': 'moo',
-		'dog': 'woof-woof',
-	}
+var animal = 'dog'
+var sounds = {
+	'pig': 'oink',
+	'cow': 'moo',
+	'dog': 'woof-woof',
+}
 
-	var sound = sounds[animal]
-	//'woof-woof'
+var sound = sounds[animal]
+//'woof-woof'
 		</code>
 	</pre>
 	<p>neat trick above, notice for this to work you have to use bracket notation. Dot notation will not work</p>
@@ -169,11 +190,11 @@ document.addEventListener('click', onPuzzleClick);
 
 	<pre>
 		<code class='scode'>
-		var mySquid = 'squid';
-		//mySquid.length = 5;
-		//mySquid[5] = undefined
-		//mySquid[4] = 'd'
-		//mySquid[mySquid.length - 1] = 'd'
+var mySquid = 'squid';
+//mySquid.length = 5;
+//mySquid[5] = undefined
+//mySquid[4] = 'd'
+//mySquid[mySquid.length - 1] = 'd'
 		</code>
 	</pre>
 
@@ -191,9 +212,9 @@ document.addEventListener('click', onPuzzleClick);
 	<h3>Dynamic Typing</h3>
 	<pre>
 		<code class='scode'>
-	//Dynamic Typing
-	var num = 43;
-	num = 'now I am a string';
+//Dynamic Typing
+var num = 43;
+num = 'now I am a string';
 		</code>
 	</pre>
 
@@ -203,18 +224,18 @@ document.addEventListener('click', onPuzzleClick);
 	<p>Can log multiple items to the console at the same time</p>
 	<pre>
 		<code class='scode'>
-	console.log(p1Score, p2Score);
+console.log(p1Score, p2Score);
 		</code>
 	</pre>
 
 	<h3>Initializing Variables</h3>
 	<pre>
 		<code class='scode'>
-	var myDog; 
-	//undefined
+var myDog; 
+//undefined
 
-	var myDog = 'Spot';
-	//'Spot'
+var myDog = 'Spot';
+//'Spot'
 		</code>
 	</pre>
 
@@ -223,25 +244,25 @@ document.addEventListener('click', onPuzzleClick);
 	<b>Not Working</b>
 	<pre>
 		<code class='scode'>
-	var numberArr = [1, 2, 3, 4, 5]; //120
+var numberArr = [1, 2, 3, 4, 5]; //120
 
-	for(var i = 0; i < numberArr.length; i++){
-		var result *= numberArr[i]
-	}
+for(var i = 0; i < numberArr.length; i++){
+	var result *= numberArr[i]
+}
 
-	//returns undefined, result has not been initialized
+//returns undefined, result has not been initialized
 		</code>
 	</pre>
 
 	<b>Working</b>
 	<pre>
 		<code class='scode'>
-	var numberArr = [1, 2, 3, 4, 5]; //120
-	var result  1; //initializing the variable
+var numberArr = [1, 2, 3, 4, 5]; //120
+var result  1; //initializing the variable
 
-	for(var i = 0; i < numberArr.length; i++){
-		var result *= numberArr[i]
-	}
+for(var i = 0; i < numberArr.length; i++){
+	var result *= numberArr[i]
+}
 		</code>
 	</pre>
 
@@ -254,9 +275,9 @@ document.addEventListener('click', onPuzzleClick);
 
 	<pre>
 		<code class='scode'>
-		var myPet = 'Luna';
-		myPet += 'is a green cheek conure';
-		//myPet 'Luna is a green cheek conure'
+var myPet = 'Luna';
+myPet += 'is a green cheek conure';
+//myPet 'Luna is a green cheek conure'
 		</code>
 	</pre>
 
@@ -264,29 +285,29 @@ document.addEventListener('click', onPuzzleClick);
 
 	<pre>
 		<code class='scode'>
-		var num = 123;
-		num = num.toString();
-		//num -> '123'
-		//typeof num -> 'string'
+var num = 123;
+num = num.toString();
+//num -> '123'
+//typeof num -> 'string'
 		</code>
 	</pre>
 
 	<h3>Converting <i>Strings</i> to <i>Numbers</i></h3>
 	<pre>
 		<code class='scode'>
-		var myStr = '123';
-		myStr = Number(myStr);
-		//convertStr = 123;
-		//typeof convertStr = 'number';
+var myStr = '123';
+myStr = Number(myStr);
+//convertStr = 123;
+//typeof convertStr = 'number';
 		</code>
 	</pre>
 
 	<h3>Converting Number to Fixed Float</h3>
 	<pre>
 		<code class='scode'>
-		var myNum = 15.7893
-		var myNum = Number(myNum.toFixed(2));
-		//returns number 15.79
+var myNum = 15.7893
+var myNum = Number(myNum.toFixed(2));
+//returns number 15.79
 		</code>
 	</pre>
 
@@ -295,16 +316,16 @@ document.addEventListener('click', onPuzzleClick);
 
 	<pre>
 		<code class='scode'>
-		var myNum = 5.99
-		myNum += 5.99;
-		//11.98
-		myNum += 5.99;
-		//17.97
-		myNum += 5.99;
-		//23.96
-		myNum += 5.99;
-		//29.950000000000003
-		//more decimal places here than we bargained for
+var myNum = 5.99
+myNum += 5.99;
+//11.98
+myNum += 5.99;
+//17.97
+myNum += 5.99;
+//23.96
+myNum += 5.99;
+//29.950000000000003
+//more decimal places here than we bargained for
 		</code>
 	</pre>
 
@@ -313,29 +334,29 @@ document.addEventListener('click', onPuzzleClick);
 	<h3>Chaining Together Methods and Properties</h3>
 	<pre>
 		<code class='scode'>
-			var wildWest = 'The, wild, wild, west';
-			wildWest.split(',').slice(2);
+var wildWest = 'The, wild, wild, west';
+wildWest.split(',').slice(2);
 		</code>
 	</pre>
 
 
 	<pre>
 		<code class='scode'>
-		document.querySelector("h2, h3").style.backgroundColor = "red";
+document.querySelector("h2, h3").style.backgroundColor = "red";
 		</code>
 	</pre>
 
 	<pre>
 		<code class='scode'>
-			document.querySelector('h1').textContent = 'end of lesson';
+document.querySelector('h1').textContent = 'end of lesson';
 		</code>
 	</pre>
 
 	<pre>
 		<code class='scode'>
-			document.querySelector('ul').addEventListener('click', function(){
+document.querySelector('ul').addEventListener('click', function(){
 
-			});
+});
 		</code>
 	</pre>
 
@@ -351,8 +372,8 @@ document.addEventListener('click', onPuzzleClick);
 	Methods are invoked on their parent. For example:
 	<pre>
 		<code class='scode'>
-			var attr = parent.getAttribute('id');
-			//invoking the getAttribute method on the parent node
+var attr = parent.getAttribute('id');
+//invoking the getAttribute method on the parent node
 		</code>
 	</pre>
 
@@ -370,59 +391,55 @@ document.addEventListener('click', onPuzzleClick);
 	<h3>By Value and By Reference</h3>
 	<pre>
 		<code class='scode'>
-			a  = 3;
-			b = 3;
-			//Every variable is a different location in the computer's memory.  
+a  = 3;
+b = 3;
+//Every variable is a different location in the computer's memory.  
 
-			a === b // true
-			//above is comparing the CONTENTS of the memory locations, not the memory locations themselves. 
+a === b // true
+//above is comparing the CONTENTS of the memory locations, not the memory locations themselves. 
 
-			a = 5;
-			//overwriting the contents at that memory location
-
+a = 5;
+//overwriting the contents at that memory location
 		</code>
 	</pre>
 
 	<p>With Functions</p>
 	<pre>
 		<code class='scode'>
-		var c = 1;
+var c = 1;
 
-		function myFunc(x){
-		  x = 5;
-		  console.log(x); 
-		}
-		 
-		myFunc(c); //-> 5
-		console.log(c) //-> 1 
+function myFunc(x){
+  x = 5;
+  console.log(x); 
+}
+ 
+myFunc(c); //-> 5
+console.log(c) //-> 1 
 
-		//in the above example we are just passing by value,
-		//that is passing the variable c that holds the value of 1
-		//through the function. Inside the function it is making a 
-		//COPY of that value to work with. Inside the function
-		//the value gets changed to 5. 
+//in the above example we are just passing by value,
+//that is passing the variable c that holds the value of 1
+//through the function. Inside the function it is making a 
+//COPY of that value to work with. Inside the function
+//the value gets changed to 5. 
 
-		//outside the function the value of c still equals 1. They exist as different entities, in different worlds. 
-
+//outside the function the value of c still equals 1. They exist as different entities, in different worlds. 
 		</code>
 	</pre>
 
 	<p>With Objects</p>
 	<pre>
 		<code class='scode'>
-		var a = {
-			cost: 1
-		}
+var a = {
+	cost: 1
+}
 
-		var b = {
-			cost: 1
-		}
+var b = {
+	cost: 1
+}
 
-		var c = {
-			cost: 1
-		}
-
-
+var c = {
+	cost: 1
+}
 		</code>
 	</pre>
 
@@ -442,13 +459,13 @@ document.addEventListener('click', onPuzzleClick);
 
 <pre>
 	<code class='scode'>
-		var myName = 'Chris';
-		myName[0] //-> 'C';
-		myName[myName.length - 1] //-> 's'
-		//getting the last character of a string
+var myName = 'Chris';
+myName[0] //-> 'C';
+myName[myName.length - 1] //-> 's'
+//getting the last character of a string
 
-		var lastChar = myName[myName.length - 1];
-		//can even save the last character to a variable if required
+var lastChar = myName[myName.length - 1];
+//can even save the last character to a variable if required
 	</code>
 </pre>
 
@@ -461,9 +478,9 @@ document.addEventListener('click', onPuzzleClick);
 <b>Example 1</b>
 <pre>
 	<code class='scode'>
-		var myName = 'Bill';
-		myName[0] = 'J';
-		console.log(myName); //-> 'Bill'
+var myName = 'Bill';
+myName[0] = 'J';
+console.log(myName); //-> 'Bill'
 	</code>
 </pre>
 
@@ -477,8 +494,8 @@ But you cannot change the individual characters of a <code class='highlight'>str
 
 <pre>
 	<code class='scode'>
-		var myName = 'Chris';
-		//reassigning the string literal 'Chris' to myName
+var myName = 'Chris';
+//reassigning the string literal 'Chris' to myName
 	</code>
 </pre>
 
@@ -489,9 +506,9 @@ But you cannot change the individual characters of a <code class='highlight'>str
 
 <pre>
 	<code class='scode'>
-	var myStr = 'jam';
-	myStr = myStr.replace(myStr[0], 'h');
-	/* "ham" */ 
+var myStr = 'jam';
+myStr = myStr.replace(myStr[0], 'h');
+/* "ham" */ 
 	</code>
 </pre>
 
@@ -503,9 +520,9 @@ But you cannot change the individual characters of a <code class='highlight'>str
 
 <pre>
 	<code class='scode'>
-		var myStr = 'dog';
-		myStr += 'cat';
-		/* 'dogcat' */
+var myStr = 'dog';
+myStr += 'cat';
+/* 'dogcat' */
 	</code>
 </pre>
 
@@ -523,9 +540,9 @@ But you cannot change the individual characters of a <code class='highlight'>str
 
 <pre>
 	<code class='scode'>
-		var myStr = 'dogcat';
-		myStr = myStr.replace(myStr[0], 'j');
-		/* "jogcat" */
+var myStr = 'dogcat';
+myStr = myStr.replace(myStr[0], 'j');
+/* "jogcat" */
 	</code>
 </pre>
 
@@ -566,13 +583,13 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-			var myString = 'hello world banana';
-			myString.slice(0,4);
-			//hell
+var myString = 'hello world banana';
+myString.slice(0,4);
+//hell
 
-			var myString = 'hello world banana';
-			myString.slice(6);
-			//world banana
+var myString = 'hello world banana';
+myString.slice(6);
+//world banana
 		</code>
 	</pre>
 
@@ -582,8 +599,8 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-			var myArr = ['Clint Eastwood', 'Revolver', 'Saloon', 'Spurs'];
-			myArr.slice(0,3)
+var myArr = ['Clint Eastwood', 'Revolver', 'Saloon', 'Spurs'];
+myArr.slice(0,3)
 		</code>
 	</pre>
 
@@ -597,8 +614,8 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-			var myArr = ['Clint Eastwood', 'Revolver', 'Saloon', 'Spurs'];
-			var cloneArr = myArr.slice();
+var myArr = ['Clint Eastwood', 'Revolver', 'Saloon', 'Spurs'];
+var cloneArr = myArr.slice();
 		</code>
 	</pre>
 
@@ -612,13 +629,13 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-			var myString = 'hello world banana';
-			myString.substr(0,4);
-			//hell
+var myString = 'hello world banana';
+myString.substr(0,4);
+//hell
 
-			var myString = 'hello world banana';
-			myString.substr(6);
-			//world banana
+var myString = 'hello world banana';
+myString.substr(6);
+//world banana
 		</code>
 	</pre>
 
@@ -635,9 +652,9 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-			var myString = 'a faintly glimmering candle dances in the window';
-			myString.replace('glimmering', 'flickering');
-			myString //-> "a faintly flickering candle dances in the window""
+var myString = 'a faintly glimmering candle dances in the window';
+myString.replace('glimmering', 'flickering');
+myString //-> "a faintly flickering candle dances in the window""
 		</code>
 	</pre>
 
@@ -648,17 +665,17 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-			var yellMessage = 'i am yelling';
-			console.log(yellMessage.toUpperCase()); 
-			//'I AM YELLLING'
+var yellMessage = 'i am yelling';
+console.log(yellMessage.toUpperCase()); 
+//'I AM YELLLING'
 		</code>
 	</pre>
 
 	<pre>
 		<code class='scode'>
-			var whisperMessage = 'I AM TALKING VERY QUIETLY';
-			console.log(whisperMessage.toUpperCase());
-			//'i am talking very quietly'
+var whisperMessage = 'I AM TALKING VERY QUIETLY';
+console.log(whisperMessage.toUpperCase());
+//'i am talking very quietly'
 		</code>
 	</pre>
 
@@ -669,9 +686,9 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-			var myString = 'Dance of Shadows';
-			myString.charAt(0)
-			//-> 'D';
+var myString = 'Dance of Shadows';
+myString.charAt(0)
+//-> 'D';
 		</code>
 	</pre>
 
@@ -679,11 +696,11 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-			var myString = 'Dance of Shadows';
-			myString[0] === 'D'; 
-			//true
-			myString.charAt(0) === 'D';
-			//true
+var myString = 'Dance of Shadows';
+myString[0] === 'D'; 
+//true
+myString.charAt(0) === 'D';
+//true
 		</code>
 	</pre>
 
@@ -694,8 +711,8 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-			var myVar = 'metal gear solid';
-			myVar = myVar.split(' '); 
+var myVar = 'metal gear solid';
+myVar = myVar.split(' '); 
 		</code>
 	</pre>	
 
@@ -703,8 +720,8 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-			var myVar = 'cabbage, banana, orange';
-			myVar = myVar.split(', ');
+var myVar = 'cabbage, banana, orange';
+myVar = myVar.split(', ');
 		</code>
 	</pre>	
 
@@ -720,7 +737,7 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<b>Creating an array literal</b>
 	<pre>
 		<code class='scode'>
-			var myArr = [];
+var myArr = [];
 		</code>
 	</pre>	
 
@@ -728,14 +745,14 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-			var myArr = new Array('red', 'blue', 'green');
+var myArr = new Array('red', 'blue', 'green');
 		</code>
 	</pre>
 
 	<b>Example Array</b>
 	<pre>
 		<code class='scode'>
-			var myColleagues = ['Sam', 'Chris', 'Lisa'];
+var myColleagues = ['Sam', 'Chris', 'Lisa'];
 		</code>
 	</pre>	
 
@@ -743,46 +760,46 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<b>allows us to change data in place</b>
 	<pre>
 		<code class='scode'>
-			var myColleagues = ['Sam', 'Chris', 'Lisa'];
+var myColleagues = ['Sam', 'Chris', 'Lisa'];
 
-			myColleagues[0] = 'Jon';
-			myColleagues[2] = 'Stephanie';
+myColleagues[0] = 'Jon';
+myColleagues[2] = 'Stephanie';
 
-			console.log(myColleagues);
-			//Jon, Chris, Stephanie
+console.log(myColleagues);
+//Jon, Chris, Stephanie
 		</code>
 	</pre>	
 
 	<h3>MultiDimensional / Nested Arrays</h3>
 	<pre>
 		<code class='scode'>
-			var friendsGroup = [
-				['Harry', 'Ron', 'Hermione'],
-				['Malfoy', 'Crabbe', 'Goyle'],
-				['Mooney', 'Wormtail', 'Prongs']
-			];
+var friendsGroup = [
+	['Harry', 'Ron', 'Hermione'],
+	['Malfoy', 'Crabbe', 'Goyle'],
+	['Mooney', 'Wormtail', 'Prongs']
+];
 
-			friendsGroup[2][0]
-			//'Mooney'
+friendsGroup[2][0]
+//'Mooney'
 		</code>
 	</pre>	
 
 	<pre>
 		<code class='scode'>
-			var ourArray = ['Stimpson', 'j', 'cat'];
-			ourArray.push(['happy', 'joy']);
-			/* "['Stimpson', 'j', 'cat', ['happy', joy]"" */
+var ourArray = ['Stimpson', 'j', 'cat'];
+ourArray.push(['happy', 'joy']);
+/* "['Stimpson', 'j', 'cat', ['happy', joy]"" */
 		</code>
 	</pre>	
 
 	<pre>
 		<code class='scode'> 
-			var myArray = [
-				['John', 23],
-				['Cat', 3]
-			];
+var myArray = [
+	['John', 23],
+	['Cat', 3]
+];
 
-			myArray.push(['dog', 5]);
+myArray.push(['dog', 5]);
 		</code>
 	</pre>	
 
@@ -797,10 +814,10 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-		var result = myArray.filter(function(value, index, array){
-			return array.indexOf(value) === index;
-			//value, index, array are built in here
-		});
+var result = myArray.filter(function(value, index, array){
+	return array.indexOf(value) === index;
+	//value, index, array are built in here
+});
 		</code>
 	</pre>	
 
@@ -814,12 +831,12 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-			var wildWestGuns = ['Peacemaker', 'Colt', 'Revolver', 'Colt']
-			//wildWestGuns.indexOf('Peacemaker') --> 0;
-			//wildWestGuns.indexOf('Colt') --> 1;
+var wildWestGuns = ['Peacemaker', 'Colt', 'Revolver', 'Colt']
+//wildWestGuns.indexOf('Peacemaker') --> 0;
+//wildWestGuns.indexOf('Colt') --> 1;
 
-			//wildWestGuns.indexOf('Peace') --> -1; 
-			//wildwestGuns.indexOf('Revolv') --> -1; 
+//wildWestGuns.indexOf('Peace') --> -1; 
+//wildwestGuns.indexOf('Revolv') --> -1; 
 		</code>
 	</pre>	
 
@@ -835,8 +852,8 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<h3>array.slice</h3>
 	<pre>
 		<code class='scode'>
-		var fruits = ['banana', 'orange', 'lemon', 'apple', 'mango'];
-		var citrus = fruits.slice(0,3);
+var fruits = ['banana', 'orange', 'lemon', 'apple', 'mango'];
+var citrus = fruits.slice(0,3);
 		</code>
 	</pre>
 
@@ -846,33 +863,33 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-		var myNumbers = [1,2,3,4,5,6];
-		var cloneArr = myNumbers.slice();
+var myNumbers = [1,2,3,4,5,6];
+var cloneArr = myNumbers.slice();
 		</code>
 	</pre>
 
 	<pre>
 		<code class='scode'>
-		var array = [1, 2, 3, 'a', 'b', 445, 45];
-		var letters = array.slice(3,5);
-		/* ['a', 'b'] */
+var array = [1, 2, 3, 'a', 'b', 445, 45];
+var letters = array.slice(3,5);
+/* ['a', 'b'] */
 		</code>
 	</pre>
 
 	<h3>array.join</h3>
 	<pre>
 		<code class='scode'>
-		var myArr = ['metal', 'gear', 'solid'];
-		myArr.join('--');
-		//"metal--gear--solid"
+var myArr = ['metal', 'gear', 'solid'];
+myArr.join('--');
+//"metal--gear--solid"
 		</code>
 	</pre>
 
 	<pre>
 		<code class='scode'>
-		var elements = ['wind', 'water', 'earth', 'heart'];
-		elements.join(', ');
-		/* "wind, water, earth, heart" */
+var elements = ['wind', 'water', 'earth', 'heart'];
+elements.join(', ');
+/* "wind, water, earth, heart" */
 		</code>
 	</pre>
 
@@ -885,28 +902,28 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<b>Adding Items</b>
 	<pre>
 		<code class='scode'>
-		var myArr = [
-			'Witch',
-			'Moon',
-			'Monster'
-		];
+var myArr = [
+	'Witch',
+	'Moon',
+	'Monster'
+];
 
-		myArr.splice(0, 0, 'Bat', 'Ghosts', 'Goblins');
-		/* "['Bat', 'Ghosts', 'Goblins', 'Witch', 'Moon', 'Monster']" */
+myArr.splice(0, 0, 'Bat', 'Ghosts', 'Goblins');
+/* "['Bat', 'Ghosts', 'Goblins', 'Witch', 'Moon', 'Monster']" */
 		</code>
 	</pre>
 
 	<b>Removing Items</b>
 	<pre>
 		<code class='scode'>
-		var myArr = [
-			'Witch',
-			'Moon',
-			'Monster'
-		];
+var myArr = [
+	'Witch',
+	'Moon',
+	'Monster'
+];
 
-		myArr.splice(0, 2);
-		/* '[Monster]' */
+myArr.splice(0, 2);
+/* '[Monster]' */
 		</code>
 	</pre>
 	
@@ -914,9 +931,9 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<b>Notice how delete leaves holes</b>
 	<pre>
 		<code class='scode'>
-		var myArr = [1,2,3]
-		delete myArr[0];
-		/* [undefined × 1, 2, 3] */ 
+var myArr = [1,2,3]
+delete myArr[0];
+/* [undefined × 1, 2, 3] */ 
 		</code>
 	</pre>
 
@@ -925,12 +942,12 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<b>Removing Duplicate Values from Arrays</b>
 	<pre>
 		<code class='scode'>
-		var myArray = ['Sam', 'Mark', 'Tim', 'Sam'];
+var myArray = ['Sam', 'Mark', 'Tim', 'Sam'];
 
-		var result = myArray.filter(function(value, index, array){
-			return array.indexOf(value) === index;
-		});
-		//Sam, Mark, Tim
+var result = myArray.filter(function(value, index, array){
+	return array.indexOf(value) === index;
+});
+//Sam, Mark, Tim
 		</code>
 	</pre>
 
@@ -938,16 +955,16 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<p>Use unshift to add to the FRONT of an array</p>
 	<pre>
 		<code class='scode'>
-		var colors = ['red', 'orange', 'yellow'];
-		colors.unshift('blue');
+var colors = ['red', 'orange', 'yellow'];
+colors.unshift('blue');
 		</code>
 	</pre>
 
 	<p>Use shift to remove the FIRST item of an array</p>
 	<pre>
 		<code class='scode'>
-		var colors = ['red', 'orange', 'yellow'];
-		var firstItem = colors.shift();
+var colors = ['red', 'orange', 'yellow'];
+var firstItem = colors.shift();
 		</code>
 	</pre>
 
@@ -956,17 +973,17 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-		var colors = ['red', 'orange', 'yellow'];
-		colors.push('violet');
+var colors = ['red', 'orange', 'yellow'];
+colors.push('violet');
 		</code>
 	</pre>
 
 	<p>Use pop to remove the last item in an array</p>
 	<pre>
 		<code class='scode'>
-		var colors = ['red', 'orange', 'yellow'];
-		var lastItem = colors.pop();
-		//yellow
+var colors = ['red', 'orange', 'yellow'];
+var lastItem = colors.pop();
+//yellow
 		</code>
 	</pre>
 
@@ -975,11 +992,11 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-		var arr1 = ['snow', 'ice'];
-		var arr2 = ['green', 'verdant'];
-		var arr3 = arr1.concat(arr2);
-		console.log(arr3);
-		/* ["snow", "ice", "green", "verdant"] */
+var arr1 = ['snow', 'ice'];
+var arr2 = ['green', 'verdant'];
+var arr3 = arr1.concat(arr2);
+console.log(arr3);
+/* ["snow", "ice", "green", "verdant"] */
 		</code>
 	</pre>	
 
@@ -994,15 +1011,15 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-		var myArr = ['Ghastly', 'Gengar', 'Haunter'];
+var myArr = ['Ghastly', 'Gengar', 'Haunter'];
 
-		//examples
-		// myArr.indexOf('Ghastly');
-		// //0
-		// myArr.indexOf('Haunter');
-		// //2
-		// myArr.indexOf('Pikachu');
-		// //-1
+//examples
+// myArr.indexOf('Ghastly');
+// //0
+// myArr.indexOf('Haunter');
+// //2
+// myArr.indexOf('Pikachu');
+// //-1
 		</code>
 	</pre>	
 
@@ -1011,14 +1028,14 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-		var ages = [3, 10, 8, 18, 28];
+var ages = [3, 10, 8, 18, 28];
 
-		function isAdult(element) {
-		  return element >= 18;
-		}
+function isAdult(element) {
+  return element >= 18;
+}
 
-		ages.find(isAdult);
-		//18 
+ages.find(isAdult);
+//18 
 		</code>
 	</pre>	
 
@@ -1028,61 +1045,61 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<p>Example 1</p>
 	<pre>
 		<code class='scode'>
-		var ages = [3, 10, 8, 18, 28];
+var ages = [3, 10, 8, 18, 28];
 
-		function isAdult(element) {
-		  return element >= 18;
-		}
+function isAdult(element) {
+  return element >= 18;
+}
 
-		ages.findIndex(isAdult);
-		//3
+ages.findIndex(isAdult);
+//3
 		</code>
 	</pre>	
 
 	<p>Example 2</p>
 	<pre>
 		<code class='scode'>
-		var shoppingCart = {
-		items: [
-		{
-			name: 'sushi',
-			color: 'red'
-		},
-		{
-			name: 'turtle',
-			color: 'green'
-		},
-		{
-			name: 'water',
-			color: 'blue'
-		},
-		{
-			name: 'flowers',
-			color: 'purple'
-		}
-		],
-		total_price: 0
-	}
+var shoppingCart = {
+items: [
+{
+	name: 'sushi',
+	color: 'red'
+},
+{
+	name: 'turtle',
+	color: 'green'
+},
+{
+	name: 'water',
+	color: 'blue'
+},
+{
+	name: 'flowers',
+	color: 'purple'
+}
+],
+total_price: 0
+}
 
-	var cartIndex = shoppingCart.items.findIndex( function(x){
-		return x.name === 'water';
-	});
+var cartIndex = shoppingCart.items.findIndex( function(x){
+return x.name === 'water';
+});
 
-	//cartIndex -> 2
+//cartIndex -> 2
 		</code>
 	</pre>
 
 	<p>Example 2</p>
 	<pre>
 		<code class='scode'>
-		var ages = [3, 10, 8, 18, 28];
+var ages = [3, 10, 8, 18, 28];
 
-		function isAdult(element) {
-		  return element >= 18;
-		}
+function isAdult(element) {
+  return element >= 18;
+}
 
-		ages.findIndex(isAdult);
-		//3
+ages.findIndex(isAdult);
+//3
 		</code>
 	</pre>
 
@@ -1095,15 +1112,15 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<p>Again we can do this because objects are mutable</p>
 	<pre>
 		<code class='scode'>
-		var person = {
-			name: 'Chris',
-			age: 29,
-			city: 'Dallas'
-		};
+var person = {
+	name: 'Chris',
+	age: 29,
+	city: 'Dallas'
+};
 
-		//update age
-		person.age = 21;
-		person.city = 'Arlington'
+//update age
+person.age = 21;
+person.city = 'Arlington'
 		</code>
 	</pre
 
@@ -1117,36 +1134,36 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<b>Object Literal</b>
 	<pre>
 		<code class='scode'>
-		var bird = {}
-		bird.name = 'Luna',
-		bird.age = 1,
-		bird.color = 'emerald'
+var bird = {}
+bird.name = 'Luna',
+bird.age = 1,
+bird.color = 'emerald'
 		</code>
 	</pre>
 
 	<b>Object Constructor</b>
 	<pre>
 		<code class='scode'>
-		var bird = {
-			name: 'Luna',
-			age: 1,
-			color: 'emerald'
-		}
+var bird = {
+	name: 'Luna',
+	age: 1,
+	color: 'emerald'
+}
 		</code>
 	</pre>
 
 	<b>Object Constructor Function</b>
 	<pre>
 		<code class='scode'>
-			function Car(make, model, year){
-				this.make = make;
-				this.model = model;
-				this.year = year;
-			}
+function Car(make, model, year){
+	this.make = make;
+	this.model = model;
+	this.year = year;
+}
 
-			var newCar = new Car('DeLorean', 'DMC-12', '1981')
-			//new keyword very important, as it creates a new instance 
-			//of the object
+var newCar = new Car('DeLorean', 'DMC-12', '1981')
+//new keyword very important, as it creates a new instance 
+//of the object
 		</code>
 	</pre>
 
@@ -1160,7 +1177,7 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	
 	<pre>
 		<code class='scode'>
-		var bird = new Object();
+var bird = new Object();
 		</code>
 	</pre>
 
@@ -1168,35 +1185,35 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<p>Notice how the object below holds an array and another object inside of it</p>
 	<pre>
 		<code class='scode'>
-		var junkObject = {
-			age: 57,
-			color: 'purple',
-			isHungry: true
-			friends: ['Sam', 'Chris'],
-			pet: {
-				name: 'Rusty',
-				species: 'Dog',
-				age: 2
-			}
-		}; 
+var junkObject = {
+	age: 57,
+	color: 'purple',
+	isHungry: true
+	friends: ['Sam', 'Chris'],
+	pet: {
+		name: 'Rusty',
+		species: 'Dog',
+		age: 2
+	}
+}; 
 
-		//above has typo somewhere throws error
+//above has typo somewhere throws error
 		</code>
 	</pre>
 
 	<h3>Object Constructor</h3>
 	<pre>
 		<code class='scode'>
-		function person(firstName, lastName, age){
-			this.firstName = firstName;
-			this.lastName = lastName;
-			this.age = age;
-			this.fullName = function(){
-				return this.firstName + ' ' + this.lastName;
-			};
-		}
+function person(firstName, lastName, age){
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.age = age;
+	this.fullName = function(){
+		return this.firstName + ' ' + this.lastName;
+	};
+}
 
-		var chris = new person('Chris', 'Michaels', 29);
+var chris = new person('Chris', 'Michaels', 29);
 		</code>
 	</pre>
 
@@ -1209,21 +1226,21 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<b>Accessing Information</b>
 	<pre>
 		<code class='scode'>
-		var bird = {
-			name: 'luna',
-			color: 'green',
-			age: 1
-		}
+var bird = {
+	name: 'luna',
+	color: 'green',
+	age: 1
+}
 
-		//dot notation
-		bird.name
-		bird.age
-		bird.color
+//dot notation
+bird.name
+bird.age
+bird.color
 
-		//bracket notation
-		bird['name'] //'Luna'
-		bird['age'] //1
-		bird['color'] //'green'
+//bracket notation
+bird['name'] //'Luna'
+bird['age'] //1
+bird['color'] //'green'
 		</code>
 	</pre>
 
@@ -1233,90 +1250,90 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<p>Example</p>
 	<pre>
 		<code class='scode'>
-  var campgrounds = [
+ var campgrounds = [
     {name: 'Salmon Creek', image:''},
     {name: 'Granite Hill', image:''},
     {name: 'Mountain Goats Rest', image:''}
 ]
 
 
-  campgrounds[1]
-  //object {name: 'Granite Hill', image: ''}
+campgrounds[1]
+//object {name: 'Granite Hill', image: ''}
 
 
-  campgrounds[2].name 
-  //'Mountain Goats Rest'
+campgrounds[2].name 
+//'Mountain Goats Rest'
 		</code>
 	</pre>
 
 	<b>Example 1</b>
 	<pre>
 		<code class='scode'>
-	var pokemonMoves = [
-		{
-			attack: 'water gun',
-			defense: 'growl'
-		},
-		{
-			attack: 'ember',
-			defense: 'leer'
-		},
-		{
-			attack: 'burrow',
-			defense: 'acid armor'
-		}
-	];
+var pokemonMoves = [
+	{
+		attack: 'water gun',
+		defense: 'growl'
+	},
+	{
+		attack: 'ember',
+		defense: 'leer'
+	},
+	{
+		attack: 'burrow',
+		defense: 'acid armor'
+	}
+];
 
-	pokemonMoves[0].attack //water gun
-	pokemonMoves[0].defense //growl
-	pokemonMoves[1].defense //leer
+pokemonMoves[0].attack //water gun
+pokemonMoves[0].defense //growl
+pokemonMoves[1].defense //leer
 		</code>
 	</pre>
 
 	<b>Example 2</b>
 	<pre>
 		<code class='scode'>
-		var post = [
-			{
-				title: 'cats are mediocre',
-				author: 'colt',
-				comments: ['Awesome Post', 'Terrible Post']
-			},
-			{
-				title: 'cats are actually awesome',
-				author: 'cat luvr',
-				comments: ['<3', 'Go to hell I hate you']
-			}
+var post = [
+	{
+		title: 'cats are mediocre',
+		author: 'colt',
+		comments: ['Awesome Post', 'Terrible Post']
+	},
+	{
+		title: 'cats are actually awesome',
+		author: 'cat luvr',
+		comments: ['<3', 'Go to hell I hate you']
+	}
 
 
-		];
+];
 
-		post[1].comments[0] //'<3'
-		post[0].comments[1] //'terrible post'
-		post[0].comments // gives you the whole array
-		</code>
+//post[1].comments[0] //'<3'
+//post[0].comments[1] //'terrible post'
+//post[0].comments // gives you the whole array
+</code>
 	</pre>
 
 	<b>Example 3</b>
 	<pre>
 		<code class='scode'>
-			var movies = [
-			{
-				name: 'Alien',
-				hasWatched: true,
-				rating: 5
-			},
-			{
-				name: 'Iron Giant',
-				hasWatched: true,
-				rating: 5
-			},
-			{
-				name: 'Zootopia 2',
-				hasWatched: false,
-				rating: 5
-			}
-		];
+var movies = [
+{
+	name: 'Alien',
+	hasWatched: true,
+	rating: 5
+},
+{
+	name: 'Iron Giant',
+	hasWatched: true,
+	rating: 5
+},
+{
+	name: 'Zootopia 2',
+	hasWatched: false,
+	rating: 5
+}
+];
 		</code>
 	</pre>
 
@@ -1326,35 +1343,35 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 	<pre>
 		<code class='scode'>
 
-		var checkoutCart = {
-		//array of objects
-		items: [
-			{
-				id: 'item1',
-				name: 'California Roll',
-				price: 8.99,
-				quantity: 1,
-				notYetAdded: true
-			},
-			{
-				id: 'item2',
-				name: 'Sushi Roll',
-				price: 5.99,
-				quantity: 1,
-				notYetAdded: true
-			}
-		],
-		total_price: 0
-		}
+var checkoutCart = {
+//array of objects
+items: [
+	{
+		id: 'item1',
+		name: 'California Roll',
+		price: 8.99,
+		quantity: 1,
+		notYetAdded: true
+	},
+	{
+		id: 'item2',
+		name: 'Sushi Roll',
+		price: 5.99,
+		quantity: 1,
+		notYetAdded: true
+	}
+],
+total_price: 0
+}
 
-		//first accessing the checkoutCart object
-		//then opening the items property which contains an array value
-		//inside the array we have items again so we access with dot notation
+//first accessing the checkoutCart object
+//then opening the items property which contains an array value
+//inside the array we have items again so we access with dot notation
 
-		//checkoutCart.items.length 2
-		//checkoutCart.items[1].name Sushi Roll
-		//checkoutCart.items[0].name California Roll
-		//checkoutCart.items[1].price 5.99
+//checkoutCart.items.length 2
+//checkoutCart.items[1].name Sushi Roll
+//checkoutCart.items[0].name California Roll
+//checkoutCart.items[1].price 5.99
 		</code>
 	</pre>
 
@@ -1364,19 +1381,19 @@ The only <code class='highlight'>mutable</code> types in JS are <code class='hig
 
 	<pre>
 		<code class='scode'>
-	var shoppingCart = {
- 		items: [
- 		{
- 			name: 'Sushi',
- 			price: 5.99
- 		},
- 		{
- 			name: 'Rice',
- 			price: 8.99
- 		}
- 	],
- 	total_price: 0
- }
+var shoppingCart = {
+		items: [
+		{
+			name: 'Sushi',
+			price: 5.99
+		},
+		{
+			name: 'Rice',
+			price: 8.99
+		}
+	],
+	total_price: 0
+}
 
 shoppingCart.items.push({name:'Octopus', price: 12.99});
 		</code>
@@ -1387,17 +1404,17 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 
 	<pre>
 		<code class='scode'>
-		var bird = {
-			name: 'Chuck',
-			age: 2,
-			friends: ['Sammy', 'Luna'],
-			song: function(){
-				console.log('tweet tweet tweet');
-			}
-		}
+var bird = {
+	name: 'Chuck',
+	age: 2,
+	friends: ['Sammy', 'Luna'],
+	song: function(){
+		console.log('tweet tweet tweet');
+	}
+}
 
-		bird.song()
-		//tweet tweet tweet
+bird.song()
+//tweet tweet tweet
 		</code>
 	</pre>	
 
@@ -1406,21 +1423,21 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 
 	<pre>
 		<code class='scode'>
-	var dogSpace = {
+var dogSpace = {
 
-	};
+};
 
-	dogSpace.speak = function(){
-		return 'Woof';
-	}
+dogSpace.speak = function(){
+	return 'Woof';
+}
 
-	var catSpace = {
+var catSpace = {
 
-	};
+};
 
-	catSpace.speak = function(){
-		return 'Meow';
-	}
+catSpace.speak = function(){
+	return 'Meow';
+}
 		</code>
 	</pre>
 
@@ -1432,32 +1449,32 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 	<b>Accessing Information</b>
 	<pre>
 		<code class='scode'>
-		var people = {
-			george: {
-				firstName: 'George',
-				age: 28
-			},
-			bob: {
-				firstName: 'Bob',
-				age:32
-			},
-			stan: {
-				firstName: 'Stan',
-				age: 55
-			}
-		};
+var people = {
+	george: {
+		firstName: 'George',
+		age: 28
+	},
+	bob: {
+		firstName: 'Bob',
+		age:32
+	},
+	stan: {
+		firstName: 'Stan',
+		age: 55
+	}
+};
 
-		//dot notation
-		people.george //shows george object
-		people.bob.age //32
+//dot notation
+people.george //shows george object
+people.bob.age //32
 
-		//bracket notation
-		people['george']['firstName'] //'George'
-		people['bob']['age'] //32
+//bracket notation
+people['george']['firstName'] //'George'
+people['bob']['age'] //32
 
-		//mixed notation
-		people.george['firstName'] //'George'
-		people.bob['age'] //32
+//mixed notation
+people.george['firstName'] //'George'
+people.bob['age'] //32
 		</code>
 	</pre>
 	
@@ -1468,24 +1485,24 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 	<h3>For in Loop</h3>
 	<pre>
 		<code class='scode'>
-		var bird = {
-			name: 'luna',
-			age: 1,
-			color: 'emerald'
-		};
+var bird = {
+	name: 'luna',
+	age: 1,
+	color: 'emerald'
+};
 
-		for(var p in bird){
-			console.log(p + '-' + bird[p]);
-		}
+for(var p in bird){
+	console.log(p + '-' + bird[p]);
+}
 
-		//p is the property name
-		//bird[p] is the property value
+//p is the property name
+//bird[p] is the property value
 
 
-		//can also write it as
-		for(var p in bird){
-			console.log(p + '-' + bird.p);
-		}
+//can also write it as
+for(var p in bird){
+	console.log(p + '-' + bird.p);
+}
 		</code>
 	</pre>
 
@@ -1494,142 +1511,141 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 	<b>Example 1</b>
 	<pre>
 		<code class='scode'>
-		var storeCart = {
-		//array of objects
-		items: [
-			{
-				id: "item2",
-				name: "Chicken Fried Rice",
-				price: 8.99,
-				quantity: 1,
-				totalPrice: 8.99,
-				type: "rice"
-			},
-			{
-				id: "item3",
-				name: "Shrimp Roll",
-				price: 5.99,
-				quantity: 1,
-				totalPrice: 5.99,
-				type: "sushi"
-			},
-			{
-				id: "item4",
-				name: "Spicy Tuna Roll",
-				price: 7.50,
-				quantity: 1,
-				totalPrice: 7.50,
-				type: "sushi"
-			}
-		],
-		total_price: 0,
-	};
-
-	for(var p in storeCart.items){
-		console.log(storeCart.items[p].name)
+var storeCart = {
+//array of objects
+items: [
+	{
+		id: "item2",
+		name: "Chicken Fried Rice",
+		price: 8.99,
+		quantity: 1,
+		totalPrice: 8.99,
+		type: "rice"
+	},
+	{
+		id: "item3",
+		name: "Shrimp Roll",
+		price: 5.99,
+		quantity: 1,
+		totalPrice: 5.99,
+		type: "sushi"
+	},
+	{
+		id: "item4",
+		name: "Spicy Tuna Roll",
+		price: 7.50,
+		quantity: 1,
+		totalPrice: 7.50,
+		type: "sushi"
 	}
+],
+total_price: 0,
+};
 
-	//Chicken Fried Rice
-	//Shrimp Roll
-	//Spicy Tuna Roll
+for(var p in storeCart.items){
+console.log(storeCart.items[p].name)
+}
+
+//Chicken Fried Rice
+//Shrimp Roll
+//Spicy Tuna Roll
 		</code>
 	</pre>
 
 	<b>Example 2</b>
 	<pre>
 		<code class='scode'>
-		var storeCart = {
-		items: [
-			{
-				id: "item2",
-				name: "Chicken Fried Rice",
-				price: 8.99,
-				quantity: 1,
-				totalPrice: 8.99,
-				type: "rice"
-			},
-			{
-				id: "item3",
-				name: "Shrimp Roll",
-				price: 5.99,
-				quantity: 1,
-				totalPrice: 5.99,
-				type: "sushi"
-			},
-			{
-				id: "item4",
-				name: "Spicy Tuna Roll",
-				price: 7.50,
-				quantity: 1,
-				totalPrice: 7.50,
-				type: "sushi"
-			}
-		],
-		total_price: 0,
-	};
-
-	for(var p in storeCart.items){
-		if(storeCart.items[p].type === 'sushi'){
-		console.log('found a sushi');
-		}
+var storeCart = {
+items: [
+	{
+		id: "item2",
+		name: "Chicken Fried Rice",
+		price: 8.99,
+		quantity: 1,
+		totalPrice: 8.99,
+		type: "rice"
+	},
+	{
+		id: "item3",
+		name: "Shrimp Roll",
+		price: 5.99,
+		quantity: 1,
+		totalPrice: 5.99,
+		type: "sushi"
+	},
+	{
+		id: "item4",
+		name: "Spicy Tuna Roll",
+		price: 7.50,
+		quantity: 1,
+		totalPrice: 7.50,
+		type: "sushi"
 	}
+],
+total_price: 0,
+};
 
-	//found a sushi
-	//found a sushi
+for(var p in storeCart.items){
+if(storeCart.items[p].type === 'sushi'){
+console.log('found a sushi');
+}
+}
+
+//found a sushi
+//found a sushi
 		</code>
 	</pre>
 
 	<b>Example 3</b>
 	<pre>
 		<code class='scode'>
-		var storeCart = {
-	items: [
-		{
-			id: "item2",
-			name: "Chicken Fried Rice",
-			price: 8.99,
-			quantity: 1,
-			totalPrice: 8.99,
-			type: "rice"
-		},
-		{
-			id: "item3",
-			name: "Shrimp Roll",
-			price: 5.99,
-			quantity: 1,
-			totalPrice: 5.99,
-			type: "sushi"
-		},
-		{
-			id: "item4",
-			name: "Spicy Tuna Roll",
-			price: 7.50,
-			quantity: 1,
-			totalPrice: 7.50,
-			type: "sushi"
-		}
-	],
-	total_price: 0,
-	};
-
-	for(var p in storeCart.items){
-		if(storeCart.items[p].type === 'sushi'){
-			console.log(checkoutCart.items[p].name);
-		}
+	var storeCart = {
+items: [
+	{
+		id: "item2",
+		name: "Chicken Fried Rice",
+		price: 8.99,
+		quantity: 1,
+		totalPrice: 8.99,
+		type: "rice"
+	},
+	{
+		id: "item3",
+		name: "Shrimp Roll",
+		price: 5.99,
+		quantity: 1,
+		totalPrice: 5.99,
+		type: "sushi"
+	},
+	{
+		id: "item4",
+		name: "Spicy Tuna Roll",
+		price: 7.50,
+		quantity: 1,
+		totalPrice: 7.50,
+		type: "sushi"
 	}
+],
+total_price: 0,
+};
 
-	//Shrimp Roll
-	//Spicy Tuna Roll
-
-
-	for(var p in storeCart.items){
-		console.log(storeCart.items[p].price);
+for(var p in storeCart.items){
+	if(storeCart.items[p].type === 'sushi'){
+		console.log(checkoutCart.items[p].name);
 	}
+}
 
-	//8.99
-	//5.99
-	//7.5
+//Shrimp Roll
+//Spicy Tuna Roll
 
+
+for(var p in storeCart.items){
+	console.log(storeCart.items[p].price);
+}
+
+//8.99
+//5.99
+//7.5
 		</code>
 	</pre>
 	
@@ -1637,13 +1653,13 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 	<h3>Removing key:value pairs from an object</h3>
 	<pre>
 		<code class='scode'>
-		var bird = {
-			name: 'luna',
-			age: 1,
-			color: 'emerald'
-		};
+var bird = {
+	name: 'luna',
+	age: 1,
+	color: 'emerald'
+};
 
-		delete bird.color;
+delete bird.color;
 		</code>
 	</pre>
 
@@ -1735,15 +1751,15 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 	<h3>toPrecision() &amp; toFixed()</h3>
 	<pre>
 		<code class='scode'>
-			var num = 2.374;
-			console.log(num.toPrecision());//->"2.374"
-			console.log(num.toPrecision(1));//->"2"
-			console.log(num.toPrecision(2));//->"2.4"
-			console.log(num.toPrecision(5));//->"2.3740"
- 
-			console.log(num.toFixed());//->"2"
-			console.log(num.toFixed(1));//->"2.4"
-			console.log(num.toFixed(4));//->"2.3740"
+var num = 2.374;
+console.log(num.toPrecision());//->"2.374"
+console.log(num.toPrecision(1));//->"2"
+console.log(num.toPrecision(2));//->"2.4"
+console.log(num.toPrecision(5));//->"2.3740"
+
+console.log(num.toFixed());//->"2"
+console.log(num.toFixed(1));//->"2.4"
+console.log(num.toFixed(4));//->"2.3740"
 
 		</code>
 	</pre>	
@@ -1752,9 +1768,9 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 
 	<pre>
 		<code class='scode'>
-			console.log(parseInt("123")); //-> 123
-			console.log(parseFloat("123.2")); //-> 123.2
-			console.log(+"123"); //-> 123
+console.log(parseInt("123")); //-> 123
+console.log(parseFloat("123.2")); //-> 123.2
+console.log(+"123"); //-> 123
 		</code>
 	</pre>
 
@@ -1771,15 +1787,15 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 
 	<pre>
 		<code class='scode'>
-			var x = 0.6;
-			var y = 0.3;
-			var diff = (x + y) - 0.9; //the difference between (x+y) and 0.9
-			var absDiff = Math.abs(diff); // absolute difference
-			//the absolute difference is very small, meaning (x+y) and 0.9 are almost equal
-			
-			if (absDiff < Number.EPSILON){ 
-  				console.log("Inside if");
-			}
+var x = 0.6;
+var y = 0.3;
+var diff = (x + y) - 0.9; //the difference between (x+y) and 0.9
+var absDiff = Math.abs(diff); // absolute difference
+//the absolute difference is very small, meaning (x+y) and 0.9 are almost equal
+
+if (absDiff < Number.EPSILON){ 
+		console.log("Inside if");
+}
 		</code>
 	</pre>
 
@@ -1790,10 +1806,10 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 
 	<pre>
 		<code class='scode'>
-	function pieceDimensions(){
-		puzzle.pieceWidth = Math.floor(puzzle.width / puzzle.difficulty);
-		puzzle.pieceHeight = Math.floor(puzzle.height / puzzle.difficulty);
-	}
+function pieceDimensions(){
+	puzzle.pieceWidth = Math.floor(puzzle.width / puzzle.difficulty);
+	puzzle.pieceHeight = Math.floor(puzzle.height / puzzle.difficulty);
+}
 		</code>
 	</pre>
 
@@ -1804,8 +1820,8 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 
 	<pre>
 		<code class='scode'>
-			var number = Math.floor(Math.random() * 6);
-			console.log(number)
+var number = Math.floor(Math.random() * 6);
+console.log(number)
 		</code>
 	</pre>
 
@@ -1816,8 +1832,8 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 
 	<pre>
 		<code class='scode'>
-			var number = Math.floor(Math.random() * 6) + 1;
-			console.log(number)
+var number = Math.floor(Math.random() * 6) + 1;
+console.log(number)
 		</code>
 	</pre>
 
@@ -1839,23 +1855,23 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 	<b>Example 1</b>
 	<pre>
 		<code class='scode'>
-			var myName = 'Chris';
-			myName[0] === 'C';
-			//true
-			myName[0] === 'K';
-			//false
+var myName = 'Chris';
+myName[0] === 'C';
+//true
+myName[0] === 'K';
+//false
 		</code>
 	</pre>
 
 	<b>Example 2</b>
 	<pre>
 		<code class='scode'>
-		var myArray = ['Sam', 'Mark', 'Tim', 'Sam'];
+var myArray = ['Sam', 'Mark', 'Tim', 'Sam'];
 
-		var result = myArray.filter(function(value, index, array){
-			return array.indexOf(value) === index;
-		});
-		//Sam, Mark, Tim
+var result = myArray.filter(function(value, index, array){
+	return array.indexOf(value) === index;
+});
+//Sam, Mark, Tim
 		</code>
 	</pre>
 
@@ -1864,12 +1880,12 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 	<b>Example 1:</b>
 	<pre>
 		<code class='scode'>
-			var dogName = 'rusty';
-			var catName = 'chad';
+var dogName = 'rusty';
+var catName = 'chad';
 
-			if(dogName !== cat){
-				console.log('These are different animals');
-			}
+if(dogName !== cat){
+	console.log('These are different animals');
+}
 		</code>
 	</pre>
 
@@ -1877,25 +1893,25 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 
 	<pre>
 		<code class='scode'>
-			var age = 23;
+var age = 23;
 
-			if(age % 2 !== 0){
-				console.log('Your age is odd');
-			}
+if(age % 2 !== 0){
+	console.log('Your age is odd');
+}
 		</code>
 	</pre>
 
 	<b>Example 3:</b>
 	<pre>
 		<code class='scode'>
-			var turtle1 = 'sam';
-			var turtle2 = 'sam';
+var turtle1 = 'sam';
+var turtle2 = 'sam';
 
-			if(turtle1 !== turtle2){
-				console.log('these turtles are not the same');
-			} else {
-				console.log(these turtles are the same!);
-			}
+if(turtle1 !== turtle2){
+	console.log('these turtles are not the same');
+} else {
+	console.log(these turtles are the same!);
+}
 		</code>
 	</pre>
 
@@ -1910,57 +1926,57 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 	<b>Example 1:</b>
 	<pre>
 		<code class='scode'>
-			var name = 'chris';
-			var nameCheck = name === 'chris' ? 'yup its chris' : 'no its not chris';
-			console.log(nameCheck);
+var name = 'chris';
+var nameCheck = name === 'chris' ? 'yup its chris' : 'no its not chris';
+console.log(nameCheck);
 		</code>
 	</pre>
 
 	<b>Example 2:</b>
 	<pre>
 		<code class='scode'>
-			var number = 6;
-			var oddEvenCheck = number % 2 === 0 ? 'even' : 'odd';
-			console.log(oddEvenCheck);
+var number = 6;
+var oddEvenCheck = number % 2 === 0 ? 'even' : 'odd';
+console.log(oddEvenCheck);
 		</code>
 	</pre>
 
 	<b>Example 3:</b>
 	<pre>
 		<code class='scode'>
-			var a = 2 === "2" ? "strictly equal" : "not strictly equal";
-			var b = 2 === 2 ? "strictly equal" : "not strictly equal";
-			console.log(a); //->"not strictly equal"
-			console.log(b); //->"strictly equal"
-			console.log(myArr); //-> ['red', 'blue']
+var a = 2 === "2" ? "strictly equal" : "not strictly equal";
+var b = 2 === 2 ? "strictly equal" : "not strictly equal";
+console.log(a); //->"not strictly equal"
+console.log(b); //->"strictly equal"
+console.log(myArr); //-> ['red', 'blue']
 		</code>
 	</pre>
 
 	<b>Example 4:</b>
 	<pre>
 		<code class='scode'>
-			var bird = {
-				name: 'luna',
-				color: 'green',
-				sex: 'female',
-				age: 1
-			};
+var bird = {
+	name: 'luna',
+	color: 'green',
+	sex: 'female',
+	age: 1
+};
 
-			function checkProperty(property, object){
-				return (object.hasOwnProperty(property))? object[property] : false;
-			};
+function checkProperty(property, object){
+	return (object.hasOwnProperty(property))? object[property] : false;
+};
 
-			console.log(checkProperty('dog', bird));
+console.log(checkProperty('dog', bird));
 		</code>
 	</pre>
 
 	<b>Example 5:</b>
 	<pre>
 		<code class='scode'>
-			var a = 'dog';
-			var b = 'dog';
-			!(a === b)
-			//false
+var a = 'dog';
+var b = 'dog';
+!(a === b)
+//false
 		</code>
 	</pre>
 
@@ -1984,9 +2000,9 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 	<p>Because of this we can use falsey values as a catch all. Instead of writing like the code below:</p>
 	<pre>
 		<code class='scode'>
-		if(puzzlePiece === null){
-		//code
-		}
+if(puzzlePiece === null){
+//code
+}
 		</code>
 	</pre>	
 
@@ -2006,26 +2022,26 @@ shoppingCart.items.push({name:'Octopus', price: 12.99});
 	<pre>
 		<code class='scode'>
 function caseInSwitch(val){
-	var answer = '';
-		switch(val){
-			case 1:
-				answer = 'alpha';
-				break;
-			case 2:
-				answer = 'beta';
-				break;
-			case 3:
-				answer = 'gamma';
-				break;	
-			case 4:
-				answer = 'delta';
-				break;	
-			}
-			return answer;
+var answer = '';
+	switch(val){
+		case 1:
+			answer = 'alpha';
+			break;
+		case 2:
+			answer = 'beta';
+			break;
+		case 3:
+			answer = 'gamma';
+			break;	
+		case 4:
+			answer = 'delta';
+			break;	
 		}
+		return answer;
+	}
 
-		caseInSwitch(1);
-		//alpha
+	caseInSwitch(1);
+	//alpha
 		</code>
 	</pre>
 
@@ -2063,34 +2079,34 @@ function switchOfStuff(val){
 
 	<pre>
 		<code class='scode'>
-	var p1Button = document.querySelector('#p1');
-	var p2Button = document.querySelector('#p2');
+var p1Button = document.querySelector('#p1');
+var p2Button = document.querySelector('#p2');
 
-	var p1Display = document.querySelector('#p1Display');
-	var p2Display = document.querySelector('#p2Display');
+var p1Display = document.querySelector('#p1Display');
+var p2Display = document.querySelector('#p2Display');
 
-	var p1Score = 0;
-	var p2Score = 0;
+var p1Score = 0;
+var p2Score = 0;
 
-	var gameOver = false;
-	var winningScore = 5;
+var gameOver = false;
+var winningScore = 5;
 
-	p1Button.addEventListener('click', function(){
-		if(!gameOver){
-		//first if statement
-			p1Score++;
-			if(p1Score === winningScore){
-		//second if statement	
-				console.log('game over');
-			}
-			p1Display.textContent = p1Score;
+p1Button.addEventListener('click', function(){
+	if(!gameOver){
+	//first if statement
+		p1Score++;
+		if(p1Score === winningScore){
+	//second if statement	
+			console.log('game over');
 		}
-	})
+		p1Display.textContent = p1Score;
+	}
+})
 
-	p2Button.addEventListener('click', function(){
-		p2Score++;
-		p2Display.textContent = p2Score;
-	})
+p2Button.addEventListener('click', function(){
+	p2Score++;
+	p2Display.textContent = p2Score;
+})
 		</code>
 	</pre>
 
@@ -2099,11 +2115,11 @@ function switchOfStuff(val){
 	<b>Example 1</b>
 	<pre>
 		<code class='scode'>
-		if(firstChunk || lastChunk === ''){
-			stringCheck = false;
-		} else {
-			stringCheck = true;
-		}
+if(firstChunk || lastChunk === ''){
+	stringCheck = false;
+} else {
+	stringCheck = true;
+}
 		</code>
 	</pre>	
 
@@ -2114,11 +2130,11 @@ function switchOfStuff(val){
 	<b>Example 2</b>
 	<pre>
 		<code class='scode'>
-		if(firstChunk === '' || lastChunk === ''){
-			stringCheck = false;
-		} else {
-			stringCheck = true;
-		}
+if(firstChunk === '' || lastChunk === ''){
+	stringCheck = false;
+} else {
+	stringCheck = true;
+}
 		</code>
 	</pre>
 
@@ -2127,14 +2143,14 @@ function switchOfStuff(val){
 	<h3>Can route two return vales without using else</h3>
 	<pre>
 		<code class='scode'>
-	function testLogical(val){
-		if(val > 20 || val < 10){
-		  return 'outside';
-		}
-		  return 'inside'
+function testLogical(val){
+	if(val > 20 || val < 10){
+	  return 'outside';
 	}
+	  return 'inside'
+}
 
-	testLogical(15);
+testLogical(15);
 		</code>
 	</pre>
 
@@ -2145,13 +2161,13 @@ function switchOfStuff(val){
 
 	<pre>
 		<code class='scode'>
-		var str = 'hello';
-		var count = 0;
+var str = 'hello';
+var count = 0;
 
-		while(count < str.length){
-			console.log(str[count]);
-			count++;
-		};
+while(count < str.length){
+	console.log(str[count]);
+	count++;
+};
 		</code>
 	</pre>	
 
@@ -2159,14 +2175,14 @@ function switchOfStuff(val){
 
 	<pre>
 		<code class='scode'>
-			var num = 1;
+var num = 1;
 
-			while(num <= 20){
-				if(num % 4 === 0){
-					console.log(num);
-				}
-				num++;
-			}
+while(num <= 20){
+	if(num % 4 === 0){
+		console.log(num);
+	}
+	num++;
+}
 		</code>
 	</pre>
 
@@ -2175,25 +2191,25 @@ function switchOfStuff(val){
 	<p>Example using for loops to get the array index number</p>
 	<pre>
 		<code class='scode'>
-		var myArr = ['Sam', 'Jessie', 'Jill'];
+var myArr = ['Sam', 'Jessie', 'Jill'];
 
-		for(var i = 0; i < myArr.length; i++){
-			console.log(myArr[i] + ' is at index ' + i);
-		}
+for(var i = 0; i < myArr.length; i++){
+	console.log(myArr[i] + ' is at index ' + i);
+}
 
-		//Sam is at index 0
-		//Jessie is at index 1
-		//Jill is at index 2
+//Sam is at index 0
+//Jessie is at index 1
+//Jill is at index 2
 		</code>
 	</pre>
 
 	<pre>
 		<code class='scode'>
-		var colors = ['red', 'orange', 'yellow', 'green'];
+var colors = ['red', 'orange', 'yellow', 'green'];
 
-		for(var i = 0; i < colors.length; i++){
-			console.log(colors[i]);
-		}
+for(var i = 0; i < colors.length; i++){
+	console.log(colors[i]);
+}
 		</code>
 	</pre>
 
@@ -2218,11 +2234,11 @@ function switchOfStuff(val){
 
 	<pre>
 		<code class='scode'>
-			var colors = ['red', 'orange', 'yellow', 'green'];
+var colors = ['red', 'orange', 'yellow', 'green'];
 
-			colors.forEach(function(colorName){
-				console.log(colorName);
-			});
+colors.forEach(function(colorName){
+	console.log(colorName);
+});
 		</code>
 	</pre>
 
@@ -2242,12 +2258,12 @@ function switchOfStuff(val){
 	<p>JS - this <b>doesn't work</b></p>
 	<pre>
 		<code class='scode'>
-		//this doesn't work
-		var listItems = document.getElementById('myDiv').children;
+//this doesn't work
+var listItems = document.getElementById('myDiv').children;
 
-		listItems.forEach(function (item) {
-		    console.log(item); 
-		});
+listItems.forEach(function (item) {
+    console.log(item); 
+});
 		</code>
 	</pre>
 
@@ -2256,13 +2272,13 @@ function switchOfStuff(val){
 
 	<pre>
 		<code class='scode'>
-		var listItems = document.getElementById('myDiv').children;
+var listItems = document.getElementById('myDiv').children;
 
-		Array.prototype.forEach.call(listItems, function(item) { 
-		    console.log(item.innerText);
-		});
+Array.prototype.forEach.call(listItems, function(item) { 
+    console.log(item.innerText);
+});
 
-		//Ghastly, Haunter, Gengar
+//Ghastly, Haunter, Gengar
 		</code>
 	</pre>
 
@@ -2270,13 +2286,13 @@ function switchOfStuff(val){
 
 	<pre>
 		<code class='scode'>
-	var listItems = document.getElementById('myDiv').children;
+var listItems = document.getElementById('myDiv').children;
 
-	listItems = Array.prototype.slice.call(listItems);
+listItems = Array.prototype.slice.call(listItems);
 
-	listItems.forEach(function (item) {
-	        console.log(item); // 
-    });	
+listItems.forEach(function (item) {
+    console.log(item); // 
+});	
 		</code>
 	</pre>
 
@@ -2286,20 +2302,20 @@ function switchOfStuff(val){
 
 	<pre>
 		<code class='scode'>
-		//declare a function first:
-		function sayHello(){
-			console.log('Hello World!');
-		}
+//declare a function first:
+function sayHello(){
+	console.log('Hello World!');
+}
 		</code>
 	</pre>
 
 	<p>Then call it</p>
 	<pre>
 		<code class='scode'>
-		sayHello();
-		sayHello();
-		sayHello();
-		sayHello();
+sayHello();
+sayHello();
+sayHello();
+sayHello();
 		</code>
 	</pre>
 
@@ -2317,18 +2333,18 @@ function switchOfStuff(val){
 	<p>Example1:</p>
 	<pre>
 		<code class='scode'>
-	(function (window){
-	//code to run 
-	})(window);
+(function (window){
+//code to run 
+})(window);
 		</code>
 	</pre>
 
 	<p>Example2:</p>
 	<pre>
 		<code class='scode'>
-	window.onload = function(){
-	//code to run
-	}
+window.onload = function(){
+//code to run
+}
 		</code>
 	</pre>
 
@@ -2336,49 +2352,48 @@ function switchOfStuff(val){
 	<h3>Types of Functions</h3>
 	<pre>
 		<code class='scode'>
-		//function
-		function printMe(message){
-			console.log(message);
-		}
+//function
+function printMe(message){
+	console.log(message);
+}
 
-		printMe('hello there!');
+printMe('hello there!');
 
-		//function expression
-		var addArray = function(){
-			//
-		}
+//function expression
+var addArray = function(){
+	//
+}
 
-		//Anonymous function
-		(function(){
-			console.log('Anonymous Function');
-		});
+//Anonymous function
+(function(){
+	console.log('Anonymous Function');
+});
 
-		//Anonymous function 
-		var p = (function(){
-			console.log('Anonymous Function Saved to a Variable');
-		});
+//Anonymous function 
+var p = (function(){
+	console.log('Anonymous Function Saved to a Variable');
+});
 
-		p();
+p();
 
-		//Anonymous Self Invoking function
-		(function(){
-			console.log('Anonymous Function');
-		})();
-
+//Anonymous Self Invoking function
+(function(){
+	console.log('Anonymous Function');
+})();
 		</code>
 	</pre>
 
 	<h3>No Formatting</h3>
 	<pre>
 		<code class='scode'>
-		//Normal function
-		function printMe(message){console.log(message);}
+//Normal function
+function printMe(message){console.log(message);}
 
-		//Anonymous function
-		(function(){console.log('hello';)});
+//Anonymous function
+(function(){console.log('hello';)});
 
-		//Anonymous self invoking function
-		(function(){console.log('hello');})();
+//Anonymous self invoking function
+(function(){console.log('hello');})();
 		</code>
 	</pre>
 
@@ -2389,15 +2404,15 @@ function switchOfStuff(val){
 
 	<pre>
 		<code class='scode'>
-		//function declaration / defining a function
-		function capitalize(str) {
-			return str.charAt(0).toUpperCase() + str.slice(1);
-		}
+//function declaration / defining a function
+function capitalize(str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
-		//function expression
-		var capitalize = function(str){
-			return str.charAt(0).toUpperCase() + str.slice(1);
-		}
+//function expression
+var capitalize = function(str){
+	return str.charAt(0).toUpperCase() + str.slice(1);
+}
 		</code>
 	</pre>
 
@@ -2408,31 +2423,31 @@ function switchOfStuff(val){
 
 	<pre>
 		<code class='scode'>
-		function square(num){
-		console.log(num * num);
-		}
-		//num is a parameter
+function square(num){
+console.log(num * num);
+}
+//num is a parameter
 		</code>
 	</pre>
 
 	<p>Now when we call square we need to pass in a value</p>
 	<pre>
 		<code class='scode'>
-		square(10); //prints 100
-		square(3); //prints 9
-		square(4); //prints 16
+square(10); //prints 100
+square(3); //prints 9
+square(4); //prints 16
 		</code>
 	</pre>
 
 	<p>Can also store a function call and its parameter inside a variable</p>
 	<pre>
 		<code class='scode'>
-		function square(num) {
-			return num * num;
-		};
+function square(num) {
+	return num * num;
+};
 
-		var storage = square(4);
-		//16
+var storage = square(4);
+//16
 		</code>
 	</pre>
 
@@ -2441,25 +2456,73 @@ function switchOfStuff(val){
 
 	<pre>
 		<code class='scode'>
-		var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
-			var isEvenNumbers = numbers.filter(function(pinkDinosaur){
-			if(pinkDinosaur % 2 === 0){
-				return pinkDinosaur;
-			}
-		});
+	var isEvenNumbers = numbers.filter(function(pinkDinosaur){
+	if(pinkDinosaur % 2 === 0){
+		return pinkDinosaur;
+	}
+});
 
-		console.log(isEvenNumbers);
+console.log(isEvenNumbers);
 		</code>
 	</pre>
 
+	<h2>Callback example</h2>
+	<p>A callback function is simply a function that gets passed through another function as a parameter, and gets called a later point in time</p>
+
+	<p>Two types of callbacks, <b>synchronous</b> and <b>asynchronous</b></p>
+
+	<p>Callbacks always use this pattern, <b>define</b> the function, then <b>call</b> it. Thats it if its an inline anonymous function. If its a named function, you have one additional step which is to define the named function as well</p>
+
+	<img src="images/example12.png">
+
+	<img src="images/example10.png">
+
+	<img src="images/callback-function-pattern.png">
+
+	<img src="images/callback-function-pattern2.png">
+
+	<img src="images/very important.png">
+
+	<img src="images/example.png">
+
+	<img src="images/example2.png">
+
+	<img src="images/example3.png">
+
+	<img src="images/example4.png">
+
+	<img src="images/example5.png">
+
+	<img src="images/example7.png">
+
+	<p>callback() is what is calling the function, without the paranetehsis you are just returning function definition as shown in the example above</p>
+
+	<img src="images/example8.png">
+
+	<p>same thing here in this example</p>
+
+	<img src="images/example6.png">
+
+	<img src="images/parameter names.png">
+
 	<h2>Callback Functions AKA Higher Order Functions</h2>
+
+	<p>Callback functions are part of the functional programming paradigm, and callback functions themselves are one of the largest corner stones of functional programming</p>
 
 	<p>
 	Callbacks are very important because it allows us to use <b>closures</b> to access variables that would have normally been destroyed. It is very important to understand in javascript functions are just values you can pass around. 
 	</p>
 
 	<p>Remember local variables inside of a function, only exist within that functions scope. They are <b>created and destroyed</b> when that function executes. Callbacks let us preserve these variables to be later used inside other functions!</p>
+
+	<p>Anytime you see an inline anonymous function, thats a clue right away that should alert you that its a callback function</p>
+
+	<p>Note, callback functions are not executed immediately, they are 'called back'(hence the name) at a specified point inside the higher order functions body.</p>
+
+	<b>Callback functions are closures</b>
+	<p>When we pass a callback function as an argument to another function, the callback is exectued at some point inside the containing functions body as if the callback were defined in the containing function. This means callbacks are closures. Closures have access to the containing functions scope, so the callback function can access the containing functions variables, and even variables from the global scope</p>
 
 	<div class='resource-list'>
 	<p class='heading-resource-list'>resources</p>
@@ -2483,37 +2546,37 @@ function switchOfStuff(val){
 
 	<pre>
 		<code class='scode'>
-		function sing(){
-			console.log('twinkle twinkle...');
-			console.log('little star');
-		}
+function sing(){
+	console.log('twinkle twinkle...');
+	console.log('little star');
+}
 
-		setInterval(sing, 1000);
+setInterval(sing, 1000);
 		</code>
 	</pre>
 
 	<b>Example 2: Anonymous Callback Function</b>
 	<pre>
 		<code class='scode'>
-		setInterval(function(){
-		console.log('twinkle twinkle...');
-		console.log('little star');
-		}, 1000);
+setInterval(function(){
+console.log('twinkle twinkle...');
+console.log('little star');
+}, 1000);
 		</code>
 	</pre>
 
 	<b>Example 3</b>
 	<pre>
 		<code class='scode'>
-		//define function
-		function myFunc(printCallback){
-			printCallback();
-		}
+//define function
+function myFunc(printCallback){
+	printCallback();
+}
 
-		//call higher order function
-		myFunc(function(){
-			console.log('Yo...');
-		});
+//call higher order function
+myFunc(function(){
+	console.log('Yo...');
+});
 		</code>
 	</pre>
 
@@ -2524,17 +2587,17 @@ function switchOfStuff(val){
 
 	<pre>
 		<code class='scode'>
-	function getFullName(firstName, lastName, callback){
-		var city = 'Arlington';
-		console.log('Hello there ' + firstName + ' ' + lastName);
-		callback(lastName, city);
-	}
-		
-	getFullName('Chris', 'Feltus', function(ln, city){
-		console.log('Mr. ' + ln + ' you live in the city of ' + city);
-	});
+function getFullName(firstName, lastName, callback){
+	var city = 'Arlington';
+	console.log('Hello there ' + firstName + ' ' + lastName);
+	callback(lastName, city);
+}
+	
+getFullName('Chris', 'Feltus', function(ln, city){
+	console.log('Mr. ' + ln + ' you live in the city of ' + city);
+});
 
-	//callback(lastName, city) a closure, gets back the lastName parameter and city variable from its parent function
+//callback(lastName, city) a closure, gets back the lastName parameter and city variable from its parent function
 		</code>
 	</pre>
 
@@ -2544,32 +2607,32 @@ function switchOfStuff(val){
 	<p>Using <b>ITEM</b> for parameter name</p>
 	<pre>
 		<code class='scode'>
-	//define function
-	function fullName(firstName, lastName, callback){
-		console.log('Hello ' + firstName + ' ' + lastName);
-		callback(lastName);
-	}
+//define function
+function fullName(firstName, lastName, callback){
+	console.log('Hello ' + firstName + ' ' + lastName);
+	callback(lastName);
+}
 
-	//call higher order function
-	fullName('Chris', 'Feltus', function(item){
-		console.log('Mr.' + item + ' how are you today?');
-	});
+//call higher order function
+fullName('Chris', 'Feltus', function(item){
+	console.log('Mr.' + item + ' how are you today?');
+});
 		</code>
 	</pre>
 
 	<p>Using <b>pinkDinosaur</b> for parameter name, again arbitrary</p>
 	<pre>
 		<code class='scode'>
-	//define function
-	function fullName(firstName, lastName, callback){
-		console.log('Hello ' + firstName + ' ' + lastName);
-		callback(lastName);
-	}
+//define function
+function fullName(firstName, lastName, callback){
+	console.log('Hello ' + firstName + ' ' + lastName);
+	callback(lastName);
+}
 
-	//call higher order function
-	fullName('Chris', 'Feltus', function(pinkDinosaur){
-		console.log('Mr.' + pinkDinosaur + ' how are you today?');
-	});
+//call higher order function
+fullName('Chris', 'Feltus', function(pinkDinosaur){
+	console.log('Mr.' + pinkDinosaur + ' how are you today?');
+});
 		</code>
 	</pre>
 
@@ -2577,322 +2640,362 @@ function switchOfStuff(val){
 	
 	<pre>
 		<code class='scode'>
-	/////////////////
-	//////  Call Backs
-	/////////////////  
-	//It’s named “callback” because at some point in time 
-	//it is “called back” by the higher-order function.
+//Function Declaration, callback
+function toeJam(callback){
+	callback();
+}
 
-	function mySandwich(param1, param2, callback) {
-	   	alert('Started eating my sandwich. It has: ' + param1 + ', ' + param2);
-	    if (callback) {
-	        callback();
-	    }
-	}
+//Higher Order Function, anonymous inline function
+toeJam(function(){
+	console.log('Yo!')
+});
+		</code>
+	</pre>
 
-mySandwich('ham', 'cheese');
+	<pre>
+		<code class='scode'>
+//Function Declaration, higher order function
+function toeJam(callback){
+	callback();
+}
 
-	//Example 1: Vanilla Callback
-	function toeJam(callback){
-		callback();
-	}
+//Function Expression, callback
+var message = function(){
+	console.log('funky...');
+}
 
-	toeJam(function(){
-		console.log('Yo!')
-	});
-
-	//Example 1.5: Vanilla Callback
-	//define function
-	function toeJam(callback){
-		callback();
-	}
-
-	var message = function(){
-		console.log('funky...');
-	}
-
-	toeJam(message);
-
-	//Example 1.7
-	//define function
-	function toeJam(callback){
-		callback();
-	}
-
-	//named callback
-	function yo(msg){
-		console.log('yo!');
-	}
-
-	toeJam(yo);
+toeJam(message);
+//'funky...'
+		</code>
+	</pre>
 
 
-	//Example 2: Callback Closure 
-	function setLocation(city, callback){
-		var country = 'France';
-		callback(country);
-		console.log('You are in the city of ' + city);
-	}
+	<pre>
+		<code class='scode'>
+//function declaration, higher order function
+function toeJam(callback){
+	callback();
+}
 
-	var greeting = function(country){
-		console.log('You are in the country of ' + country);
+//function declaration, callback
+function yo(msg){
+	console.log('yo!');
+}
+
+toeJam(yo);
+		</code>
+	</pre>
+
+	<pre>
+		<code class='scode'>
+
+//function declaration, higher order function
+function setLocation(city, callback){
+	var country = 'France';
+	callback(country);
+	console.log('You are in the city of ' + city);
+}
+
+//function expression, callback
+var greeting = function(country){
+	console.log('You are in the country of ' + country);
+};
+
+setLocation('paris', greeting);
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+
+//higher order function, function declaration
+function fullName(firstName, lastName, callback){
+	console.log('My name is ' + firstName + ' ' + lastName);
+	callback(lastName);
+}
+
+//callback function, function expression
+var greeting = function(ln){
+	console.log('Welcome Mr. ' + ln);
+};
+
+
+fullName('Jackie', 'Chan', greeting);
+	</code>
+	</pre>
+
+
+	<pre>
+	<code class='scode'>
+//higher order function, function declaration
+function fullName(firstName, lastName, callback){
+	console.log('My name is ' + firstName + ' ' + lastName);
+	callback(firstName, lastName);
+}
+
+//callback, function expression
+var greeting = function(fn, ln){
+	console.log('Welcome Mr. ' + ln + ' your first name is ' + fn);
+};
+
+
+fullName('Jackie', 'Chan', greeting);
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+//higher order function, function declaration
+function fullName(firstName, lastName, callback){
+	console.log('My full name is ' + firstName + ' ' + lastName);
+	callback(firstName);
+}
+
+//callback, function declaration
+function greet(fn){
+	console.log('Hey ' + fn + ' how are you today'); 
+}
+
+fullName('Chris',  'Feltus', greet);
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+//higher order function, function declaration
+function fullName(firstName, lastName, callback){
+  console.log("My name is " + firstName + " " + lastName);
+  callback(lastName);
+}
+
+//calling function, inline anonymous function
+fullName("Jackie", "Chan", function(ln){
+	console.log('Welcome Mr. ' + ln);
+});
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+//higher order function, function declaration
+function setLocation(city, callback){
+	var country = 'France';
+	callback(country);
+	console.log('You are in the city of ' + city);
+}
+
+//callback, function expression
+var greeting = function(country){
+	console.log('You are in the country of ' + country);
+};
+
+setLocation('paris', greeting);
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+//higher order function, function declaration
+function publish(item, author, callback){
+	console.log(item);
+	var date = new Date();
+
+	callback(author, date);
+}
+
+//callback, function declation
+function textingFormat(author, time){
+	var sendTime = time.toLocaleTimeString();
+	//takes date = new Date() 
+	//and converts it to the format "2:29:38 PM"
+	console.log('Sent from ' + author + ' at ' + sendTime);
+}
+
+//callback, function declaration
+function articleFormat(author, date){
+	var pubDate = date.toDateString();
+	//takes date = new Date() 
+	//and converts it to this format "Tue Nov 22 2016"
+	console.log('Written by ' + author);
+	console.log('Published on ' + pubDate);
+}
+
+publish("10 Tips for JavaScript Developers", "Jane Doe", articleFormat);
+publish("How are you Jane?", " From Monique", textingFormat); 
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+//higher order function, function declaration
+function setLocation(city) {
+  var country = "France"; 
+
+//callback, function declaration
+function printLocation() {       
+console.log("You are in " + city + ", " + country);  
+}
+
+  printLocation();
+}
+
+setLocation ("Paris");  // output: You are in Paris, France
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+//Part2: Inner functions can refer to variables defined in
+// outer functions even after the latter have returned.
+
+function setLocation(city) {
+  var country = "France"; 
+
+  function printLocation() {       
+    console.log("You are in " + city + ", " + country);  
+  }
+
+  return printLocation;
+}
+
+var currentLocation = setLocation ("Paris");   
+
+currentLocation();   // output: You are in Paris, France
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+//Part3:  Inner functions store their 
+// outer function’s variables by reference, not by value.
+
+function cityLocation() {
+  var city = "Paris";
+
+  return {
+    get: function() { console.log(city); },  
+    set: function(newCity) { city = newCity; }
+  };
+}
+
+var myLocation = cityLocation();
+
+myLocation.get();           // output: Paris
+myLocation.set('Sydney');
+myLocation.get();           // output: Sydney
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+function getFullName(firstName, lastName, callback){
+	var city = 'Seattle';
+	console.log('Hello there ' + firstName + ' ' + lastName);
+	callback(lastName, city);
+}
+
+getFullName('Chris', 'Feltus', function(ln, city){
+	console.log('Mr.' + ln + ' you live in the city of ' + city);
+});
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+var friends = ['Mike', 'Stacey', 'Andy', 'Rick'];
+
+friends.forEach(function(eachName, index){
+console.log(index + 1 + '. ' + eachName);
+});
+
+//1. Mike
+//2. Stacey
+//3. Andy
+//4. Rick
+
+////
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+function makeAdjectifier(adjective){
+	return function(string){
+		return adjective + '' + string;
 	};
-
-	setLocation('paris', greeting);
-
-
-
-	//Example 3: Callback - with existing function 
-	//define our function
-	function fullName(firstName, lastName, callback){
-		console.log('My name is ' + firstName + ' ' + lastName);
-		callback(lastName);
-	}
-
-	//passing through greeting variable thats a function
-	var greeting = function(ln){
-		console.log('Welcome Mr. ' + ln);
-	};
-
-
-	fullName('Jackie', 'Chan', greeting);
-
-
-	//Example 3.5: Callback - with existing function
-	//define our function
-	function fullName(firstName, lastName, callback){
-		console.log('My name is ' + firstName + ' ' + lastName);
-		callback(firstName, lastName);
-	}
-
-	//passing through greeting variable thats a function
-	var greeting = function(fn, ln){
-		console.log('Welcome Mr. ' + ln + ' your first name is ' + fn);
-	};
-
-
-	fullName('Jackie', 'Chan', greeting);
-
-	//Example 3.7 Don't have to use a function saved to a variable either
-	//see greet function
-
-	function fullName(firstName, lastName, callback){
-		console.log('My full name is ' + firstName + ' ' + lastName);
-		callback(firstName);
-	}
-
-	function greet(fn){
-		console.log('Hey ' + fn + ' how are you today'); 
-	}
-
-	fullName('Chris',  'Feltus', greet);
-
-	//Example 4: Callback - with anonymous function
-	function fullName(firstName, lastName, callback){
-	  console.log("My name is " + firstName + " " + lastName);
-	  callback(lastName);
-	}
-
-	fullName("Jackie", "Chan", function(ln){
-		console.log('Welcome Mr. ' + ln);
-	});
-
-
-	//Example 5: Function Closures 
-	function setLocation(city, callback){
-		var country = 'France';
-		callback(country);
-		console.log('You are in the city of ' + city);
-	}
-
-	var greeting = function(country){
-		console.log('You are in the country of ' + country);
-	};
-
-	setLocation('paris', greeting);
-
-
-	//Example 6: Compartmentalizing code with multiple callbacks
-
-	//define function
-	function publish(item, author, callback){
-		console.log(item);
-		var date = new Date();
-
-		callback(author, date);
-	}
-
-	//callbacks
-	function textingFormat(author, time){
-		var sendTime = time.toLocaleTimeString();
-		//takes date = new Date() 
-		//and converts it to the format "2:29:38 PM"
-		console.log('Sent from ' + author + ' at ' + sendTime);
-	}
-
-	function articleFormat(author, date){
-		var pubDate = date.toDateString();
-		//takes date = new Date() 
-		//and converts it to this format "Tue Nov 22 2016"
-		console.log('Written by ' + author);
-		console.log('Published on ' + pubDate);
-	}
-
-	publish("10 Tips for JavaScript Developers", "Jane Doe", articleFormat);
-	publish("How are you Jane?", " From Monique", textingFormat); 
-
-
-	/////////////////
-	//////  Closures
-	/////////////////  
-	//Part 1: You can refer to variables defined outside 
-	//of the current function.
-
-	function setLocation(city) {
-	  var country = "France"; 
-
-	  function printLocation() {       
-	    console.log("You are in " + city + ", " + country);  
-	  }
-
-	  printLocation();
-	}
-
-	setLocation ("Paris");  // output: You are in Paris, France
-
-
-	//Part2: Inner functions can refer to variables defined in
-	// outer functions even after the latter have returned.
-
-	function setLocation(city) {
-	  var country = "France"; 
-
-	  function printLocation() {       
-	    console.log("You are in " + city + ", " + country);  
-	  }
-
-	  return printLocation;
-	}
-
-	var currentLocation = setLocation ("Paris");   
-
-	currentLocation();   // output: You are in Paris, France
-
-
-	//Part3:  Inner functions store their 
-	// outer function’s variables by reference, not by value.
-
-	function cityLocation() {
-	  var city = "Paris";
-
-	  return {
-	    get: function() { console.log(city); },  
-	    set: function(newCity) { city = newCity; }
-	  };
-	}
-
-	var myLocation = cityLocation();
-
-	myLocation.get();           // output: Paris
-	myLocation.set('Sydney');
-	myLocation.get();           // output: Sydney
-
-
-	//////
-
-	function getFullName(firstName, lastName, callback){
-		var city = 'Seattle';
-		console.log('Hello there ' + firstName + ' ' + lastName);
-		callback(lastName, city);
-	}
-
-	getFullName('Chris', 'Feltus', function(ln, city){
-		console.log('Mr.' + ln + ' you live in the city of ' + city);
-	});
-
-	////
-
-	var friends = ['Mike', 'Stacey', 'Andy', 'Rick'];
-
-	friends.forEach(function(eachName, index){
-	console.log(index + 1 + '. ' + eachName);
-	});
-
-	//1. Mike
-	//2. Stacey
-	//3. Andy
-	//4. Rick
-
-	////
-
-	function makeAdjectifier(adjective){
-		return function(string){
-			return adjective + '' + string;
-		};
-	}
-
-	var coolifier = makeAdjectifier('cool');
-	coolifier('dog');
-	//cool dog
-
-	////
-
-	var ages = [3, 10, 8, 18, 28];
-
-	//define function
-	function isAdult(element) {
-	  return element >= 18;
-	}
-
-	//call function
-	ages.findIndex(isAdult);
-	//3 
-	//read more on this example here: https://www.reddit.com/r/learnjavascript/comments/5g4151/question_regarding_callback_function_example/
-
-	///callback example from the DOM w/ NAMED function
-	var listChildren = document.getElementById('myDiv').children
-
-	var callback = function(){
+}
+
+var coolifier = makeAdjectifier('cool');
+coolifier('dog');
+//cool dog
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+var ages = [3, 10, 8, 18, 28];
+
+//define function
+function isAdult(element) {
+  return element >= 18;
+}
+
+//call function
+ages.findIndex(isAdult);
+//3 
+//read more on this example here: https://www.reddit.com/r/learnjavascript/comments/5g4151/question_regarding_callback_function_example/
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+///callback example from the DOM w/ NAMED function
+var listChildren = document.getElementById('myDiv').children
+
+var callback = function(){
+	var buttonContainer = this.parentNode;
+	console.log(buttonContainer);
+}
+
+for(var i = 0; i < listChildren.length; i++){
+	listChildren[i].addEventListener('click', callback);
+}
+	</code>
+	</pre>
+	
+	<pre>
+	<code class='scode'>
+///callback example from the DOM w/ Anonymous function
+
+var listChildren = document.getElementById('myDiv').children
+
+for(var i = 0; i < listChildren.length; i++){
+	listChildren[i].addEventListener('click', function(){
 		var buttonContainer = this.parentNode;
 		console.log(buttonContainer);
+	})
+}
+	</code>
+	</pre>
+
+	<pre>
+	<code class='scode'>
+function cycleArray(arr, callback){
+	for(var i = 0; i < arr.length; i++){
+		callback(arr[i])
 	}
+}
 
-	for(var i = 0; i < listChildren.length; i++){
-		listChildren[i].addEventListener('click', callback);
-	}
-	
-	///callback example from the DOM w/ Anonymous function
+function print(message){
+	console.log(message);
+}
 
-	var listChildren = document.getElementById('myDiv').children
+var spookyArr = ['ghost', 'vampire', 'dracula']
 
-	for(var i = 0; i < listChildren.length; i++){
-		listChildren[i].addEventListener('click', function(){
-			var buttonContainer = this.parentNode;
-			console.log(buttonContainer);
-		})
-	}
-
-	////
-
-	
-	function cycleArray(arr, callback){
-		for(var i = 0; i < arr.length; i++){
-			callback(arr[i])
-		}
-	}
-
-	function print(message){
-		console.log(message);
-	}
-
-	var spookyArr = ['ghost', 'vampire', 'dracula']
-
-	cycleArray(spookyArr, print);
-	//ghost
-	//vampire
-	//dracula
-
-	
+cycleArray(spookyArr, print);
+//ghost
+//vampire
+//dracula
 	</code>
 	</pre>
 
@@ -2916,22 +3019,22 @@ mySandwich('ham', 'cheese');
 
 	<pre>
 		<code class='scode'>
-		//define function
-		function definePig(pig, callback){
-			console.log(pig + ' is a piglet');
-			callback(pig); //using callback on the pig PARAMETER
-		}
+//define function
+function definePig(pig, callback){
+	console.log(pig + ' is a piglet');
+	callback(pig); //using callback on the pig PARAMETER
+}
 
-		//callback
-		function pigSounds(pigName){
-			console.log(pigName + ' says: ' + 'oink oink oink');
-		}
+//callback
+function pigSounds(pigName){
+	console.log(pigName + ' says: ' + 'oink oink oink');
+}
 
-		//call function
-		definePig('Abby', pigSounds);
-		
-		//Abby is a piglet
-		//Abby says: oink oink oink
+//call function
+definePig('Abby', pigSounds);
+
+//Abby is a piglet
+//Abby says: oink oink oink
 		</code>
 	</pre>
 
@@ -2939,55 +3042,54 @@ mySandwich('ham', 'cheese');
 
 	<pre>
 		<code class='scode'>
-	//define function
-	function definePig(pig, callback){
-		var adjective = 'small'
-		console.log(pig + ' is a piglet');
-		callback(pig, adjective); 
-	}
+//define function
+function definePig(pig, callback){
+	var adjective = 'small'
+	console.log(pig + ' is a piglet');
+	callback(pig, adjective); 
+}
 
-	//callback
-	function pigDiscription(pigName, pigType){
-		console.log(pigName + ' is a ' + pigType + ' pig');
-	}
+//callback
+function pigDiscription(pigName, pigType){
+	console.log(pigName + ' is a ' + pigType + ' pig');
+}
 
-	//call function
-	definePig('Abby', pigDiscription);
+//call function
+definePig('Abby', pigDiscription);
 
-	//Abby is a piglet
-	//Abby is a small pig
+//Abby is a piglet
+//Abby is a small pig
 		</code>
 	</pre>
 
 	<p>Another <b>callback</b> Example</p>
 	<pre>
 		<code class='scode'>
-	//global variable
-	var allUserData = [];
+//global variable
+var allUserData = [];
 
-	//define function
-	function getInput(options, callback){
-		allUserData.push(options); //push items to array
-		callback(options);
-	}
+//define function
+function getInput(options, callback){
+	allUserData.push(options); //push items to array
+	callback(options);
+}
 
-	//callback function
-	function logStuff(userData){
-		if(typeof userData === 'string'){
-			console.log(userData);
-		} else if(typeof userData === 'object') {
-			for(var item in userData){
-				console.log(item + ': ' + userData[item]);
-			}
+//callback function
+function logStuff(userData){
+	if(typeof userData === 'string'){
+		console.log(userData);
+	} else if(typeof userData === 'object') {
+		for(var item in userData){
+			console.log(item + ': ' + userData[item]);
 		}
 	}
+}
 
-	// //calling function
-	getInput({name:'Rich', speciality:'JavaScript'}, logStuff);
+// //calling function
+getInput({name:'Rich', speciality:'JavaScript'}, logStuff);
 
-	//name: Rich
-	//speciality: JavaScript
-
+//name: Rich
+//speciality: JavaScript
 		</code>
 	</pre>
 
@@ -2998,26 +3100,26 @@ mySandwich('ham', 'cheese');
 
 	<pre>
 		<code class='scode'>
-	function filter(arr, callback){
-		var result = [];
+function filter(arr, callback){
+	var result = [];
 
-		//for each item in the array apply the callback
-		for(var i = 0; i < arr.length; i++){
-		//if callback returns true then add to the result
-		  if(callback(arr[i])){
-			result.push(arr[i]);
-		  }
-		}
-		return result;
+	//for each item in the array apply the callback
+	for(var i = 0; i < arr.length; i++){
+	//if callback returns true then add to the result
+	  if(callback(arr[i])){
+		result.push(arr[i]);
+	  }
 	}
+	return result;
+}
 
-	var numbers = [3, 45, 2, 34, 7, 8, 4];
-	var oddNumbers = filter(numbers, function(item){
-		return item % 2 !== 0;
-	});
+var numbers = [3, 45, 2, 34, 7, 8, 4];
+var oddNumbers = filter(numbers, function(item){
+	return item % 2 !== 0;
+});
 
-	console.log(oddNumbers);
-	//3, 45, 7
+console.log(oddNumbers);
+//3, 45, 7
 		</code>
 	</pre>
 
@@ -3042,69 +3144,69 @@ mySandwich('ham', 'cheese');
 	<b>Callback with Anonymous Function</b>
 	<pre>
 		<code class='scode'>
-	function fullName(firstName, lastName, callback){
-		console.log('My name is ' + firstName + ' ' + lastName);
-		callback(lastName);
-	}
+function fullName(firstName, lastName, callback){
+	console.log('My name is ' + firstName + ' ' + lastName);
+	callback(lastName);
+}
 
-	fullName('Jackie', 'Chan', function(ln){
-		console.log('Welcome Mr. ' + ln);
-	})
+fullName('Jackie', 'Chan', function(ln){
+	console.log('Welcome Mr. ' + ln);
+})
 	</code>
 	</pre>
 
 	<b>Callback with Named Function</b>
 	<pre>
 		<code class='scode'>
-	function fullName(firstName, lastName, callback){
-		console.log('My name is ' + firstName + ' ' + lastName);
-		callback(lastName);
-	}
+function fullName(firstName, lastName, callback){
+	console.log('My name is ' + firstName + ' ' + lastName);
+	callback(lastName);
+}
 
-	var greeting = function(ln){
-		console.log('Welcome Mr. ' + ln);
-	};
+var greeting = function(ln){
+	console.log('Welcome Mr. ' + ln);
+};
 
-	fullName('Jackie', 'Chan', greeting);
+fullName('Jackie', 'Chan', greeting);
 	</code>
 	</pre>
 
 	<h3>Callback function example</h3>
 	<pre>
 		<code class='scode'>
-	var arraySearch = function(arr, callback){
-		for(var i = 0; i < arr.length; i++){
-			callback(arr[i]);
-		}
+var arraySearch = function(arr, callback){
+	for(var i = 0; i < arr.length; i++){
+		callback(arr[i]);
 	}
+}
 
-	arraySearch([1,2,'fruit',4,5,'cat'], function(item){
-		console.log(item)
-	});
+arraySearch([1,2,'fruit',4,5,'cat'], function(item){
+	console.log(item)
+});
 
-	//1 2 fruit 4 5 cat
+//1 2 fruit 4 5 cat
 		</code>
 	</pre>
 
 	<b>another example: named function call back</b>
 	<pre>
 		<code class='scode'>
-	function showMessage(){
-		alert('clicked!')
-	}
+function showMessage(){
+	alert('clicked!')
+}
 
-	var button = document.getElementById('btn');
-	button.addEventListener('click', showMessage);
+var button = document.getElementById('btn');
+button.addEventListener('click', showMessage);
 		</code>
 	</pre>
 
 	<b>can also have anonymous function callback</b>
 	<pre>
 		<code class='scode'>
-	var button = document.getElementById('btn');
-	button.addEventListener('click', function(){
-		alert('clicked!');
-	});
+var button = document.getElementById('btn');
+button.addEventListener('click', function(){
+	alert('clicked!');
+});
 		</code>
 	</pre>
 
@@ -3240,24 +3342,24 @@ Creating Constructor Functions
 	<h2>Function Examples</h2>
 	<pre>
 		<code class='scode'>
-		function pick(object, props){
+function pick(object, props){
 
-			var result = {};
-			for(var p in object){
-				if(props.indexOf(p) >= 0){
-					result[p] = object[p]
-				}
-			}
-			return result; 
+	var result = {};
+	for(var p in object){
+		if(props.indexOf(p) >= 0){
+			result[p] = object[p]
 		}
+	}
+	return result; 
+}
 
-		var turtles = {
-			name: 'leonardo',
-			color: 'blue',
-			weapon: 'sword'
-		}
+var turtles = {
+	name: 'leonardo',
+	color: 'blue',
+	weapon: 'sword'
+}
 
-		console.log(pick(turtles, ['name', 'weapon']));
+console.log(pick(turtles, ['name', 'weapon']));
 		</code>
 	</pre>
 
@@ -3269,41 +3371,41 @@ Creating Constructor Functions
 	<b>First Pass</b>
 	<pre>
 		<code class='scode'>
-		var myArray = [1,2,3,4,5,6,7,8,9,10];
+var myArray = [1,2,3,4,5,6,7,8,9,10];
 
-		function isEven(value, index, array){
-			if(value % 2 === 0){
-				return true;
-			} else {
-				return false;
-			}
-		}
+function isEven(value, index, array){
+	if(value % 2 === 0){
+		return true;
+	} else {
+		return false;
+	}
+}
 
-		var result = myArray.filter(isEven);
+var result = myArray.filter(isEven);
 		</code>
 	</pre>
 
 	<b>Second Pass</b>
 	<pre>
 		<code class='scode'>
-		var myArray = [1,2,3,4,5,6,7,8,9,10];
+var myArray = [1,2,3,4,5,6,7,8,9,10];
 
-		function isEven(value, index, array){
-			return value % 2 === 0;
-		}
+function isEven(value, index, array){
+	return value % 2 === 0;
+}
 
-		var result = myArray.filter(isEven);
+var result = myArray.filter(isEven);
 		</code>
 	</pre>
 
 	<b>Third Pass</b>
 	<pre>
 		<code class='scode'>
-		var myArray = [1,2,3,4,5,6,7,8,9,10];
+var myArray = [1,2,3,4,5,6,7,8,9,10];
 
-		var result = myArray.filter(function(value, index, array){
-			return value % 2 === 0; 
-		});
+var result = myArray.filter(function(value, index, array){
+	return value % 2 === 0; 
+});
 		</code>
 	</pre>
 
@@ -3315,97 +3417,96 @@ Creating Constructor Functions
 	<b>Factorial</b>
 	<pre>
 		<code class='scode'>
-		function factorial(num){
-			var result = 1;
+function factorial(num){
+	var result = 1;
 
-			for(var i = 2; i<= num; i++){
-				result = result * i;
-				//can also use result *= i
-			}
-			return result; 
-		}
-		//factorial(4) 4*3*2*1
+	for(var i = 2; i<= num; i++){
+		result = result * i;
+		//can also use result *= i
+	}
+	return result; 
+}
+//factorial(4) 4*3*2*1
 		</code>
 	</pre>
 	
 	<h3>isUniform</h3>
 	<pre>
 		<code class='scode'>
-		var numbers = [1, 1, 1, 1];
+var numbers = [1, 1, 1, 1];
 
-		var isUniform = function(array){
-			var first = array[0];
+var isUniform = function(array){
+	var first = array[0];
 
-			for(var i = 0; i < array.length; i++){
-				if(array[i] !== first){
-					return false;
-				}
-			}
-			return true
+	for(var i = 0; i < array.length; i++){
+		if(array[i] !== first){
+			return false;
 		}
+	}
+	return true
+}
 
-		isUniform(numbers);
+isUniform(numbers);
 		</code>
 	</pre>
 
 	<h3>sumArray</h3>
 	<pre>
 		<code class='scode'>
-		var numbers = [10, 20, 30, 55];
+var numbers = [10, 20, 30, 55];
 
-		var sumArray = function(array){
-			var sum = 0;
+var sumArray = function(array){
+	var sum = 0;
 
-			for(var i = 0; i < array.length; i++){
-				sum += array[i];
-			}
-			return sum;
-		}
+	for(var i = 0; i < array.length; i++){
+		sum += array[i];
+	}
+	return sum;
+}
 
-		sumArray(numbers);
+sumArray(numbers);
 		</code>
 	</pre>
 
 	<h3>find max</h3>
 	<pre>
 		<code class='scode'>
+var myArr = [10, 50, 999, 7];
 
-		var myArr = [10, 50, 999, 7];
+var max = function(array){
+	var max = array[0];
 
-		var max = function(array){
-			var max = array[0];
+	for(var i = 0; i < array.length; i++){
+		if(array[i] > max){
+			max = array[i];
+		}
+	}
+	return max;
+};
 
-			for(var i = 0; i < array.length; i++){
-				if(array[i] > max){
-					max = array[i];
-				}
-			}
-			return max;
-		};
-
-		max(myArr);
-		//999
+max(myArr);
+//999
 		</code>
 	</pre>
 
 	<h3>find min</h3>
 	<pre>
 		<code class='scode'>
-		var numbers = [1, 5, 15, 500, -1];
+var numbers = [1, 5, 15, 500, -1];
 
-		var min = function(numbers){
-			var min = numbers[0];
+var min = function(numbers){
+	var min = numbers[0];
 
-			for(var i = 1; i < numbers.length; i++){
-				if(numbers[i] < min){
-					min = numbers[i];
-				}
-			}
-			return min
+	for(var i = 1; i < numbers.length; i++){
+		if(numbers[i] < min){
+			min = numbers[i];
 		}
+	}
+	return min
+}
 
-		min(numbers);
-		//-1
+min(numbers);
+//-1
 		</code>
 	</pre>
 
@@ -3420,15 +3521,15 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-		var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8];
 
-		var isEvenNumbers = numbers.filter(function(value){
-			if(value % 2 === 0){
-				return value;
-			}
-		});
+var isEvenNumbers = numbers.filter(function(value){
+	if(value % 2 === 0){
+		return value;
+	}
+});
 
-		console.log(isEvenNumbers);
+console.log(isEvenNumbers);
 		</code>
 	</pre>
 
@@ -3438,16 +3539,16 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-		var numbers = [1, 2, 3, 4];
+var numbers = [1, 2, 3, 4];
 
-		var newNumbers = numbers.map(function(number){
-			return number * 2;
-		}).map(function(number){
-			return number + 1;
-		});
+var newNumbers = numbers.map(function(number){
+	return number * 2;
+}).map(function(number){
+	return number + 1;
+});
 
-		console.log(newNumbers)
-		//3, 5, 7, 9
+console.log(newNumbers)
+//3, 5, 7, 9
 		</code>
 	</pre>
 
@@ -3498,8 +3599,8 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	document.getElementsByTagName() // returns node list
-	document.images //returns node list
+document.getElementsByTagName() // returns node list
+document.images //returns node list
 		</code>
 	</pre>
 
@@ -3541,8 +3642,8 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-		var listChildren = document.getElementById('ulParent').children;
-		//prefered method with no empty text nodes
+var listChildren = document.getElementById('ulParent').children;
+//prefered method with no empty text nodes
 		</code>
 	</pre>
 
@@ -3556,32 +3657,31 @@ Creating Constructor Functions
 	document.forms['loginForm'] // getting a form by a specific name
 
 	document.anchors; //node list
-
 		</code>
 	</pre>
 
 	<h3>Appending</h3>
 	<pre>
 		<code class='scode'>
-	//Method #1 createElement, createTextNode
-	var liNode = document.createElement('li');
-	var txtNode = document.createTextNode('spooky');
-	var parent = document.getElementById('domList1')
+//Method #1 createElement, createTextNode
+var liNode = document.createElement('li');
+var txtNode = document.createTextNode('spooky');
+var parent = document.getElementById('domList1')
 
-	liNode.appendChild(txtNode);
-	parent.appendChild(liNode);
+liNode.appendChild(txtNode);
+parent.appendChild(liNode);
 
-	//Method #2 .innerTEXT
-	var liNode = document.getElementById('beaker');
-	liNode.innerText = 'new text';
+//Method #2 .innerTEXT
+var liNode = document.getElementById('beaker');
+liNode.innerText = 'new text';
 
-	//Method #3 .innerHTML
-	var liNode = document.getElementById('beaker');
-	liNode.innerHTML = 'guppy'
+//Method #3 .innerHTML
+var liNode = document.getElementById('beaker');
+liNode.innerHTML = 'guppy'
 
-	//Another Variation
-	var parent = document.getElementById('domList1');
-	parent.childNodes[1].innerHTML = 'ghost';
+//Another Variation
+var parent = document.getElementById('domList1');
+parent.childNodes[1].innerHTML = 'ghost';
 		</code>
 	</pre>
 
@@ -3595,9 +3695,9 @@ Creating Constructor Functions
 	
 	<pre>
 		<code class='scode'>
-	.hide{
-		display: none;
-	}
+.hide{
+	display: none;
+}
 		</code>
 	</pre>
 	
@@ -3620,10 +3720,10 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-		var submitButton = document.getElementById('submitButton');
-		console.dir(submitButton)
-		/*generates object properties and values*/
-		/*can then expand style and look at properties inside*/
+var submitButton = document.getElementById('submitButton');
+console.dir(submitButton)
+/*generates object properties and values*/
+/*can then expand style and look at properties inside*/
 		</code>
 	</pre>
 
@@ -3645,11 +3745,11 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	document.getElementById();
-	document.getElementsByClassName();
-	document.getElementsByTagName();
-	document.querySelector();
-	document.querySelectorAll();
+document.getElementById();
+document.getElementsByClassName();
+document.getElementsByTagName();
+document.querySelector();
+document.querySelectorAll();
 		</code>
 	</pre>
 
@@ -3658,8 +3758,8 @@ Creating Constructor Functions
 	<p>JS</p>
 	<pre>
 		<code class='scode'>
-	var tags = document.getElementsByClassName('bolded');
-	//returns a nodeList with listItem2 and listItem3
+var tags = document.getElementsByClassName('bolded');
+//returns a nodeList with listItem2 and listItem3
 		</code>
 	</pre>
 
@@ -3742,21 +3842,21 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-		//!important! notice how these are all using the parent element in other words parent.querySelector NOT document.querySelector
+//!important! notice how these are all using the parent element in other words parent.querySelector NOT document.querySelector
 
-		var query = parent.querySelector('p.item-number').innerText;
+var query = parent.querySelector('p.item-number').innerText;
 
-		var pink = parent.querySelector('div.pink-bar');
+var pink = parent.querySelector('div.pink-bar');
 
-		var anchor = parent.querySelector('a[target]');
-		//notice how [] is used to target an html attribute with
-		//css
+var anchor = parent.querySelector('a[target]');
+//notice how [] is used to target an html attribute with
+//css
 
-		var sonic = parent.querySelector('img[alt~="sonic"');
-		//notice to target a value ~ is used before the = sign 
-		//with css
+var sonic = parent.querySelector('img[alt~="sonic"');
+//notice to target a value ~ is used before the = sign 
+//with css
 
-		var tag = document.querySelector('#highlight');
+var tag = document.querySelector('#highlight');
 		</code>
 	</pre>
 
@@ -3771,14 +3871,14 @@ Creating Constructor Functions
 	<p>JS</p>
 	<pre>
 		<code class='scode'>
-		var p = document.querySelector("#ptext[data-key='highlight']")
+var p = document.querySelector("#ptext[data-key='highlight']")
 		</code>
 	</pre>
 
 	<b>Chaining Together Selectors</b>
 	<pre>
 		<code class='scode'>
-	var li = document.querySelector('li a.special');
+var li = document.querySelector('li a.special');
 		</code>
 	</pre>
 
@@ -3788,15 +3888,15 @@ Creating Constructor Functions
 	<p>JS</p>
 	<pre>
 		<code class='scode'>
-	var li = document.querySelectorAll('h1');
+var li = document.querySelectorAll('h1');
 	// returns Hello and Goodbye
 		</code>
 	</pre>
 
 	<pre>
 		<code class='scode'>
-	var li = document.querySelectorAll('h1')[1];
-	/*returns second h1 in HTML collection array like, which is 'Goodbye'*/
+var li = document.querySelectorAll('h1')[1];
+/*returns second h1 in HTML collection array like, which is 'Goodbye'*/
 		</code>
 	</pre>
 
@@ -3838,34 +3938,34 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	//Object Constructor
-	var dog = new Object();
-	dog.name = 'Samuel';
-	dog.age = 5;
-	dog.sound = function(){
-		console.log('Woof Woof')
-	}
+//Object Constructor
+var dog = new Object();
+dog.name = 'Samuel';
+dog.age = 5;
+dog.sound = function(){
+	console.log('Woof Woof')
+}
 
-	//Image HTML DOM Image Object Constructor Method
-	var fruitBat = new Image();
-	fruitBat.src = 'fruitbat.jpg';
-	fruitBat.alt = 'a silly fruit bat being brushed'
-	fruitBat.style.height = '110px';
-	fruitBat.style.width = '110px';
+//Image HTML DOM Image Object Constructor Method
+var fruitBat = new Image();
+fruitBat.src = 'fruitbat.jpg';
+fruitBat.alt = 'a silly fruit bat being brushed'
+fruitBat.style.height = '110px';
+fruitBat.style.width = '110px';
 
-	//document.createElement Method
-	var fruitBat = document.createElement('img');
-	fruitBat.src = 'fruitBat.jpg';
-	fruitBat.alt = 'a silly fruit bat being brushed';
+//document.createElement Method
+var fruitBat = document.createElement('img');
+fruitBat.src = 'fruitBat.jpg';
+fruitBat.alt = 'a silly fruit bat being brushed';
 
-	//Can also use .setAttribute or .getAttribute
-	var img = document.createElement('img');
-	img.alt = 'cute cat';
-	img.setAttribute('alt', 'a large cat with a hat')
-	
-	//notice we are using dot notation for the properties 
-	//we can either get or set the property for example
-	//console.log(fruitBat.src) property will give us 'fruitBat.jpg'
+//Can also use .setAttribute or .getAttribute
+var img = document.createElement('img');
+img.alt = 'cute cat';
+img.setAttribute('alt', 'a large cat with a hat')
+
+//notice we are using dot notation for the properties 
+//we can either get or set the property for example
+//console.log(fruitBat.src) property will give us 'fruitBat.jpg'
 
 		</code>
 	</pre>	
@@ -3909,9 +4009,9 @@ Creating Constructor Functions
 	<p>JS</p>
 	<pre>
 		<code class='scode'>
-	button.addEventListener('click', function(event){
-		console.log(event);
-	})
+button.addEventListener('click', function(event){
+	console.log(event);
+})
 		</code>
 	</pre>
 
@@ -3929,17 +4029,17 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	button.addEventListener('click', function(event){
-		console.log(event);
-		console.log(event.clientX)
-		//log event object property clientX
-		console.log(event.clientY)
-		//log event object property clientY
-	})
-
-	<p>Notice how the above code logs the exact local coordinates where the button was clicked</p>
+button.addEventListener('click', function(event){
+	console.log(event);
+	console.log(event.clientX)
+	//log event object property clientX
+	console.log(event.clientY)
+	//log event object property clientY
+})
 		</code>
 	</pre>
+
+	<p>Notice how the above code logs the exact local coordinates where the button was clicked</p>
 
 	<img src="images/client event.png">
 
@@ -3969,15 +4069,15 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	//Select Element
-	var tag = document.getElementById('highlight');
+//Select Element
+var tag = document.getElementById('highlight');
 
-	//Manipulate
-	tag.style.color = 'blue';
-	tag.style.border = '10px solid red';
-	tag.style.fontSize = '70px';
-	tag.style.background = 'yellow';
-	tag.style.marginTop = '200px';
+//Manipulate
+tag.style.color = 'blue';
+tag.style.border = '10px solid red';
+tag.style.fontSize = '70px';
+tag.style.background = 'yellow';
+tag.style.marginTop = '200px';
 		</code>
 	</pre>
 
@@ -4001,8 +4101,8 @@ Creating Constructor Functions
 	<p>JS</p>
 	<pre>
 		<code class='scode'>
-	var tag = document.getElementById('highlight');
-	tag.classList.add('some-class');
+var tag = document.getElementById('highlight');
+tag.classList.add('some-class');
 		</code>
 	</pre>
 
@@ -4012,28 +4112,28 @@ Creating Constructor Functions
 	<p>CSS</p>
 	<pre>
 		<code class='scode'>
-	.another-class {
-		color: purple;
-		fontSize: 1.5em
-	}
+.another-class {
+	color: purple;
+	fontSize: 1.5em
+}
 		</code>
 	</pre>
 
 	<p>JS</p>
 	<pre>
 		<code class='scode'>
-	var tag = document.querySelector('h1');
-	var p = document.querySelectorAll('p')[0];
+var tag = document.querySelector('h1');
+var p = document.querySelectorAll('p')[0];
 
-	//add a class to the selected element
-	tag.classList.add('another-class');
-	p.classList.add('fun');
+//add a class to the selected element
+tag.classList.add('another-class');
+p.classList.add('fun');
 
-	//remove a class
-	tag.classList.remove('another-class');
+//remove a class
+tag.classList.remove('another-class');
 
-	//toggle a class
-	tag.classList.toggle('another-class');
+//toggle a class
+tag.classList.toggle('another-class');
 		</code>
 	</pre>
 
@@ -4056,14 +4156,13 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	var logoImage = document.getElementById('logo');
-	logoImage.id;
-	/*'logo'*/
+var logoImage = document.getElementById('logo');
+logoImage.id;
+/*'logo'*/
 
-	logoImage.id = 'newLogo';
-	logoImage.id;
-	/*'newLogo'*/
-
+logoImage.id = 'newLogo';
+logoImage.id;
+/*'newLogo'*/
 		</code>
 	</pre>
 
@@ -4078,13 +4177,13 @@ Creating Constructor Functions
 	<p>JS</p>
 	<pre>
 		<code class='scode'>
-	var listChildren = document.getElementById('ulParent').children;
+var listChildren = document.getElementById('ulParent').children;
 
-	for(var i = 0; i < listChildren.length; i++){
-			listChildren[i].addEventListener('click', function(){
-			this.classList.toggle('pink');
-		});
-	}
+for(var i = 0; i < listChildren.length; i++){
+		listChildren[i].addEventListener('click', function(){
+		this.classList.toggle('pink');
+	});
+}
 		</code>
 	</pre>
 
@@ -4096,9 +4195,9 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	var p = document.querySelectorAll('p')[0];
+var p = document.querySelectorAll('p')[0];
 
-	p.textContent = "hello world";
+p.textContent = "hello world";
 		</code>
 	</pre>
 
@@ -4109,10 +4208,10 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	var p = document.querySelectorAll('p')[0];
+var p = document.querySelectorAll('p')[0];
 
-	p.innerHTML = "hello'<'strong'>'world'<'/'strong'>'";
-	/* manipulating text inside element, remove ' from above */
+p.innerHTML = "hello'<'strong'>'world'<'/'strong'>'";
+/* manipulating text inside element, remove ' from above */
 		</code>
 	</pre>
 
@@ -4139,13 +4238,13 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-		var link = document.querySelector('a');
-		link.setAttribute('href', 'www.dogs.com');
-		//Change HREF attribute
+var link = document.querySelector('a');
+link.setAttribute('href', 'www.dogs.com');
+//Change HREF attribute
 
-		var img = document.querySelector('img');
-		img.setAttribute('src', 'corgi.png');
-		//Change SRC attribute
+var img = document.querySelector('img');
+img.setAttribute('src', 'corgi.png');
+//Change SRC attribute
 		</code>
 	</pre>
 
@@ -4185,8 +4284,8 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	element.addEventListener(type, functionToCall);
-	/*Syntax*/
+element.addEventListener(type, functionToCall);
+/*Syntax*/
 		</code>
 	</pre>
 
@@ -4194,10 +4293,10 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	var button = document.querySelector('button');
-	button.addEventListener('click', function(){
-		console.log('button clicked');
-	});
+var button = document.querySelector('button');
+button.addEventListener('click', function(){
+	console.log('button clicked');
+});
 		</code>
 	</pre>
 
@@ -4209,13 +4308,13 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	var button = document.getElementsByTagName('button')[0];
-	
-	button.onclick = addTask;
+var button = document.getElementsByTagName('button')[0];
 
-	var addTask = function(){
-		console.log('Add task...');
-	};
+button.onclick = addTask;
+
+var addTask = function(){
+	console.log('Add task...');
+};
 		</code>
 	</pre>
 
@@ -4243,13 +4342,13 @@ Creating Constructor Functions
 	<p>JS</p>
 	<pre>
 		<code class='scode'>
-	var button = document.querySelector('button');
-	var paragraph = document.querySelector('p');
+var button = document.querySelector('button');
+var paragraph = document.querySelector('p');
 
-	//setup event listener
-	button.addEventListener('click', function(){
-		paragraph.textContent = 'Someone clicked the button';
-	});
+//setup event listener
+button.addEventListener('click', function(){
+	paragraph.textContent = 'Someone clicked the button';
+});
 		</code>
 	</pre>
 
@@ -4264,11 +4363,11 @@ Creating Constructor Functions
 	<p>JS</p>
 	<pre>
 		<code class='scode'>
-	button.addEventListener('click', changeText);
+button.addEventListener('click', changeText);
 
-	function changeText(){
-		paragraph.textContent = 'Someone clicked the button';
-	}
+function changeText(){
+	paragraph.textContent = 'Someone clicked the button';
+}
 		</code>
 	</pre>
 
@@ -4289,150 +4388,17 @@ Creating Constructor Functions
 	<p>For Example:</p>
 	<pre>
 		<code class='scode'>
-	//example 1: regular array
-	var myArray = ['ghost', 'goblin', 'haunted'];
-	//myArray[0] -> ghost
-	//myArray[2] -> haunted
+//example 1: regular array
+var myArray = ['ghost', 'goblin', 'haunted'];
+//myArray[0] -> ghost
+//myArray[2] -> haunted
 		</code>
 	</pre>
 
 	<pre>
 		<code class='scode'>
-	//example 2: array of objects
-	var shoppingCart = {
-		items: [
-			{
-				name: 'sushi',
-				color: 'red'
-			},
-			{
-				name: 'turtle',
-				color: 'green'
-			},
-			{
-				name: 'water',
-				color: 'blue'
-			},
-			{
-				name: 'george',
-				color: 'purple'
-			}
-
-			],
-			total_price: 0
-	}
-	//shoppingCart.items represents the whole array
-	//shoppingCart.items[0].name -> sushi
-	//shoppingCart.items[2].color -> blue
-		</code>
-	</pre>
-
-	<p>The important thing is to just look at <span class='highlight'>objectName.arrayOfObjects</span> as just a regular array, you access the information the same, for example <span class='highlight'>objectName.arrayOfObjects[1]</span>. Just like you would access <span class='highlight'>myArray[0]</span>, <span class='highlight'>myArray[i] etc.</span></p>
-
-
-	<b>Step 1</b>
-	<p>Here using some logic where we <span class='highlight'>i</span> represents the index of the array</p>
-
-	<pre>
-		<code class='scode'>
-	var myArr = ['ghost', 'vampire', 'wolf'];
-
-	for(var i = 0; i < myArr.length; i++){
-		console.log(myArr[i] + ' has the index of ' + i);
-	}
-
-	//ghost has the index of 0
-	//vampire has the index of 1
-	//wolf has the index of 2
-		</code>
-	</pre>
-
-	<b>Step 1.5</b>
-	<p>JS arrays have a built in method called<span class='highlight'>findIndex</span> that allows us to find the index an array item is at. Just be aware for all of these functions, including the custom ones, the array index for the matched item will always be the first instance of it. For example if you have <span class='highlight'>var elementals = ['fire', 'water', 'fire', 'earth', 'wind']</span> the index found for fire will always be the first instance of that item, in this case <span class='highlight'>0</span>.</p>
-
-	<pre>
-		<code class='scode'>
-		var shoppingCart = {
-		items: [
-		{
-			name: 'sushi',
-			color: 'red'
-		},
-		{
-			name: 'turtle',
-			color: 'green'
-		},
-		{
-			name: 'water',
-			color: 'blue'
-		},
-		{
-			name: 'flowers',
-			color: 'purple'
-		}
-		],
-		total_price: 0
-	}
-
-	var cartIndex = shoppingCart.items.findIndex( function(x){
-		return x.name === 'water';
-	});
-
-	//cartIndex -> 2
-		</code>
-	</pre>
-
-	<p>Another important note if we save <span class='highlight'>cartIndex</span> as a variable we can use it while accessing an aray. For Example: </p>
-
-	<pre>
-		<code class='scode'>
-	//setting cartIndex
-	var cartIndex = 2;
-	//
-
-	var shoppingCart = {
-		items: [
-			{
-				name: 'sushi',
-				color: 'red'
-			},
-			{
-				name: 'turtle',
-				color: 'green'
-			},
-			{
-				name: 'water',
-				color: 'blue'
-			},
-			{
-				name: 'george',
-				color: 'purple'
-			}
-
-			],
-			total_price: 0
-	}
-
-	//shoppingCart.items[cartIndex].name -> 'water';
-	//shoppingCart.items[cartIndex].color -> 'blue'
-
-		</code>
-	</pre>
-
-	<p><span class='pink'>Very Important:</span> study the code snippets below carefully</p>
-	<pre>
-		<code class='scode'>
-	//shoppingCart.items[cartIndex].name; -> 'water'
-	//shoppingCart.items[cartIndex].color; -> 'blue'
-		</code>
-	</pre>
-
-	<b>Step 2</b>
-	<p>Now lets continue on that logic knowing that we can use <span class='highlight'>i</span> to find the index number of an array</p>
-
-	 <pre>
-		<code class='scode'>
-		var shoppingCart = {
+//example 2: array of objects
+var shoppingCart = {
 	items: [
 		{
 			name: 'sushi',
@@ -4453,21 +4419,154 @@ Creating Constructor Functions
 
 		],
 		total_price: 0
+}
+//shoppingCart.items represents the whole array
+//shoppingCart.items[0].name -> sushi
+//shoppingCart.items[2].color -> blue
+		</code>
+	</pre>
+
+	<p>The important thing is to just look at <span class='highlight'>objectName.arrayOfObjects</span> as just a regular array, you access the information the same, for example <span class='highlight'>objectName.arrayOfObjects[1]</span>. Just like you would access <span class='highlight'>myArray[0]</span>, <span class='highlight'>myArray[i] etc.</span></p>
+
+
+	<b>Step 1</b>
+	<p>Here using some logic where we <span class='highlight'>i</span> represents the index of the array</p>
+
+	<pre>
+		<code class='scode'>
+var myArr = ['ghost', 'vampire', 'wolf'];
+
+for(var i = 0; i < myArr.length; i++){
+	console.log(myArr[i] + ' has the index of ' + i);
+}
+
+//ghost has the index of 0
+//vampire has the index of 1
+//wolf has the index of 2
+		</code>
+	</pre>
+
+	<b>Step 1.5</b>
+	<p>JS arrays have a built in method called<span class='highlight'>findIndex</span> that allows us to find the index an array item is at. Just be aware for all of these functions, including the custom ones, the array index for the matched item will always be the first instance of it. For example if you have <span class='highlight'>var elementals = ['fire', 'water', 'fire', 'earth', 'wind']</span> the index found for fire will always be the first instance of that item, in this case <span class='highlight'>0</span>.</p>
+
+	<pre>
+		<code class='scode'>
+	var shoppingCart = {
+	items: [
+	{
+		name: 'sushi',
+		color: 'red'
+	},
+	{
+		name: 'turtle',
+		color: 'green'
+	},
+	{
+		name: 'water',
+		color: 'blue'
+	},
+	{
+		name: 'flowers',
+		color: 'purple'
+	}
+	],
+	total_price: 0
+}
+
+var cartIndex = shoppingCart.items.findIndex( function(x){
+	return x.name === 'water';
+});
+
+//cartIndex -> 2
+		</code>
+	</pre>
+
+	<p>Another important note if we save <span class='highlight'>cartIndex</span> as a variable we can use it while accessing an aray. For Example: </p>
+
+	<pre>
+		<code class='scode'>
+//setting cartIndex
+var cartIndex = 2;
+//
+
+var shoppingCart = {
+	items: [
+		{
+			name: 'sushi',
+			color: 'red'
+		},
+		{
+			name: 'turtle',
+			color: 'green'
+		},
+		{
+			name: 'water',
+			color: 'blue'
+		},
+		{
+			name: 'george',
+			color: 'purple'
+		}
+
+		],
+		total_price: 0
+}
+
+//shoppingCart.items[cartIndex].name -> 'water';
+//shoppingCart.items[cartIndex].color -> 'blue'
+
+		</code>
+	</pre>
+
+	<p><span class='pink'>Very Important:</span> study the code snippets below carefully</p>
+	<pre>
+		<code class='scode'>
+//shoppingCart.items[cartIndex].name; -> 'water'
+//shoppingCart.items[cartIndex].color; -> 'blue'
+		</code>
+	</pre>
+
+	<b>Step 2</b>
+	<p>Now lets continue on that logic knowing that we can use <span class='highlight'>i</span> to find the index number of an array</p>
+
+	 <pre>
+		<code class='scode'>
+	var shoppingCart = {
+items: [
+	{
+		name: 'sushi',
+		color: 'red'
+	},
+	{
+		name: 'turtle',
+		color: 'green'
+	},
+	{
+		name: 'water',
+		color: 'blue'
+	},
+	{
+		name: 'george',
+		color: 'purple'
 	}
 
-	function findItem(list, name) {
-	    for (i = 0 ; i < list.length; i++) {
-	        if (list[i].name === name) {
-	            return i;
-	        }
-	    }
+	],
+	total_price: 0
+}
 
-    return -1; 
-	}
+function findItem(list, name) {
+    for (i = 0 ; i < list.length; i++) {
+        if (list[i].name === name) {
+            return i;
+        }
+    }
 
-	//findItem(shoppingCart.items, 'water'); --> 2
-	//findItem(shoppingCart.items, 'george'); --> 3
-	//findItem(shoppingCart.items, 'sushi'); --> 4
+return -1; 
+}
+
+//findItem(shoppingCart.items, 'water'); --> 2
+//findItem(shoppingCart.items, 'george'); --> 3
+//findItem(shoppingCart.items, 'sushi'); --> 4
 		</code>
 	</pre>
 
@@ -4476,60 +4575,60 @@ Creating Constructor Functions
 
 	 <pre>
 		<code class='scode'>
-	var slab = document.getElementById('slab');
-	var addToCart = document.getElementById('addToCart')
+var slab = document.getElementById('slab');
+var addToCart = document.getElementById('addToCart')
 
 
-	addToCart.addEventListener('click', function(){
-		var parent = this.parentNode; 
-		console.log(parent);
+addToCart.addEventListener('click', function(){
+	var parent = this.parentNode; 
+	console.log(parent);
 
-		var itemName = parent.querySelector('.item-name').innerText;
-		var itemPrice = Number(parent.querySelector('.item-price').innerText);
-		var itemQuantity = 1;
+	var itemName = parent.querySelector('.item-name').innerText;
+	var itemPrice = Number(parent.querySelector('.item-price').innerText);
+	var itemQuantity = 1;
 
-		var cartIndex = findItem(shoppingCart.items, itemName);
-		console.log(cartIndex);
+	var cartIndex = findItem(shoppingCart.items, itemName);
+	console.log(cartIndex);
 
-		if(cartIndex === -1){
-			console.log('push to cart');
-		} else {
-			console.log('item already exists');
-		}
-	});
-
-
-	var shoppingCart = {
-		items: [
-			{
-			name:'sushi',
-			color: 'red'
-			}
-		],
-		total_price: 0
+	if(cartIndex === -1){
+		console.log('push to cart');
+	} else {
+		console.log('item already exists');
 	}
+});
 
-	function findItem(list, name){
-		var found = false;
-		var i = 0;
 
-		for(i; i < list.length; i++){
-			if(list[i].name === name){
-				found = true;
-				break; //to stop i from increasing
-				//otherwise it will always go to its max
-				//list.length in this case, 2
-			}
+var shoppingCart = {
+	items: [
+		{
+		name:'sushi',
+		color: 'red'
 		}
+	],
+	total_price: 0
+}
 
-		if(found){
-			return i;
-		} else {
-			return - 1;
+function findItem(list, name){
+	var found = false;
+	var i = 0;
+
+	for(i; i < list.length; i++){
+		if(list[i].name === name){
+			found = true;
+			break; //to stop i from increasing
+			//otherwise it will always go to its max
+			//list.length in this case, 2
 		}
 	}
 
-	//logs 'item already exists' for cartIndex local variable
+	if(found){
+		return i;
+	} else {
+		return - 1;
+	}
+}
+
+//logs 'item already exists' for cartIndex local variable
 		</code>
 	</pre>
 
@@ -4537,60 +4636,60 @@ Creating Constructor Functions
 	<p>Now lets finalize the logic</p>
 	<pre>
 		<code class='scode'>
-	var slab = document.getElementById('slab');
-	var addToCart = document.getElementById('addToCart')
+var slab = document.getElementById('slab');
+var addToCart = document.getElementById('addToCart')
 
 
-	addToCart.addEventListener('click', function(){
-		var parent = this.parentNode; 
-		console.log(parent);
+addToCart.addEventListener('click', function(){
+	var parent = this.parentNode; 
+	console.log(parent);
 
-		var itemName = parent.querySelector('.item-name').innerText;
-		var itemPrice = Number(parent.querySelector('.item-price').innerText);
-		var itemQuantity = 1;
+	var itemName = parent.querySelector('.item-name').innerText;
+	var itemPrice = Number(parent.querySelector('.item-price').innerText);
+	var itemQuantity = 1;
 
-		var cartIndex = findItem(shoppingCart.items, itemName);
+	var cartIndex = findItem(shoppingCart.items, itemName);
 
-		if(cartIndex === -1){
-			shoppingCart.items.push({
-				name: itemName,
-				itemPrice: itemPrice,
-				totalPrice: itemPrice,
-				itemQuantity: itemQuantity
-			})
-			console.log('pushed ' + itemName + ' to cart');
-		} else {
-			shoppingCart.items[cartIndex].itemQuantity ++;
-			shoppingCart.items[cartIndex].totalPrice += itemPrice;
-			console.log(shoppingCart.items[cartIndex])
+	if(cartIndex === -1){
+		shoppingCart.items.push({
+			name: itemName,
+			itemPrice: itemPrice,
+			totalPrice: itemPrice,
+			itemQuantity: itemQuantity
+		})
+		console.log('pushed ' + itemName + ' to cart');
+	} else {
+		shoppingCart.items[cartIndex].itemQuantity ++;
+		shoppingCart.items[cartIndex].totalPrice += itemPrice;
+		console.log(shoppingCart.items[cartIndex])
+	}
+});
+
+
+var shoppingCart = {
+	items: [],
+	total_price: 0
+}
+
+function findItem(list, name){
+	var found = false;
+	var i = 0;
+
+	for(i; i < list.length; i++){
+		if(list[i].name === name){
+			found = true;
+			break; //to stop i from increasing
+			//otherwise it will always go to its max
+			//list.length in this case, 2
 		}
-	});
-
-
-	var shoppingCart = {
-		items: [],
-		total_price: 0
 	}
 
-	function findItem(list, name){
-		var found = false;
-		var i = 0;
-
-		for(i; i < list.length; i++){
-			if(list[i].name === name){
-				found = true;
-				break; //to stop i from increasing
-				//otherwise it will always go to its max
-				//list.length in this case, 2
-			}
-		}
-
-		if(found){
-			return i;
-		} else {
-			return - 1;
-		}
+	if(found){
+		return i;
+	} else {
+		return - 1;
 	}
+}
 		</code>
 	</pre>
 
@@ -4616,14 +4715,14 @@ Creating Constructor Functions
 	<p>JS</p>
 	<pre>
 		<code class='scode'>
-	var ulParent = document.getElementById('ulParent');
-	var lis = ulParent.children;
+var ulParent = document.getElementById('ulParent');
+var lis = ulParent.children;
 
-	for(var i = 0; i < lis.length; i++){
-		lis[i].addEventListener('click', function(){
-			this.style.color = 'pink';
-		});
-	}
+for(var i = 0; i < lis.length; i++){
+	lis[i].addEventListener('click', function(){
+		this.style.color = 'pink';
+	});
+}
 		</code>
 	</pre>
 
@@ -4640,9 +4739,9 @@ Creating Constructor Functions
 	<img src="images/blue-outline.png">
 	<pre>
 		<code class='scode'>
-		input:focus {
-			outline:none
-		}
+input:focus {
+	outline:none
+}
 		</code>
 	</pre>	
 
@@ -4652,12 +4751,12 @@ Creating Constructor Functions
 	<p>can select <b>both</b> an ID and a Class</p>
 	<pre>
 		<code class='scode'>
-	#my-cart.animateMenu {
-		opacity: 1;
-		transition: .45s all ease;
-		transform: translate(-50%, -50%) scale(1.5);
-		z-index: 1
-	}
+#my-cart.animateMenu {
+	opacity: 1;
+	transition: .45s all ease;
+	transform: translate(-50%, -50%) scale(1.5);
+	z-index: 1
+}
 		</code>
 	</pre>
 
@@ -4712,10 +4811,10 @@ Creating Constructor Functions
 	<h3>Cursor Style</h3>
 	<pre>
 		<code class='scode'>
-	.close-button {
-		fill: #94d341b;
-		cursor: pointer
-	}
+.close-button {
+	fill: #94d341b;
+	cursor: pointer
+}
 		</code>
 	</pre>
 
@@ -4731,11 +4830,11 @@ Creating Constructor Functions
 	<h3>Center an Image</h3>
 	<pre>
 		<code class='scode'>
-		img {
-			display: block;
-			margin: auto;
-			width: 40%
-		}
+img {
+	display: block;
+	margin: auto;
+	width: 40%
+}
 		</code>
 	</pre>
 
@@ -4755,9 +4854,9 @@ Creating Constructor Functions
 	<p>Multiple transform properties done correctly</p>
 	<pre>
 		<code class='scode'>
-		button {
-			transform: translateX(300px) scale(0.5) rotate(90deg);
-		}
+button {
+	transform: translateX(300px) scale(0.5) rotate(90deg);
+}
 		</code>
 	</pre>
 
@@ -4793,20 +4892,19 @@ Creating Constructor Functions
 	<p>Combinator Examples</p>
 	<pre>
 		<code class='scode'>
-	.tabs + input {
-		display: none;
-		width: 100%;
-	}
+.tabs + input {
+	display: none;
+	width: 100%;
+}
 
-	.tabs + input + div {
-		visibility: none;
-		width: 100%;
-	}
+.tabs + input + div {
+	visibility: none;
+	width: 100%;
+}
 
-	.tabs + input:checked + div {
-		visibility: visible;
-	}
-
+.tabs + input:checked + div {
+	visibility: visible;
+}
 		</code>
 	</pre>
 
@@ -4848,11 +4946,11 @@ Creating Constructor Functions
 	<b>before</b>
 	<pre>
 		<code class='scode'>
-	.animateMenu {
-		opacity: 1;
-		transition: .45s all ease;
-		transform: scale(1.5);
-	}	
+.animateMenu {
+	opacity: 1;
+	transition: .45s all ease;
+	transform: scale(1.5);
+}	
 		</code>
 	</pre>
 
@@ -4863,13 +4961,13 @@ Creating Constructor Functions
 	<b>after</b>
 	<pre>
 		<code class='scode'>
-	#my-cart.animateMenu {
-		opacity: 1;
-		transition: .45s all ease;
-		transform: scale(1.5);
-		z-index: 1;
-		position: relative;
-	}	
+#my-cart.animateMenu {
+	opacity: 1;
+	transition: .45s all ease;
+	transform: scale(1.5);
+	z-index: 1;
+	position: relative;
+}	
 		</code>
 	</pre>
 
@@ -4885,34 +4983,34 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	#my-cart {
-		width: 45%;
-		transform: scale(.1);
-		transition: .45s all ease;
-		position: absolute;
-		top: 50%; left: 50%;
-		transform: translate(-50%, -50%) scale(.1);
-		opacity: 0;
-	}
+#my-cart {
+	width: 45%;
+	transform: scale(.1);
+	transition: .45s all ease;
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%) scale(.1);
+	opacity: 0;
+}
 
-	#my-cart.animateMenu {
-		opacity: 1;
-		transition: .45s all ease;
-		transform: translate(-50%, -50%) scale(1.5);
-		z-index: 1;
-	}
+#my-cart.animateMenu {
+	opacity: 1;
+	transition: .45s all ease;
+	transform: translate(-50%, -50%) scale(1.5);
+	z-index: 1;
+}
 		</code>
 	</pre>
 
 	<pre>
 		<code class='scode'>
-	#my-cart.animateMenu {
-		opacity: 1;
-		transition: .45s all ease;
-		transform: scale(1.5);
-		z-index: 1;
-		position: relative;
-	}	
+#my-cart.animateMenu {
+	opacity: 1;
+	transition: .45s all ease;
+	transform: scale(1.5);
+	z-index: 1;
+	position: relative;
+}	
 		</code>
 	</pre>
 
@@ -5027,30 +5125,30 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	var name = "tt"; /* global variable (window.name) */
+var name = "tt"; /* global variable (window.name) */
 
-	var person = {
+var person = {
 
-	  name: "tingting",
+  name: "tingting",
 
-	  outerFunc: function () {
+  outerFunc: function () {
 
-	    console.log(this); // person (this === person) but this happens because of the caller (person.outerFunc()).
+    console.log(this); // person (this === person) but this happens because of the caller (person.outerFunc()).
 
-	    console.log(this.name); // person.name (which is "tingting"), the "name" property.
+    console.log(this.name); // person.name (which is "tingting"), the "name" property.
 
-	    function getFullName () {
-	      console.log(this); // (this === window)
-	      console.log(this.name); // window.name, which is "tt"
-	    }
+    function getFullName () {
+      console.log(this); // (this === window)
+      console.log(this.name); // window.name, which is "tt"
+    }
 
-	    getFullName(); // This is a global function call (notice there is nothing on the left side). The expected value of "this" inside that function is "window". Because "window" is the global object.
+    getFullName(); // This is a global function call (notice there is nothing on the left side). The expected value of "this" inside that function is "window". Because "window" is the global object.
 
-	  }
+  }
 
-	};
+};
 
-	person.outerFunc(); // Please note that "person" is the caller. Inside the context of "outerFunc", "this" will be "person".
+person.outerFunc(); // Please note that "person" is the caller. Inside the context of "outerFunc", "this" will be "person".
 
 		</code>
 	</pre>
@@ -5059,34 +5157,32 @@ Creating Constructor Functions
 
 	<pre>
 		<code class='scode'>
-	 var name = "Tingting";
-    var age = 20;
-    
-    function info() {
-      console.log(this.name);
-      console.log(this.age);
-    }
-    
-    var person = {
-      name: "Anthony",
-      age: 40,
-      printInfo: info
-    };
-    
-    var dog = {
-      name: "Bobby",
-      age: 7,
-      printInfo: info
-    };
-    
-    /* Please notice we are using the same function "info" in 3  different scenarios:*/
-    info();
-    person.printInfo();
-    dog.printInfo();
-    /* Please note that the we are having 3 different values of this in the same function,
-    for every different execution. (first one is window, second one is person, third one is dog).*/
+var name = "Tingting";
+var age = 20;
 
+function info() {
+  console.log(this.name);
+  console.log(this.age);
+}
 
+var person = {
+  name: "Anthony",
+  age: 40,
+  printInfo: info
+};
+
+var dog = {
+  name: "Bobby",
+  age: 7,
+  printInfo: info
+};
+
+/* Please notice we are using the same function "info" in 3  different scenarios:*/
+info();
+person.printInfo();
+dog.printInfo();
+/* Please note that the we are having 3 different values of this in the same function,
+for every different execution. (first one is window, second one is person, third one is dog).*/
 		</code>
 	</pre>
 
