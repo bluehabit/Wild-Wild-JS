@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Keyword 'This'</title>
+	<link rel="stylesheet" type="text/css" href="../styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+</head>
+<body>
+
+<a class='tempButton' href="../index.html">Home</a>
+
+<h1>
+<img class='tumbleweed' src="../images/tumbleweed.svg">
+Wild Wild.JS
+<img class='tumbleweed2' src="../images/tumbleweed.svg">
+</h1>
+
+<div id='mainContainer'>
+
+<p>Before we get started with the Keyword this, lets look at..<p>
+
+<h2>Nested Objects</h2>
+
+<img src="../images/keyword this/nested_object_00.png">
+
+<img src="../images/keyword this/nested_object_01.png">
+
+<h2>The Keyword 'This'</h2>
+<p>The keyword this is determined by the <i>context</i> in which it was called. There are 4 rules for determining the value of the the keyword 'this'</p>
+
+<ul>
+	<li>global</li>
+	<li>object / implicit</li>
+	<li>explicit</li>
+	<li>new keyword</li>
+</ul>
+
+<h2>Global</h2>
+
+<img src="../images/keyword this/keyword_this_00.png">
+
+<img src="../images/keyword this/keyword_this_01.png">
+
+<img src="../images/keyword this/keyword_this_02.png">
+
+<p>When we see the keyword this in the global context, its value refers to the glboal object, which in the browser environment refers to the window object.</p>
+
+<p>When the value of 'this' is just floating around within the global scope its in the wild. In comparison to declaring the keyword 'this' inside an object</p>
+
+<img src="../images/keyword this/keyword_this_03.png">
+
+<br>
+<hr>
+
+<p>In this code example user accidently uses <i>this.badIdea</i> where this refers to the global window object. In javascript, all variables you declare behind the scenes are added to the window object. As a result when you call the function <i>mistake()</i> it creates the variable on <i>window.badIdea</i>, now it exists in the global scope</p>
+
+<img src="../images/keyword this/keyword_this_04.png">
+
+<h3>Strict Mode</h3>
+
+<p>ES5 introduced <b>strict mode</b>. The value of the keyword this inside of a function is undefined, its not the global window object. This prevents us from accidently attaching global variables to the window object. It will give the value of this in the case below of <i>undefined</i>, and it will give us a type error since we cannot attach properties or methods to undefined</p>
+
+<img src="../images/keyword this/keyword_this_05.png">
+
+<h2>Object Rule (implicit)</h2>
+
+<p>When the keyword this is found inisde a declared object, the value of the keyword this will always be the <b>closest parent object</b></p>
+
+<img src="../images/keyword this/keyword_this_06.png">
+
+<p>Here is a simple example:</p>
+
+<img src="../images/keyword this/keyword_this_07.png">
+
+<p>Nested object example:</p>
+
+<img src="../images/keyword this/nested_object_02.png">
+
+<p>Within <code class='highlight'>person.dog.sayHello</code> the value of this is looking to the <b>closest parent object</b> which in this case is dog. What if we wanted our <code class='highlight'>sayHello</code> method to return <i>'hello chris'</i> instead of <i>'hello undefined'</i> we would need some way of explicitly changing the value of the keyword this. And that is where we will introduce...
+
+<img src="../images/keyword this/keyword_this_08.png">
+
+<h2>Explicit Binding using Call, Apply, Bind</h2>
+
+<p>We can specifically choose what we want the context / value of the keyword this by using call, apply or bind. These 3 <strong>methods</strong> can only be used on functions, since they are methods afterall.</p>
+
+<p>The first argument to call method is what you want the value of the keyword this to be, and is commonly known as the <code class='highlight'>thisArg</code> and this can be set to whatever you want</p>
+
+<img src="../images/keyword this/keyword_this_09.png">
+
+<p>Note call and bind accept an infinite amount of parameters, while apply only accepts 2 parameters</p>
+
+<h2>Call</h2>
+<h3>Fixing earlier example with Call</h3>
+
+<img src="../images/keyword this/keyword_this_10.png">
+
+<p>Call is often used to prevent code duplication</p>
+
+<img src="../images/keyword this/keyword_this_11.png">
+
+<img src="../images/keyword this/keyword_this_12.png">
+
+<p>Here we are using call to point to the new value of the keyword this</p>
+
+<h2>Apply</h2>
+
+<img src="../images/keyword this/keyword_this_13.png">
+
+<p><span class='pink'>Special Note:</span> Remember, can always use console.log(this) to see what the value of 'this' is.</p>
+
+<img src="../images/keyword this/keyword_this_14.png">
+
+<p><strong>Bind</strong>works just like call, but instead of calling the function right away it returns a function definition. With the keyword this set to the value of the this arg. When you dont know all the arguments that will be passed to a function its common to use bind. We dont call it right away, instead we bind it with some of the parameters set we call this <strong>partial application</strong>. Again whats neat about bind, is we dont need to know all the parameters to the function when we bind it, only need to know the thisArg the value of what we want the keyword this to be</p>
+
+<img src="../images/keyword this/keyword_this_15.png">
+
+<p>Another common use is to set context of kw this for a function that will be called at a later point in time, very common with async code.</p>
+
+<p>Confusing, but setTimeout is actually part of the global window object so the code below won't do what you think it does.</p>
+
+<img src="../images/keyword this/keyword_this_16.png">
+
+<p>We can fix this by explicitly setting the value of the KW this. But since setTimeout is asynchronous and occurs at a later point in time we should use bind. Call and apply remember invoke the function right away and would defeat the purpose of a setTimeout. </p>
+
+<img src="../images/keyword this/keyword_this_17.png">
+
+<h2>The New Keyword</h2>
+
+<p>When the 'new' keyword is used, a new object is created out of thin air. And inside the function definition the keyword this refers to the new object that was created. </p>
+
+<img src="../images/keyword this/keyword_this_18.png">
+
+<h2>Object Oriented Programming</h2>
+
+<img src="../images/keyword this/keyword_this_19.png">
+
+<img src="../images/keyword this/keyword_this_20.png">
+
+<p>Above, instead of making an infinite number of different objects, lets ee if we can create a function to construct these similar 'house' objects.</p>
+
+<p>In javascript we call these special functions constructor functions</p>
+
+<h2>Constructor Functions</h2>
+
+<img src="../images/keyword this/keyword_this_21.png">
+
+<p>The New Keyword:</p>
+
+<ul>
+	<li>creates a new object out of thin air</li>
+	<li>sets of the value of the keyword this inside the constructor function to be that empty object just created.</li>
+	<li>adds the line 'return this' to the end of the function, which follows it</li>
+	<li>it adds a property onto the empty object called '_proto_' which links the prototype property on the constructor function to the empty object</li>
+</ul>
+
+<img src="../images/keyword this/keyword_this_22.png">
+
+<h3>Multiple Constructors with Duplicated Code: Fix</h3>
+
+<img src="../images/keyword this/keyword_this_23.png">
+
+<p>Refactor:</p>
+
+<img src="../images/keyword this/keyword_this_24.png">
+
+<img src="../images/keyword this/keyword_this_25.png">
+
+<img src="../images/keyword this/keyword_this_26.png">
+
+<h2>__Prototype__</h2>
+
+<img src="../images/keyword this/keyword_this_27.png">
+
+<img src="../images/keyword this/keyword_this_28.png">
+
+<p><strong>Object prototype property</strong>- is an object that can have methods and properties placed on it, these properties and methods are shared among all objects when the new keyword is used to create an object from the constructor function. </p>
+
+<img src="../images/keyword this/keyword_this_29.png">
+
+<p>These objects created from the constructor function have a dynamic link between them and the original constructor function. Any properties or methods that are added to the original constructor function are automatically shared with objects it creates! A dynamic link.  This is called the <b>prototype chain</b>.</p>
+
+<p>The reason this is possible is due to the way that javascript looks for methods and properties. Take a look below. </p>
+
+<img src="../images/keyword this/keyword_this_30.png">
+
+<img src="../images/keyword this/keyword_this_31.png">
+
+<img src="../images/keyword this/keyword_this_32.png">
+
+<p>The prototype property is a great place to put properties and methods amongst all objects created from that constructor function</p>
+
+<img src="../images/keyword this/keyword_this_33.png">
+
+<img src="../images/keyword this/keyword_this_34.png">
+
+
+</div><!--end main container-->
+
+
+</body>
+
+<style>
+	#mainContainer img{
+		display: block;
+	}
+</style>
+</html>

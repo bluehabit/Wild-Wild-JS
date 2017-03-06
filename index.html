@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<a class='tempButton' href="this-and-closures/index.html">the Keyword 'This'</a>
+
 <h1>
 <img class='tumbleweed' src="images/tumbleweed.svg">
 Wild Wild.JS
@@ -71,6 +73,11 @@ https://www.sitepoint.com/inner-workings-javascripts-this-keyword/
 https://www.sitepoint.com/mastering-javascripts-this-keyword/
 
 http://jstherightway.org/
+
+<h2>PATH variable</h2>
+<p>
+C:\Users\Chris\AppData\Roaming\npm;%SUBLIME%;C:\Program Files\MongoDB\Server\3.4\bin;C:\Program Files\Heroku\bin;C:\Windows\System32\
+</p>
 
 <h2>Javascript Performance</h2>
 http://jsperf.com/
@@ -175,9 +182,9 @@ var meme = true;
 		<code class='scode'>
 var animal = 'dog'
 var sounds = {
-	'pig': 'oink',
-	'cow': 'moo',
-	'dog': 'woof-woof',
+	pig: 'oink',
+	cow: 'moo',
+	dog: 'woof-woof',
 }
 
 var sound = sounds[animal]
@@ -1122,6 +1129,21 @@ var person = {
 person.age = 21;
 person.city = 'Arlington'
 		</code>
+	</pre>
+
+<p>Mixing and matching <b>bracket</b> and <b>dot</b> notation</p>
+	<pre>
+		<code class='scode'>
+var obj = {};
+
+obj['name'] = 'Chris';
+obj['age'] = 29;
+obj.sex = 'male';
+
+// age: 29,
+// name: 'Chris',
+// sex: 'male'
+		</code>
 	</pre
 
 
@@ -1246,6 +1268,43 @@ bird['color'] //'green'
 
 	<p><span class='pink'>ARRAY OF OBJECTS</span></p> 
 	<b>Accessing Information</b>
+
+	<h3>Pushing a new object to an array of objects</h3>
+	<pre>
+		<code class='scode'>
+//Pushing to Array of Objects
+
+var movies = [
+	{
+		name: 'Alien',
+		rating: 5
+	},
+	{
+		name: 'Terminator',
+		rating: 4
+	},
+	{
+		name: 'Land of the Lost',
+		rating: 3
+	}
+];
+
+var movieName = 'Garfield';
+var movieRating = 2;
+
+movies.push({name:'The Flintstones', rating: 2});
+
+//pushing through a custom object that maps to the 
+//original movies object
+movies.push({name: movieName, rating: movieRating});
+
+//->Garfield
+//->2
+
+		</code>
+	</pre>
+<p><span class='pink'>Very Important:</span> Notice three  things here in the above code. #1 we are creating an <strong>array of objects</strong>. #2 We are pushing a new object to the array with <i>The Flintstones</i>. #3 We can create our own new object, and map the key value pairs to our custom variables and push that as well. 
+</p>
 
 	<p>Example</p>
 	<pre>
@@ -2228,9 +2287,14 @@ for(var i = 0; i < colors.length; i++){
 	<h3>Nested For Loops</h3>
 	<b>under construction</b>
 
+	<h2> For Each </h2>
 
 	<h3>For Each</h3>
 	<p>Javascript provides a built-in way of iterating over an array using forEach</p>
+
+
+	<h2> For Each Array of Objects</h2>
+	<img src="images/for each array of objects.png">
 
 	<pre>
 		<code class='scode'>
@@ -2468,12 +2532,59 @@ console.log(isEvenNumbers);
 		</code>
 	</pre>
 
+	<h2>Supremve Victory: callback</h2>
+	
+	<p>Anonymous callback function</p>
+	<img src="images/supremeExample.png">
+
+	<p>Named callback function</p>
+	<img src="images/named function variant.png">
+
+	<img src="images/problem.png">
+
+	<img src="images/supremeExample2.png">
+
+	<h2>Contrived Forced Async Examples</h2>
+
+	<img src="images/forcedasync1.png">
+
+	<img src="images/forcedasync2.png">
+
+	<h2>Real World Callback Example</h2>
+
+	<img src='images/callback key.png'>
+
+	<img src="images/realworld1.png">
+
+	<img src="images/realworld2.png">
+
+	<img src="images/realworld3.png">
+
 	<h2>Callback example</h2>
 	<p>A callback function is simply a function that gets passed through another function as a parameter, and gets called a later point in time</p>
+
+	<p>A callback function defined as a function that gets passed as an argument as an argument to another function and gets executed after some event happens.</p>
 
 	<p>Two types of callbacks, <b>synchronous</b> and <b>asynchronous</b></p>
 
 	<p>Callbacks always use this pattern, <b>define</b> the function, then <b>call</b> it. Thats it if its an inline anonymous function. If its a named function, you have one additional step which is to define the named function as well</p>
+
+	<img src="images/callback syntax.png">
+	<p>Notice in this last example how we have a function inside another function. getUser is the main function, and inside we have a setTimeout function</p>
+
+	<p>Andrew Mead callback examples, notice how the callback is wrapped in a <strong>setTimeout</strong> function </p>
+
+	<img src="images/callbackex1.png">
+
+	<img src="images/callbackex2.png">
+
+	<img src="images/async5.png">
+
+	<p>Weird callback example, function within a function callback</p>
+
+	<img src="images/strangecallback.png">
+
+	<img src="images/callbacklol.png">
 
 	<img src="images/example12.png">
 
@@ -2506,6 +2617,54 @@ console.log(isEvenNumbers);
 	<img src="images/example6.png">
 
 	<img src="images/parameter names.png">
+	
+	<p><b>Callback Hell Example</b></p>
+
+	<img src="images/callbackhell.png">
+
+	<h2>Array.filter</h2>
+	<p>Array.filter is a built in callback. It uses a callback to determine if an element inside an array fits the criteria as true or false. If true it is added to the new array, if false it is not included in the new array. Using filter is an example of not mutating the original array</p>
+
+	<p>Named function and anonymous function filter callbacks</p>
+	<img src="images/filter01.png">
+
+	<p>Using all the built in parameters for filter</p>
+	<img src="images/filter02.png">
+
+	<p>Just like our own functions, parameters names are arbitrary</p>
+	<img src="images/filter03.png">
+
+	<p>Filter example</p>
+	<img src="images/filter example.png">
+
+	<h2>Array.map()</h2>
+	<p>Creates a new array with the results of calling a provided callback function on <i>every</i> element within the array</p>
+
+	<img src="images/map01.png">
+
+	<h2>Array.reduce()</h2>
+	<p><i>Native function</i> of all javascript arrays. Reduces an entire array into just one value</p>
+
+	<a href="https://www.youtube.com/watch?v=tsIAyUQc8Ig">Reduce</a>
+
+	<img src="images/reduce.png">
+
+	<img src="images/reduce02.png">
+
+	<h2>ES6 Template Strings</h2>
+	<p>Allow you to reference a variable in string format, for example inside of HTMl, very important note template strings use the <strong>`</strong> character not quotation marks <strong>'</strong>
+	</p>
+
+	<p><p><span class='pink'>Very Important:</span> you can perform operations within the query string as shown in example 2</p>
+
+	<img src="images/templatestrings.png">
+
+	<img src='images/templatestrings2.png'
+
+	<h2>Array Dot in Dev Tools</h2>
+	<p>If you want to easily jog your memory of what native methods arrays have in javascript just use array. in chrome dev tools and it will populate a list for you</p>
+
+	<img src="images/array dot.gif">
 
 	<h2>Callback Functions AKA Higher Order Functions</h2>
 
@@ -3573,7 +3732,10 @@ console.log(newNumbers)
 
 	<p>Node lists works like an array. Technically what is being returned here is not an array but a <b>node list</b> its an 'array like'. It has some of the basic things that JS arrays have,  but its missing some of the features of an actual array. For example we can do <code class='highlight'>element.length</code> but if we try to do <code class='highlight'>element.forEach() </code> it doesn't work.</p>
 
-	<p><b>HTMLCollection === nodeList</b></p>
+	<h2>HTMLCollections vs Nodelist</h2>
+
+	<img src="images/nodelist and html collections.png">
+
 
 	<p><span class='pink'>HTML Collections are Not Arrays</span> if you want to use <b>forEach</b> on HTML collections read more information here on <a href="http://clubmate.fi/the-intuitive-and-powerful-foreach-loop-in-javascript/" target='_blank'>clufmate.fi</a></p>
 
@@ -5231,6 +5393,10 @@ for every different execution. (first one is window, second one is person, third
 			" target="_blank">Flexbox Froggy</a>
 		</li>
 		<li>
+			<a href="https://medium.freecodecamp.com/an-animated-guide-to-flexbox-d280cf6afc35#.sqnq2b2fq
+			" target="_blank">Animated Flexbox Guide</a>
+		</li>
+		<li>
 			<a href="http://www.flexboxdefense.com/
 			" target="_blank">Flexbox Defense Game</a>
 		</li>
@@ -5332,6 +5498,10 @@ for every different execution. (first one is window, second one is person, third
 		<li>
 			<a href="https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA
 			" target="_blank">Computerphile</a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/channel/UCqr-7GDVTsdNBCeufvERYuw
+			" target="_blank">Dev Coffee</a>
 		</li>
 		<li>
 			<a href="https://www.khanacademy.org/computing/computer-programming

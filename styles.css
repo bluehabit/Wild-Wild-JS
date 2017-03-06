@@ -192,3 +192,11 @@ a {
 	border: 2px solid #4d738b;
 	padding: 2px;
 }
+
+.tempButton {
+	padding: 50px;
+	background-color: gray;
+	border-radius: 5px;
+	color:white;
+	font-size: 1.2em;
+}
