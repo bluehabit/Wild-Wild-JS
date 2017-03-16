@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>The Keyword 'This'</title>
+	<title>JS30</title>
 	<link rel="stylesheet" type="text/css" href="../styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
@@ -18,16 +18,279 @@ Wild Wild.JS
 
 <div id='mainContainer'>
 
+<h2>Drum Kit</h2>
+<img src="../images/js30/drumkit08.png">
+
+<img src='../images/js30/drumkit00.png'>
+
+<h3>Data Key HTML Attribute</h3>
+<img src="../images/js30/drumkit01.png">
+<p>Data attributes are just something we make up so we can hook it up to our data later. For example 'data-attribute = cake' or 'data-attribute = 63'</p>
+
+<h3>Audio HTML Element</h3>
+<img src="../images/js30/drumkit02.png">
+
+<h3>audio.play() Method</h3>
+<img src="../images/js30/drumkit03.png">
+
+<h3>audio.currentTime Property</h3>
+<p>Can set this value to be 0, or any other value. By setting it to 0 it allows us to continually mash the button and the sound keeps generating. Instead of having to wait for the sound to end</p>
+
+<img src="../images/js30/drumkit04.png">
+
+<h3>Timing Events to CSS Transitions</h3>
+<img src="../images/js30/drumkit05.png">
+
+<h3>The keyword 'this'</h3>
+<img src="../images/js30/drumkit06.png">
+<p>check this against the keyword this rules, I think because 'this' is contained within the nearest parent object which is keys. removeTransition is called within an object, the object is keys in this case. Thats why this has the value of keys</p>
+
+<h3>Full Program</h3>
+<img src="../images/js30/drumkit07.png">
+
+
+<h2>JS Clock</h2>
+
+
+<h3>Transform pivot point</h3>
+<img src="../images/js30/clock00.png">
+
+<p>By default when you transform something, in this case rotate, the pivot point is in the center of the object.As you can see in the image above</p>
+
+<p>We want to put our pivot point on the very end of the clock hand. In CSS this pivot point is called the <b>origin</b>. We use the <b>transition-origin</b> property and use it as a percentage to move the origin along the object, in our case 100% moves it to the very end as we need</p>
+
+<img src="../images/js30/clock01.png">
+
+<p>Using page up / down in dev tools to increment our transform rotate</p>
+<img src="../images/js30/clocktick.gif">
+
+<p>Dev tools also has a built in <b>cubic-bezier</b> editor</p>
+<img src="../images/js30/cubic-bezier.gif">
+
+<h3>setInterval</h3>
+<p>Executing a function at a set interval</p>
+
+<img src="../images/js30/clock02.png">
+
+<h3>new Date(), now.getSeconds(), now.getMinutes(), now.getHours()</h3>
+<img src="../images/js30/clock03.png">
+
+<h3>Full program</h3>
+<img src="../images/js30/clock04.png">
+
+<h2>CSS Variables</h2>
+<p>May be thinking, we already have CSS variables with SASS, but its new because CSS variables can be <b>updated</b> with Javascript. And when you change the value of that variable, everywhere on the page that references that CSS variable gets updated as well. Compared to SASS where variables get changed at compile time, and once compiled, you cannot change it.</p>
+
+<img src="../images/js30/cssVariable00.png">
+
+<p>The way CSS variables work is you first declare them on an element, or in our case, :root which is the highest you can get</p>
+
+<p>Notice how these elements all have a <b>name</b> attribute that is the <b>same as the CSS variable name</b></p>
+<img src="../images/js30/cssVariable11.png">
+
+<h3>Defining Variables</h3>
+<img src="../images/js30/cssVariable01.png">
+
+<h3>Using a CSS Variable</h3>
+<p>Use the keyword var and pass it the value</p>
+<img src="../images/js30/cssVariable02.png">
+
+<h3>Nodelists</h3>
+<p>querySelectorAll will produce a nodeList, which looks like an array but isn't. An array has built in methods like map, reduce, filter. But if you open the prototype of the nodeList we only have a few methods and properties listed here</p>
+
+<img src="../images/js30/cssVariable03.png">
+
+<p>Now compare that to the prototype of a regular array as shown below, take a look at all those handy built properties and methods</p>
+
+<img src="../images/js30/cssVariable04.png">
+
+<p>You can actually convert a nodeList to an array, but forEach has just been recently added to nodeLists as well</p>
+
+<h3>Suffixes</h3>
+<p>Here the program is simply printing the value of the blur, background color, etc. When we grab these values out such as "spacing: 10px". We can't just grab the value 10, we also need the suffix 'px' for '10px'.</p>
+
+<img src="../images/js30/cssVariable06.png">
+
+<p>Suffix</p>
+<img src="../images/js30/cssVariable05.png">
+
+<p>The way we solve this is with a <b>data-attribute</b></p>
+<img src="../images/js30/cssVariable07.png">
+
+<p>The data-attribute actually stores all of our custom data attributes as an <b>object</b></p>
+<img src="../images/js30/cssVariable08.png">
+
+<h3>object.dataset</h3>
+<p>We get access to this data-set object using object.dataset</p>
+<img src="../images/js30/cssVariable09.png">
+
+<p>We can drill down even further, instead of getting all of our custom datasets properties and values back, we can just get a specific one as shown below</p>
+<img src="../images/js30/cssVariable10.png">
+
+<h3>Final</h3>
+<img src="../images/js30/cssVariable12.png">
+
+<h3>Array Cardio part 1</h3>
+<h3>Filter</h3>
+<p><b>Filter</b> the way filter works is we pass it a function, and that function loops over every item in the array</p>
+
+<p>For filter, anything with the value of TRUE gets added to the new array, a  value of FALSE and it will not be added - in effect removing it</p>
+
+<h3>Exercises</h3>
+<img src="../images/js30/inventors.png">
+<br>
+<img src="../images/js30/arrayCardio00.png">
+
+<h3>Map</h3>
+<p><b>Map</b> transforms the values within an array and returns a new array of the same length. I like to think of map as a factory machine that takes in a raw material, stamps it, and kicks it out the other end. Map will always return the same amount of items you give it</p>
+
+<img src="../images/js30/arrayCardio01.png">
+
+<h3>array.prototype.sort()</h3>
+<p>Can sort items using -1 and 1</p>
+
+<img src="../images/js30/arrayCardio02.png">
+
+
+<h3>Reduce</h3>
+<p>Reduce allows you to build something on every single item. Have you ever done something like this?</p>
+
+<img src="../images/js30/arrayCardio03.png">
+
+<p>This is pretty similar to how reduce works. Reduce is just a much clearn way to do that. Reduce will give you a running total.</p>
+
+<img src="../images/js30/arrayCardio04.png">
+<br>
+
+<img src="../images/js30/arrayCardio05.png">
+
+<h3>Chaining Map and Filter</h3>
+<img src="../images/js30/arrayCardio06.png">
+
+<p>ES6 Variant</p>
+<img src="../images/js30/arrayCardio07.png">
+
+<h3>People Dataset</h3>
+<img src="../images/js30/arrayCardio09.png">
+
+<h3>Magic</h3>
+<img src="../images/js30/arrayCardio08.png">
+<br>
+<img src="../images/js30/arrayCardio10.png">
+
+<h3>Reduce Exercise</h3>
+<img src="../images/js30/arrayCardio11.png">
+
+<h2>Array Cardio Day part 2</h2>
+
+<h3>array.prototype.some() and array.prototype.every()</h3>
+<p><b>.some()</b> is <i>at least</i> one person 19?</p>
+<p><b>.every()</b> is <i>everyone</i> 19?</p>
+
+<h3>Our Dataset</h3>
+<img src="../images/js30/arrayCardioDay2_02.png">
+
+<h3>Some</h3>
+<img src="../images/js30/arrayCardioDay2_00.png">
+
+<h3>Every</h3>
+<img src="../images/js30/arrayCardioDay2_01.png">
+
+<h3>array.prototype.find()</h3>
+<p><b>Find</b> is similar to filter but instead of returning you a subset of an array, it returns the FIRST item it finds</p>
+<img src="../images/js30/arrayCardioDay2_03.png">
+
+<h3>array.prototype.findIndex()</h3>
+<p>Locates an item within an array</p>
+<img src="../images/js30/arrayCardioDay2_04.png">
+
+<p>Locating an item from an array and then removing it</p>
+<img src="../images/js30/arrayCardioDay2_05.png">
+
+
+<h2>nodeList vs Array</h2>
+<img src="../images/js30/nodelist.png">
+
+
+<h2>Must know Dev Tools Trick</h2>
+
+<h3>Breakpoints</h3>
+<p>Will trigger the console where this breakpoint has been inserted, and pause the program</p>
+
+<img class='border' src="../images/js30/devtools00.gif">
+
+<h3>console.dir()</h3>
+<p>Gives you a drop down of all available mehtods and properties on something</p>
+
+<img class='border' src="../images/js30/devtools01.gif">
+
+<h3>console.group()</h3>
+<p>Use console.group to start it and console.groupEnd() to end it. Can also switch out console.group with console.groupCollapsed so by default the items are collapsed.</p>
+<img src="../images/js30/devtools00.png">
+
+<h3>console.count()</h3>
+<img src="../images/js30/devtools01.png">
+
+<h3>console.time()</h3>
+<img src="../images/js30/devtools02.png">
+
+<h3>console.table()</h3>
+<p>Can take an array of objects, assuming they all have the same properties, in this case name and age, it will put it in a nice table for you.</p>
+<img src="../images/js30/devtools03.png">
+
+<h2>Intro to Ajax - type ahead feature</h2>
+
+<img src="../images/js30/typeAhead00.png">
+
+<p>
+<b>AJAX or Asynchronous JavaScript and XML</b> is a way to use JS to talk to a webserver, get back a response, and update a web page all without loading a new page.  An example of asynchronous JavaScript  would be scrolling to the bottom of your twitter feed where it loads in more tweets indefinitely. Or google maps, how it continuously updates as you scroll around to new areas of the map without having to reload the page. On reddit users can vote posts up or down, helping to move the most popular posts to the top of the home page, when you vote you don't leave the current page - but your vote is sent to the reddit server using AJAX. <b>New content without loading new web pages</b>. 
+</p>
+
+<a href="https://www.youtube.com/watch?v=fvVG5QOOn44">Treehouse intro to AJAX</a>
+
+<p>Ajax - using a new API in the <i>browser</i> called <b>fetch</b>. If you have used HTML or XMLHTTP request before using something like jquery.json or a 3rd party library like axios. </p>
+
+<p>It <b>doesn't return the data</b>, it returns what's called a <b>promise</b>.  So the way you work with a promise is you call <b>.then</b> on it which will return a <b>blob</b> of data. </p>
+
+<h3>.fetch</h3>
+
+<p>A basic promise, shown below, again notice its not returning the data but the state of the promise: either resolved or rejected</p>
+
+<img src="../images/js30/typeAhead01.png">
+
+<img src="../images/js30/typeAhead03.png">
+
+<p>Notice how it shows us the promise state, in this case resolved</p>
+
+<h3>.then</h3>
+<p>Notice how it gives us back a response <i>object</i></p>
+
+<img src="../images/js30/typeAhead02.png">
+
+<p>Whats going on here is the data fetch gets back, it doesn't know what type it is just yet. It could be an image, some html, music etc. <b>.json itself returns another promise</b> So we can convert it with ...</p>
+
+<h3>.json</h3>
+<img src="../images/js30/typeAhead04.png">
+
+<p>Assigning our data from JSON to the cities variable</p>
+<img src="../images/js30/typeAhead05.png">
+
+<h3>.match and regex</h3>
+<p>Putting variable into regular expression. </p>
+<img src="../images/js30/typeAhead06.png">
 
 
 </div><!--end main container-->
-
 
 </body>
 
 <style>
 	#mainContainer img{
 		display: block;
+	}
+
+	.border {
+		border: 2px solid gray;
 	}
 </style>
 </html>
